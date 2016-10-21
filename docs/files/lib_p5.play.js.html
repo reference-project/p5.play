@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib\p5.play.js - p5.play</title>
+    <title>lib/p5.play.js - p5.play</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -15,7 +15,7 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="p5.play" src="..\..\asterisk.png" style="max-height: 65%;" title="p5.play">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
             p5.play
         </h1>
 	<div class="nav">
@@ -27,7 +27,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.play", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5", "classes/p5.Color", "classes/p5.Element", "classes/p5.Font", "classes/p5.Graphics", "classes/p5.Image", "classes/p5.play", "classes/p5.Renderer", "classes/p5.Table", "classes/p5.TableRow", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/2D Primitives", "modules/3D Primitives", "modules/Acceleration", "modules/Array Functions", "modules/Attributes", "modules/Calculation", "modules/Camera", "modules/Color", "modules/Constants", "modules/Conversion", "modules/Creating & Reading", "modules/Curves", "modules/Data", "modules/DOM", "modules/Environment", "modules/Events", "modules/Font", "modules/Image", "modules/Input", "modules/IO", "modules/Keyboard", "modules/Lights", "modules/Lights, Camera", "modules/Loading & Displaying", "modules/Material", "modules/Math", "modules/Mouse", "modules/Noise", "modules/Output", "modules/p5.play", "modules/Pixels", "modules/Random", "modules/Rendering", "modules/Setting", "modules/Shape", "modules/String Functions", "modules/Structure", "modules/Table", "modules/Time & Date", "modules/Touch", "modules/Transform", "modules/Trigonometry", "modules/Typography", "modules/Vertex"]'>
         </form>
     </div>
 </div>
@@ -41,7 +41,17 @@
 	                    <li><a href="../classes/Animation.html">Animation</a></li>
 	                    <li><a href="../classes/Camera.html">Camera</a></li>
 	                    <li><a href="../classes/Group.html">Group</a></li>
+	                    <li><a href="../classes/p5.html">p5</a></li>
+	                    <li><a href="../classes/p5.Color.html">p5.Color</a></li>
+	                    <li><a href="../classes/p5.Element.html">p5.Element</a></li>
+	                    <li><a href="../classes/p5.Font.html">p5.Font</a></li>
+	                    <li><a href="../classes/p5.Graphics.html">p5.Graphics</a></li>
+	                    <li><a href="../classes/p5.Image.html">p5.Image</a></li>
 	                    <li><a href="../classes/p5.play.html">p5.play</a></li>
+	                    <li><a href="../classes/p5.Renderer.html">p5.Renderer</a></li>
+	                    <li><a href="../classes/p5.Table.html">p5.Table</a></li>
+	                    <li><a href="../classes/p5.TableRow.html">p5.TableRow</a></li>
+	                    <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
 	                    <li><a href="../classes/Sprite.html">Sprite</a></li>
 	                    <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
 	            </ul>
@@ -77,7 +87,7 @@
                 <div id="docs-main">
                     <div class="content">
                         <div class="page-header">
-                            <h1>lib\p5.play.js <small>File</small></h1>
+                            <h1>lib/p5.play.js <small>File</small></h1>
                         </div>
                         
                         <div class="file">
@@ -88,14 +98,14 @@
                         http://molleindustria.org/
                         */
                         
-                        (function (root, factory) {
+                        (function(root, factory) {
                         if (typeof define === &#x27;function&#x27; &amp;&amp; define.amd)
-                        define(&#x27;p5.play&#x27;, [&#x27;p5&#x27;], function (p5) { (factory(p5)); });
+                        define(&#x27;p5.play&#x27;, [&#x27;p5&#x27;], function(p5) { (factory(p5)); });
                         else if (typeof exports === &#x27;object&#x27;)
                         factory(require(&#x27;../p5&#x27;));
                         else
                         factory(root.p5);
-                        }(this, function (p5) {
+                        }(this, function(p5) {
                         /**
                          * p5.play is a library for p5.js to facilitate the creation of games and gamelike
                          * projects.
@@ -212,7 +222,9 @@
                         * @type {Group}
                         */
                         
-                        defineLazyP5Property(&#x27;allSprites&#x27;, function() { return new Group(); });
+                        defineLazyP5Property(&#x27;allSprites&#x27;, function() {
+                          return new p5.prototype.Group();
+                        });
                         
                         p5.prototype.spriteUpdate = true;
                         
@@ -222,6 +234,10 @@
                            * properties such as position and visibility.
                            * A Sprite can have a collider that defines the active area to detect
                            * collisions or overlappings with other sprites and mouse interactions.
+                           *
+                           * Sprites created using createSprite (the preferred way) are added to the
+                           * allSprites group and given a depth value that puts it in front of all
+                           * other sprites.
                            *
                            * @method createSprite
                            * @param {Number} x Initial x coordinate
@@ -357,7 +373,7 @@
                          *
                          * @method loadSpriteSheet
                          */
-                        p5.prototype.loadSpriteSheet = function () {
+                        p5.prototype.loadSpriteSheet = function() {
                           return construct(this.SpriteSheet, arguments);
                         };
                         
@@ -670,7 +686,7 @@
                          * @return {number|undefined} a numeric JavaScript key code, or undefined
                          *          if no key code matching the given alias is found.
                          */
-                        p5.prototype._keyCodeFromAlias = function (alias) {
+                        p5.prototype._keyCodeFromAlias = function(alias) {
                           alias = alias.toUpperCase();
                           if (this.KEY_DEPRECATIONS[alias]) {
                             this._warn(&#x27;Key literal &quot;&#x27; + alias + &#x27;&quot; is deprecated and may be removed &#x27; +
@@ -898,8 +914,8 @@
                           * It can either be an Axis Aligned Bounding Box (a non-rotated rectangle)
                           * or a circular collider.
                           * If the sprite is checked for collision, bounce, overlapping or mouse events the
-                          * collider is automatically created from the width and height parameter passed at the
-                          * creation of the sprite or the from the image dimension in case of animate sprites
+                          * collider is automatically created from the width and height
+                          * of the sprite or from the image dimension in case of animate sprites
                           *
                           * You can set a custom collider with Sprite.setCollider
                           *
@@ -976,7 +992,29 @@
                           * @type {Number}
                           * @default 0
                           */
-                          this.rotation = 0;
+                          Object.defineProperty(this, &#x27;rotation&#x27;, {
+                            enumerable: true,
+                            get: function() {
+                              return this._rotation;
+                            },
+                            set: function(value) {
+                              this._rotation = value;
+                              if (this.rotateToDirection) {
+                                this.setSpeed(this.getSpeed(), value);
+                              }
+                            }
+                          });
+                        
+                          /**
+                          * Internal rotation variable (expressed in degrees).
+                          * Note: external callers access this through the rotation property above.
+                          *
+                          * @private
+                          * @property _rotation
+                          * @type {Number}
+                          * @default 0
+                          */
+                          this._rotation = 0;
                         
                           /**
                           * Rotation change in degrees per frame of thevisual element (image or animation)
@@ -990,8 +1028,8 @@
                         
                         
                           /**
-                          * Automatically set the rotation of the visual element
-                          * (image or animation) to the sprite&#x27;s movement direction.
+                          * Automatically lock the rotation property of the visual element
+                          * (image or animation) to the sprite&#x27;s movement direction and vice versa.
                           *
                           * @property rotateToDirection
                           * @type {Boolean}
@@ -1010,7 +1048,9 @@
                           *
                           * @property depth
                           * @type {Number}
-                          * @default 0
+                          * @default One more than the greatest existing sprite depth, when calling
+                          *          createSprite().  When calling new Sprite() directly, depth will
+                          *          initialize to 0 (not recommended).
                           */
                           this.depth = 0;
                         
@@ -1067,6 +1107,48 @@
                           */
                           this.mouseIsPressed = false;
                         
+                          /*
+                          * Width of the sprite&#x27;s current image.
+                          * If no images or animations are set it&#x27;s the width of the
+                          * placeholder rectangle.
+                          * Used internally to make calculations and draw the sprite.
+                          *
+                          * @private
+                          * @property _internalWidth
+                          * @type {Number}
+                          * @default 100
+                          */
+                          this._internalWidth = _w;
+                        
+                          /*
+                          * Height of the sprite&#x27;s current image.
+                          * If no images or animations are set it&#x27;s the height of the
+                          * placeholder rectangle.
+                          * Used internally to make calculations and draw the sprite.
+                          *
+                          * @private
+                          * @property _internalHeight
+                          * @type {Number}
+                          * @default 100
+                          */
+                          this._internalHeight = _h;
+                        
+                          /*
+                           * _internalWidth and _internalHeight are used for all p5.play
+                           * calculations, but width and height can be extended. For example,
+                           * you may want users to always get and set a scaled width:
+                              Object.defineProperty(this, &#x27;width&#x27;, {
+                                enumerable: true,
+                                configurable: true,
+                                get: function() {
+                                  return this._internalWidth * this.scale;
+                                },
+                                set: function(value) {
+                                  this._internalWidth = value / this.scale;
+                                }
+                              });
+                           */
+                        
                           /**
                           * Width of the sprite&#x27;s current image.
                           * If no images or animations are set it&#x27;s the width of the
@@ -1076,6 +1158,17 @@
                           * @type {Number}
                           * @default 100
                           */
+                          Object.defineProperty(this, &#x27;width&#x27;, {
+                            enumerable: true,
+                            configurable: true,
+                            get: function() {
+                              return this._internalWidth;
+                            },
+                            set: function(value) {
+                              this._internalWidth = value;
+                            }
+                          });
+                        
                           if(_w === undefined)
                             this.width = 100;
                           else
@@ -1090,6 +1183,17 @@
                           * @type {Number}
                           * @default 100
                           */
+                          Object.defineProperty(this, &#x27;height&#x27;, {
+                            enumerable: true,
+                            configurable: true,
+                            get: function() {
+                              return this._internalHeight;
+                            },
+                            set: function(value) {
+                              this._internalHeight = value;
+                            }
+                          });
+                        
                           if(_h === undefined)
                             this.height = 100;
                           else
@@ -1104,7 +1208,7 @@
                           * @type {Number}
                           * @default 100
                           */
-                          this.originalWidth = this.width;
+                          this.originalWidth = this._internalWidth;
                         
                           /**
                           * Unscaled height of the sprite
@@ -1115,7 +1219,7 @@
                           * @type {Number}
                           * @default 100
                           */
-                          this.originalHeight = this.height;
+                          this.originalHeight = this._internalHeight;
                         
                           /**
                           * True if the sprite has been removed.
@@ -1176,6 +1280,33 @@
                           */
                           this.animation = undefined;
                         
+                          /*
+                           * @private
+                           * Keep animation properties in sync with how the animation changes.
+                           */
+                          this._syncAnimationSizes = function() {
+                            //has an animation but the collider is still default
+                            //the animation wasn&#x27;t loaded. if the animation is not a 1x1 image
+                            //it means it just finished loading
+                            if(this.colliderType === &#x27;default&#x27; &amp;&amp;
+                              animations[currentAnimation].getWidth() !== 1 &amp;&amp; animations[currentAnimation].getHeight() !== 1)
+                            {
+                              this.collider = this.getBoundingBox();
+                              this.colliderType = &#x27;image&#x27;;
+                              this._internalWidth = animations[currentAnimation].getWidth()*abs(this._getScaleX());
+                              this._internalHeight = animations[currentAnimation].getHeight()*abs(this._getScaleY());
+                              //quadTree.insert(this);
+                            }
+                        
+                            //update size and collider
+                            if(animations[currentAnimation].frameChanged || this.width === undefined || this.height === undefined)
+                            {
+                              //this.collider = this.getBoundingBox();
+                              this._internalWidth = animations[currentAnimation].getWidth()*abs(this._getScaleX());
+                              this._internalHeight = animations[currentAnimation].getHeight()*abs(this._getScaleY());
+                            }
+                          };
+                        
                           /**
                           * Updates the sprite.
                           * Called automatically at the beginning of the draw cycle.
@@ -1199,10 +1330,10 @@
                               if(this.maxSpeed !== -1)
                                 this.limitSpeed(this.maxSpeed);
                         
-                              if(this.rotateToDirection)
-                                this.rotation = this.getDirection();
-                              else
-                                this.rotation += this.rotationSpeed;
+                              if(this.rotateToDirection &amp;&amp; this.velocity.mag() &gt; 0)
+                                this._rotation = this.getDirection();
+                        
+                              this.rotation += this.rotationSpeed;
                         
                               this.position.x += this.velocity.x;
                               this.position.y += this.velocity.y;
@@ -1218,28 +1349,7 @@
                                 //update it
                                 animations[currentAnimation].update();
                         
-                                //has an animation but the collider is still default
-                                //the animation wasn&#x27;t loaded. if the animation is not a 1x1 image
-                                //it means it just finished loading
-                                if(this.colliderType === &#x27;default&#x27; &amp;&amp;
-                                  animations[currentAnimation].getWidth() !== 1 &amp;&amp;
-                                   animations[currentAnimation].getHeight() !== 1
-                                  )
-                                {
-                                this.collider = this.getBoundingBox();
-                                this.colliderType = &#x27;image&#x27;;
-                                this.width = animations[currentAnimation].getWidth()*abs(this.scale);
-                                this.height = animations[currentAnimation].getHeight()*abs(this.scale);
-                                //quadTree.insert(this);
-                                }
-                        
-                                //update size and collider
-                                if(animations[currentAnimation].frameChanged || this.width === undefined || this.height === undefined)
-                                {
-                                //this.collider = this.getBoundingBox();
-                                this.width = animations[currentAnimation].getWidth()*abs(this.scale);
-                                this.height = animations[currentAnimation].getHeight()*abs(this.scale);
-                                }
+                                this._syncAnimationSizes();
                               }
                         
                               //a collider is created either manually with setCollider or
@@ -1249,30 +1359,35 @@
                                 if(this.collider instanceof AABB)
                                 {
                                 //scale / rotate collider
-                                var t = radians(this.rotation);
+                                var t;
+                                if (pInst._angleMode === pInst.RADIANS) {
+                                  t = radians(this.rotation);
+                                } else {
+                                  t = this.rotation;
+                                }
                         
                                 if(this.colliderType === &#x27;custom&#x27;)
                                   {
-                                  this.collider.extents.x = this.collider.originalExtents.x * abs(this.scale) * abs(cos(t)) +
-                                  this.collider.originalExtents.y * abs(this.scale) * abs(sin(t));
+                                  this.collider.extents.x = this.collider.originalExtents.x * abs(this._getScaleX()) * abs(cos(t)) +
+                                  this.collider.originalExtents.y * abs(this._getScaleY()) * abs(sin(t));
                         
-                                  this.collider.extents.y = this.collider.originalExtents.x * abs(this.scale) * abs(sin(t)) +
-                                  this.collider.originalExtents.y * abs(this.scale) * abs(cos(t));
+                                  this.collider.extents.y = this.collider.originalExtents.x * abs(this._getScaleX()) * abs(sin(t)) +
+                                  this.collider.originalExtents.y * abs(this._getScaleY()) * abs(cos(t));
                                   }
                                 else if(this.colliderType === &#x27;default&#x27;)
                                   {
-                                  this.collider.extents.x = this.originalWidth * abs(this.scale) * abs(cos(t)) +
-                                  this.originalHeight * abs(this.scale) * abs(sin(t));
-                                  this.collider.extents.y = this.originalWidth * abs(this.scale) * abs(sin(t)) +
-                                  this.originalHeight * abs(this.scale) * abs(cos(t));
+                                  this.collider.extents.x = this._internalWidth * abs(this._getScaleX()) * abs(cos(t)) +
+                                  this._internalHeight * abs(this._getScaleY()) * abs(sin(t));
+                                  this.collider.extents.y = this._internalWidth * abs(this._getScaleX()) * abs(sin(t)) +
+                                  this._internalHeight * abs(this._getScaleY()) * abs(cos(t));
                                   }
                                 else if(this.colliderType === &#x27;image&#x27;)
                                   {
-                                  this.collider.extents.x = this.width * abs(cos(t)) +
-                                  this.height * abs(sin(t));
+                                  this.collider.extents.x = this._internalWidth * abs(cos(t)) +
+                                  this._internalHeight * abs(sin(t));
                         
-                                  this.collider.extents.y = this.width * abs(sin(t)) +
-                                  this.height * abs(cos(t));
+                                  this.collider.extents.y = this._internalWidth * abs(sin(t)) +
+                                  this._internalHeight * abs(cos(t));
                                   }
                                 }
                         
@@ -1334,8 +1449,8 @@
                             if(animations[currentAnimation] &amp;&amp; (animations[currentAnimation].getWidth() !== 1 &amp;&amp; animations[currentAnimation].getHeight() !== 1))
                             {
                               this.collider = this.getBoundingBox();
-                              this.width = animations[currentAnimation].getWidth()*abs(this.scale);
-                              this.height = animations[currentAnimation].getHeight()*abs(this.scale);
+                              this._internalWidth = animations[currentAnimation].getWidth()*abs(this._getScaleX());
+                              this._internalHeight = animations[currentAnimation].getHeight()*abs(this._getScaleY());
                               //quadTree.insert(this);
                               this.colliderType = &#x27;image&#x27;;
                               //print(&quot;IMAGE COLLIDER ADDED&quot;);
@@ -1347,7 +1462,7 @@
                             }
                             else //get the with and height defined at the creation
                             {
-                              this.collider = new AABB(pInst, this.position, createVector(this.width, this.height));
+                              this.collider = new AABB(pInst, this.position, createVector(this._internalWidth, this._internalHeight));
                               //quadTree.insert(this);
                               this.colliderType = &#x27;default&#x27;;
                             }
@@ -1418,7 +1533,7 @@
                                   else
                                     print(&#x27;Warning: onMousePressed should be a function&#x27;);
                         
-                                if(mouseWasPressed &amp;&amp; !this.mouseIsPressed &amp;&amp; this.onMouseReleased !== undefined)
+                                if(mouseWasPressed &amp;&amp; !pInst.mouseIsPressed &amp;&amp; !this.mouseIsPressed &amp;&amp; this.onMouseReleased !== undefined)
                                   if(typeof(this.onMouseReleased) === &#x27;function&#x27;)
                                     this.onMouseReleased.call(this, this);
                                   else
@@ -1477,8 +1592,8 @@
                            */
                           this.getBoundingBox = function() {
                         
-                            var w = animations[currentAnimation].getWidth()*abs(this.scale);
-                            var h = animations[currentAnimation].getHeight()*abs(this.scale);
+                            var w = animations[currentAnimation].getWidth()*abs(this._getScaleX());
+                            var h = animations[currentAnimation].getHeight()*abs(this._getScaleY());
                         
                             //if the bounding box is 1x1 the image is not loaded
                             //potential issue with actual 1x1 images
@@ -1525,6 +1640,25 @@
                               return dirY;
                           };
                         
+                          /*
+                           * Returns the value the sprite should be scaled in the X direction.
+                           * Used to calculate rendering and collisions.
+                           * @private
+                           */
+                          this._getScaleX = function()
+                          {
+                            return this.scale;
+                          };
+                        
+                          /*
+                           * Returns the value the sprite should be scaled in the Y direction.
+                           * Used to calculate rendering and collisions.
+                           * @private
+                           */
+                          this._getScaleY = function()
+                          {
+                            return this.scale;
+                          };
                         
                           /**
                            * Manages the positioning, scale and rotation of the sprite
@@ -1546,8 +1680,12 @@
                               imageMode(CENTER);
                         
                               translate(this.position.x, this.position.y);
-                              scale(this.scale*dirX, this.scale*dirY);
-                              rotate(radians(this.rotation));
+                              scale(this._getScaleX()*dirX, this._getScaleY()*dirY);
+                              if (pInst._angleMode === pInst.RADIANS) {
+                                rotate(radians(this.rotation));
+                              } else {
+                                rotate(this.rotation);
+                              }
                               this.draw();
                               //draw debug info
                               pop();
@@ -1606,7 +1744,7 @@
                             {
                               noStroke();
                               fill(this.shapeColor);
-                              rect(0, 0, this.width, this.height);
+                              rect(0, 0, this._internalWidth, this._internalHeight);
                             }
                           };
                         
@@ -1661,7 +1799,16 @@
                         
                             if(isNaN(direction))
                               direction = 0;
-                            return degrees(direction);
+                        
+                            // Unlike Math.atan2, the atan2 method above will return degrees if
+                            // the current p5 angleMode is DEGREES, and radians if the p5 angleMode is
+                            // RADIANS.  This method should always return degrees (for now).
+                            // See https://github.com/molleindustria/p5.play/issues/94
+                            if (pInst._angleMode === pInst.RADIANS) {
+                              direction = degrees(direction);
+                            }
+                        
+                            return direction;
                           };
                         
                           /**
@@ -1700,13 +1847,33 @@
                           /**
                           * Set the speed and direction of the sprite.
                           * The action overwrites the current velocity.
+                          * If direction is not supplied, the current direction is maintained.
+                          * If direction is not supplied and there is no current velocity, the current
+                          * rotation angle used for the direction.
                           *
                           * @method setSpeed
-                          * @param {Number}  speed Scalar speed to add
-                          * @param {Number}  angle Direction in degrees
+                          * @param {Number}  speed Scalar speed
+                          * @param {Number}  [angle] Direction in degrees
                           */
                           this.setSpeed = function(speed, angle) {
-                            var a = radians(angle);
+                            var a;
+                            if (typeof angle === &#x27;undefined&#x27;) {
+                              if (this.velocity.x !== 0 || this.velocity.y !== 0) {
+                                a = pInst.atan2(this.velocity.y, this.velocity.x);
+                              } else {
+                                if (pInst._angleMode === pInst.RADIANS) {
+                                  a = radians(this._rotation);
+                                } else {
+                                  a = this._rotation;
+                                }
+                              }
+                            } else {
+                              if (pInst._angleMode === pInst.RADIANS) {
+                                a = radians(angle);
+                              } else {
+                                a = angle;
+                              }
+                            }
                             this.velocity.x = cos(a)*speed;
                             this.velocity.y = sin(a)*speed;
                           };
@@ -1720,7 +1887,12 @@
                           * @param {Number}  angle Direction in degrees
                           */
                           this.addSpeed = function(speed, angle) {
-                            var a = radians(angle);
+                            var a;
+                            if (pInst._angleMode === pInst.RADIANS) {
+                              a = radians(angle);
+                            } else {
+                              a = angle;
+                            }
                             this.velocity.x += cos(a) * speed;
                             this.velocity.y += sin(a) * speed;
                           };
@@ -1819,6 +1991,9 @@
                         
                               newAnimation.isSpriteAnimation = true;
                         
+                              this._internalWidth = newAnimation.getWidth()*abs(this._getScaleX());
+                              this._internalHeight = newAnimation.getHeight()*abs(this._getScaleY());
+                        
                               return newAnimation;
                             }
                             else
@@ -1836,6 +2011,10 @@
                                 this.animation = anim;
                               }
                               anim.isSpriteAnimation = true;
+                        
+                              this._internalWidth = anim.getWidth()*abs(this._getScaleX());
+                              this._internalHeight = anim.getHeight()*abs(this._getScaleY());
+                        
                               return anim;
                             }
                         
@@ -2664,18 +2843,13 @@
                           * @return {Number} The depth of the sprite drawn on the top
                           */
                           array.maxDepth = function() {
-                            var max;
+                            if (array.length === 0) {
+                              return 0;
+                            }
                         
-                            if(array.length === 0)
-                              max = 0;
-                            else
-                              max = array[0].depth;
-                        
-                            for(var i = 0; i&lt;array.length; i++)
-                              if(array[i].depth&gt;max)
-                                max = array[i].depth;
-                        
-                            return max;
+                            return array.reduce(function(maxDepth, sprite) {
+                              return Math.max(maxDepth, sprite.depth);
+                            }, -Infinity);
                           };
                         
                           /**
@@ -2685,18 +2859,13 @@
                           * @return {Number} The depth of the sprite drawn on the bottom
                           */
                           array.minDepth = function() {
-                            var min;
+                            if (array.length === 0) {
+                              return 99999;
+                            }
                         
-                            if(array.length === 0)
-                              min = 99999;
-                            else
-                              min = array[0].depth;
-                        
-                            for(var i = 0; i&lt;array.length; i++)
-                              if(array[i].depth&lt;min)
-                                min = array[i].depth;
-                        
-                            return min;
+                            return array.reduce(function(minDepth, sprite) {
+                              return Math.min(minDepth, sprite.depth);
+                            }, Infinity);
                           };
                         
                           /**
@@ -3020,7 +3189,12 @@
                           this.rotate = function(r)
                           {
                             //rotate the bbox
-                            var t = radians(r);
+                            var t;
+                            if (pInst._angleMode === pInst.RADIANS) {
+                              t = radians(r);
+                            } else {
+                              t = r;
+                            }
                         
                             var w2 = this.extents.x * abs(pInst.cos(t)) + this.extents.y * abs(pInst.sin(t));
                             var h2 = this.extents.x * abs(pInst.sin(t)) + this.extents.y * abs(pInst.cos(t));
@@ -3435,7 +3609,9 @@
                           else if (frameArguments.length === 1 &amp;&amp; (frameArguments[0] instanceof SpriteSheet))
                           {
                             this.spriteSheet = frameArguments[0];
-                            this.images = this.spriteSheet.frames;
+                            this.images = this.spriteSheet.frames.map( function(f) {
+                              return f.frame;
+                            });
                           }
                           else if(frameArguments.length !== 0)//arbitrary list of images
                           {
@@ -3462,11 +3638,8 @@
                         
                             if (this.spriteSheet) {
                               myClone.spriteSheet = this.spriteSheet.clone();
-                              myClone.images = myClone.spriteSheet.frames;
-                            } else {
-                              for (var i = 0; i &lt; this.images.length; i++)
-                                myClone.images.push(this.images[i]);
                             }
+                            myClone.images = this.images.slice();
                         
                             myClone.offX = this.offX;
                             myClone.offY = this.offY;
@@ -3486,7 +3659,7 @@
                            * @param {Number} y y coordinate
                            * @param {Number} [r=0] rotation
                            */
-                          this.draw = function (x, y, r) {
+                          this.draw = function(x, y, r) {
                             this.xpos = x;
                             this.ypos = y;
                             this.rotation = r || 0;
@@ -3504,12 +3677,16 @@
                               pInst.imageMode(CENTER);
                         
                               pInst.translate(this.xpos, this.ypos);
-                              pInst.rotate(radians(this.rotation));
+                              if (pInst._angleMode === pInst.RADIANS) {
+                                pInst.rotate(radians(this.rotation));
+                              } else {
+                                pInst.rotate(this.rotation);
+                              }
                         
                               if(this.images[frame] !== undefined)
                               {
                                 if (this.spriteSheet) {
-                                  var frame_info = this.images[frame].frame;
+                                  var frame_info = this.images[frame];
                                   pInst.image(this.spriteSheet.image, frame_info.x, frame_info.y, frame_info.width,
                                     frame_info.height, this.offX, this.offY, frame_info.width, frame_info.height);
                                 } else {
@@ -3711,22 +3888,32 @@
                         
                           /**
                           * Returns the current frame width in pixels.
+                          * If there is no image loaded, returns 1.
                           *
                           * @method getWidth
                           * @return {Number} Frame width
                           */
                           this.getWidth = function() {
-                            return this.images[frame].width;
+                            if (this.images[frame]) {
+                              return this.images[frame].width;
+                            } else {
+                              return 1;
+                            }
                           };
                         
                           /**
                           * Returns the current frame height in pixels.
+                          * If there is no image loaded, returns 1.
                           *
                           * @method getHeight
                           * @return {Number} Frame height
                           */
                           this.getHeight = function() {
-                            return this.images[frame].height;
+                            if (this.images[frame]) {
+                              return this.images[frame].height;
+                            } else {
+                              return 1;
+                            }
                           };
                         
                         }
@@ -3833,10 +4020,10 @@
                            * @param [height]  optional height to draw the frame
                            * @method drawFrame
                            */
-                          this.drawFrame = function (frame_name, x, y, width, height) {
+                          this.drawFrame = function(frame_name, x, y, width, height) {
                             var frameToDraw;
                             if (typeof frame_name === &#x27;number&#x27;) {
-                              frameToDraw = this.frames[frame_name];
+                              frameToDraw = this.frames[frame_name].frame;
                             } else {
                               for (var i = 0; i &lt; this.frames.length; i++) {
                                 if (this.frames[i].name === frame_name) {
@@ -4254,7 +4441,7 @@
                          * @param {!string} message
                          * @private
                          */
-                        p5.prototype._warn = function (message) {
+                        p5.prototype._warn = function(message) {
                           var console = window.console;
                         
                           if(console)

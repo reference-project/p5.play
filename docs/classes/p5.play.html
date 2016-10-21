@@ -15,7 +15,7 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="p5.play" src="..\..\asterisk.png" style="max-height: 65%;" title="p5.play">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
             p5.play
         </h1>
 	<div class="nav">
@@ -27,7 +27,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.play", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5", "classes/p5.Color", "classes/p5.Element", "classes/p5.Font", "classes/p5.Graphics", "classes/p5.Image", "classes/p5.play", "classes/p5.Renderer", "classes/p5.Table", "classes/p5.TableRow", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/2D Primitives", "modules/3D Primitives", "modules/Acceleration", "modules/Array Functions", "modules/Attributes", "modules/Calculation", "modules/Camera", "modules/Color", "modules/Constants", "modules/Conversion", "modules/Creating & Reading", "modules/Curves", "modules/Data", "modules/DOM", "modules/Environment", "modules/Events", "modules/Font", "modules/Image", "modules/Input", "modules/IO", "modules/Keyboard", "modules/Lights", "modules/Lights, Camera", "modules/Loading & Displaying", "modules/Material", "modules/Math", "modules/Mouse", "modules/Noise", "modules/Output", "modules/p5.play", "modules/Pixels", "modules/Random", "modules/Rendering", "modules/Setting", "modules/Shape", "modules/String Functions", "modules/Structure", "modules/Table", "modules/Time & Date", "modules/Touch", "modules/Transform", "modules/Trigonometry", "modules/Typography", "modules/Vertex"]'>
         </form>
     </div>
 </div>
@@ -41,7 +41,17 @@
 	                    <li><a href="../classes/Animation.html">Animation</a></li>
 	                    <li><a href="../classes/Camera.html">Camera</a></li>
 	                    <li><a href="../classes/Group.html">Group</a></li>
+	                    <li><a href="../classes/p5.html">p5</a></li>
+	                    <li><a href="../classes/p5.Color.html">p5.Color</a></li>
+	                    <li><a href="../classes/p5.Element.html">p5.Element</a></li>
+	                    <li><a href="../classes/p5.Font.html">p5.Font</a></li>
+	                    <li><a href="../classes/p5.Graphics.html">p5.Graphics</a></li>
+	                    <li><a href="../classes/p5.Image.html">p5.Image</a></li>
 	                    <li><a href="../classes/p5.play.html">p5.play</a></li>
+	                    <li><a href="../classes/p5.Renderer.html">p5.Renderer</a></li>
+	                    <li><a href="../classes/p5.Table.html">p5.Table</a></li>
+	                    <li><a href="../classes/p5.TableRow.html">p5.TableRow</a></li>
+	                    <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
 	                    <li><a href="../classes/Sprite.html">Sprite</a></li>
 	                    <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
 	            </ul>
@@ -99,24 +109,44 @@
                         			<strong>Methods</strong>
                         			<ul>
                         				<li><a href="#method-_isKeyInState"><span class="im">_isKeyInState</span>(<span class="ia">key</span><span class="ia">state</span>)</a></li>
+                        				<li><a href="#method-_isKeyInState"><span class="im">_isKeyInState</span>(<span class="ia">key</span><span class="ia">state</span>)</a></li>
+                        				<li><a href="#method-_isMouseButtonInState"><span class="im">_isMouseButtonInState</span>(<span class="ia">buttonCode</span><span class="ia">state</span>)</a></li>
                         				<li><a href="#method-_isMouseButtonInState"><span class="im">_isMouseButtonInState</span>(<span class="ia">buttonCode</span><span class="ia">state</span>)</a></li>
                         				<li><a href="#method-_keyCodeFromAlias"><span class="im">_keyCodeFromAlias</span>(<span class="ia">alias</span>)</a></li>
+                        				<li><a href="#method-_keyCodeFromAlias"><span class="im">_keyCodeFromAlias</span>(<span class="ia">alias</span>)</a></li>
+                        				<li><a href="#method-animation"><span class="im">animation</span>(<span class="ia">anim</span><span class="ia">x</span><span class="ia">y</span>)</a></li>
                         				<li><a href="#method-animation"><span class="im">animation</span>(<span class="ia">anim</span><span class="ia">x</span><span class="ia">y</span>)</a></li>
                         				<li><a href="#method-createSprite"><span class="im">createSprite</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">width</span><span class="ia">height</span>)</a></li>
+                        				<li><a href="#method-createSprite"><span class="im">createSprite</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">width</span><span class="ia">height</span>)</a></li>
+                        				<li><a href="#method-drawSprite"><span class="im">drawSprite</span>(<span class="ia">sprite</span>)</a></li>
                         				<li><a href="#method-drawSprite"><span class="im">drawSprite</span>(<span class="ia">sprite</span>)</a></li>
                         				<li><a href="#method-drawSprites"><span class="im">drawSprites</span>(<span class="ia">group</span>)</a></li>
+                        				<li><a href="#method-drawSprites"><span class="im">drawSprites</span>(<span class="ia">group</span>)</a></li>
+                        				<li><a href="#method-getSprites"><span class="im">getSprites</span>()</a></li>
                         				<li><a href="#method-getSprites"><span class="im">getSprites</span>()</a></li>
                         				<li><a href="#method-keyDown"><span class="im">keyDown</span>(<span class="ia">key</span>)</a></li>
+                        				<li><a href="#method-keyDown"><span class="im">keyDown</span>(<span class="ia">key</span>)</a></li>
+                        				<li><a href="#method-keyWentDown"><span class="im">keyWentDown</span>(<span class="ia">key</span>)</a></li>
                         				<li><a href="#method-keyWentDown"><span class="im">keyWentDown</span>(<span class="ia">key</span>)</a></li>
                         				<li><a href="#method-keyWentUp"><span class="im">keyWentUp</span>(<span class="ia">key</span>)</a></li>
+                        				<li><a href="#method-keyWentUp"><span class="im">keyWentUp</span>(<span class="ia">key</span>)</a></li>
+                        				<li><a href="#method-loadAnimation"><span class="im">loadAnimation</span>(<span class="ia">sprite</span>)</a></li>
                         				<li><a href="#method-loadAnimation"><span class="im">loadAnimation</span>(<span class="ia">sprite</span>)</a></li>
                         				<li><a href="#method-loadSpriteSheet"><span class="im">loadSpriteSheet</span>()</a></li>
+                        				<li><a href="#method-loadSpriteSheet"><span class="im">loadSpriteSheet</span>()</a></li>
+                        				<li><a href="#method-mouseDown"><span class="im">mouseDown</span>(<span class="ia">buttonCode</span>)</a></li>
                         				<li><a href="#method-mouseDown"><span class="im">mouseDown</span>(<span class="ia">buttonCode</span>)</a></li>
                         				<li><a href="#method-mouseUp"><span class="im">mouseUp</span>(<span class="ia">buttonCode</span>)</a></li>
+                        				<li><a href="#method-mouseUp"><span class="im">mouseUp</span>(<span class="ia">buttonCode</span>)</a></li>
+                        				<li><a href="#method-mouseWentDown"><span class="im">mouseWentDown</span>(<span class="ia">buttonCode</span>)</a></li>
                         				<li><a href="#method-mouseWentDown"><span class="im">mouseWentDown</span>(<span class="ia">buttonCode</span>)</a></li>
                         				<li><a href="#method-mouseWentUp"><span class="im">mouseWentUp</span>(<span class="ia">buttonCode</span>)</a></li>
+                        				<li><a href="#method-mouseWentUp"><span class="im">mouseWentUp</span>(<span class="ia">buttonCode</span>)</a></li>
+                        				<li><a href="#method-removeSprite"><span class="im">removeSprite</span>(<span class="ia">sprite</span>)</a></li>
                         				<li><a href="#method-removeSprite"><span class="im">removeSprite</span>(<span class="ia">sprite</span>)</a></li>
                         				<li><a href="#method-updateSprites"><span class="im">updateSprites</span>(<span class="ia">updating</span>)</a></li>
+                        				<li><a href="#method-updateSprites"><span class="im">updateSprites</span>(<span class="ia">updating</span>)</a></li>
+                        				<li><a href="#method-useQuadTree"><span class="im">useQuadTree</span>(<span class="ia">use</span>)</a></li>
                         				<li><a href="#method-useQuadTree"><span class="im">useQuadTree</span>(<span class="ia">use</span>)</a></li>
                         			</ul>
                         		</li>
@@ -125,7 +155,10 @@
                         			<strong>Properties</strong>
                         			<ul>
                         				<li><a href="#prop-allSprites"><span class="ip">allSprites</span></a></li>
+                        				<li><a href="#prop-allSprites"><span class="ip">allSprites</span></a></li>
                         				<li><a href="#prop-KEY"><span class="ip">KEY</span></a></li>
+                        				<li><a href="#prop-KEY"><span class="ip">KEY</span></a></li>
+                        				<li><a href="#prop-KEY_DEPRECATIONS"><span class="ip">KEY_DEPRECATIONS</span></a></li>
                         				<li><a href="#prop-KEY_DEPRECATIONS"><span class="ip">KEY_DEPRECATIONS</span></a></li>
                         			</ul>
                         		</li>
@@ -168,7 +201,83 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l345"><code>lib\p5.play.js:345</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l351"><code>__temp_p5.play.js:351</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a key is in the given state during the last cycle.
+                                    Helper method encapsulating common key state logic; it may be preferable
+                                    to call keyDown or other methods directly.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">key</code>
+                                    						<span class="type">Number  |  String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Key code or character</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">state</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Key state to check against</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the key is in the given state</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-_isKeyInState" class="method item private">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>_isKeyInState</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>key</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>state</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    		<span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l351"><code>lib&#x2F;p5.play.js:351</code></a>
                                     		</p>
                                     
                                     
@@ -244,7 +353,82 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l430"><code>lib\p5.play.js:430</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l436"><code>__temp_p5.play.js:436</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a mouse button is in the given state during the last cycle.
+                                    Helper method encapsulating common mouse button state logic; it may be
+                                    preferable to call mouseWentUp, etc, directly.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[buttonCode]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Mouse button constant LEFT, RIGHT or CENTER</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">state</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the button was in the given state</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-_isMouseButtonInState" class="method item private">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>_isMouseButtonInState</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">buttonCode</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>state</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    		<span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l436"><code>lib&#x2F;p5.play.js:436</code></a>
                                     		</p>
                                     
                                     
@@ -316,7 +500,76 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l576"><code>lib\p5.play.js:576</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l582"><code>__temp_p5.play.js:582</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Given a string key alias (as defined in the KEY property above), look up
+                                    and return the numeric JavaScript key code for that key.  If a deprecated
+                                    alias is passed (as defined in the KEY_DEPRECATIONS property) it will be
+                                    mapped to a valid key code, but will also generate a warning about use
+                                    of the deprecated alias.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">alias</code>
+                                    						<span class="type">!string</span>
+                                    
+                                    
+                                    					<div class="param-description"><ul>
+                                    <li>a case-insensitive key alias</li>
+                                    </ul>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Number  |  Undefined</span>:
+                                    					<p>a numeric JavaScript key code, or undefined
+                                    if no key code matching the given alias is found.</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-_keyCodeFromAlias" class="method item private">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>_keyCodeFromAlias</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>alias</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Number  |  Undefined</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    		<span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l582"><code>lib&#x2F;p5.play.js:582</code></a>
                                     		</p>
                                     
                                     
@@ -387,7 +640,80 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l280"><code>lib\p5.play.js:280</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l286"><code>__temp_p5.play.js:286</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Displays an animation.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">anim</code>
+                                    						<span class="type"><a href="../classes/Animation.html" class="crosslink">Animation</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Animation to be displayed</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">x</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>X coordinate</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">y</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Y coordinate</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-animation" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>animation</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>anim</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>y</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l286"><code>lib&#x2F;p5.play.js:286</code></a>
                                     		</p>
                                     
                                     
@@ -466,7 +792,7 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l135"><code>lib\p5.play.js:135</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l137"><code>__temp_p5.play.js:137</code></a>
                                     		</p>
                                     
                                     
@@ -478,6 +804,115 @@
                                     properties such as position and visibility.
                                     A Sprite can have a collider that defines the active area to detect
                                     collisions or overlappings with other sprites and mouse interactions.</p>
+                                    <p>Sprites created using createSprite (the preferred way) are added to the
+                                    allSprites group and given a depth value that puts it in front of all
+                                    other sprites.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">x</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Initial x coordinate</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">y</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Initial y coordinate</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">width</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Width of the placeholder rectangle and of the
+                                    collider until an image or new collider are set</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">height</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Height of the placeholder rectangle and of the
+                                    collider until an image or new collider are set</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Object</span>:
+                                    					<p>The new sprite instance</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-createSprite" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>createSprite</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>width</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>height</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Object</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l137"><code>lib&#x2F;p5.play.js:137</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>A Sprite is the main building block of p5.play:
+                                    an element able to store images or animations with a set of
+                                    properties such as position and visibility.
+                                    A Sprite can have a collider that defines the active area to detect
+                                    collisions or overlappings with other sprites and mouse interactions.</p>
+                                    <p>Sprites created using createSprite (the preferred way) are added to the
+                                    allSprites group and given a depth value that puts it in front of all
+                                    other sprites.</p>
                                     </div>
                                     
                                     		<div class="params">
@@ -557,7 +992,57 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l247"><code>lib\p5.play.js:247</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l253"><code>__temp_p5.play.js:253</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Displays a Sprite.
+                                    To be typically used in the main draw function.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">sprite</code>
+                                    						<span class="type"><a href="../classes/Sprite.html" class="crosslink">Sprite</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Sprite to be displayed</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-drawSprite" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>drawSprite</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>sprite</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l253"><code>lib&#x2F;p5.play.js:253</code></a>
                                     		</p>
                                     
                                     
@@ -607,7 +1092,60 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l226"><code>lib\p5.play.js:226</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l232"><code>lib&#x2F;p5.play.js:232</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Displays a Group of sprites.
+                                    If no parameter is specified, draws all sprites in the
+                                    sketch.
+                                    The drawing order is determined by the Sprite property "depth"</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[group]</code>
+                                    						<span class="type"><a href="../classes/Group.html" class="crosslink">Group</a></span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Group of Sprites to be displayed</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-drawSprites" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>drawSprites</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">group</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l232"><code>__temp_p5.play.js:232</code></a>
                                     		</p>
                                     
                                     
@@ -657,7 +1195,47 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l195"><code>lib\p5.play.js:195</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l201"><code>lib&#x2F;p5.play.js:201</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Returns all the sprites in the sketch as an array</p>
+                                    </div>
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Array</span>:
+                                    					<p>Array of Sprites</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-getSprites" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>getSprites</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Array</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l201"><code>__temp_p5.play.js:201</code></a>
                                     		</p>
                                     
                                     
@@ -703,7 +1281,69 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l333"><code>lib\p5.play.js:333</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l339"><code>__temp_p5.play.js:339</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a key is currently pressed
+                                    Like p5 keyIsDown but accepts strings and codes</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">key</code>
+                                    						<span class="type">Number  |  String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Key code or character</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the key is down</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-keyDown" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>keyDown</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>key</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l339"><code>lib&#x2F;p5.play.js:339</code></a>
                                     		</p>
                                     
                                     
@@ -765,7 +1405,70 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l306"><code>lib\p5.play.js:306</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l312"><code>lib&#x2F;p5.play.js:312</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a key was pressed during the last cycle.
+                                    It can be used to trigger events once, when a key is pressed or released.
+                                    Example: Super Mario jumping.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">key</code>
+                                    						<span class="type">Number  |  String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Key code or character</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the key was pressed</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-keyWentDown" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>keyWentDown</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>key</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l312"><code>__temp_p5.play.js:312</code></a>
                                     		</p>
                                     
                                     
@@ -828,7 +1531,70 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l320"><code>lib\p5.play.js:320</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l326"><code>__temp_p5.play.js:326</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a key was released during the last cycle.
+                                    It can be used to trigger events once, when a key is pressed or released.
+                                    Example: Spaceship shooting.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">key</code>
+                                    						<span class="type">Number  |  String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Key code or character</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the key was released</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-keyWentUp" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>keyWentUp</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>key</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l326"><code>lib&#x2F;p5.play.js:326</code></a>
                                     		</p>
                                     
                                     
@@ -888,7 +1654,57 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l259"><code>lib\p5.play.js:259</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l265"><code>__temp_p5.play.js:265</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Loads an animation.
+                                    To be typically used in the preload() function of the sketch.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">sprite</code>
+                                    						<span class="type"><a href="../classes/Sprite.html" class="crosslink">Sprite</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Sprite to be displayed</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-loadAnimation" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>loadAnimation</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>sprite</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l265"><code>lib&#x2F;p5.play.js:265</code></a>
                                     		</p>
                                     
                                     
@@ -932,7 +1748,36 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l270"><code>lib\p5.play.js:270</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l276"><code>__temp_p5.play.js:276</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Loads a Sprite Sheet.
+                                    To be typically used in the preload() function of the sketch.</p>
+                                    </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="method-loadSpriteSheet" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>loadSpriteSheet</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l276"><code>lib&#x2F;p5.play.js:276</code></a>
                                     		</p>
                                     
                                     
@@ -970,7 +1815,70 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l381"><code>lib\p5.play.js:381</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l387"><code>lib&#x2F;p5.play.js:387</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a mouse button is currently down
+                                    Combines mouseIsPressed and mouseButton of p5</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[buttonCode]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Mouse button constant LEFT, RIGHT or CENTER</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the button is down</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseDown" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseDown</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">buttonCode</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l387"><code>__temp_p5.play.js:387</code></a>
                                     		</p>
                                     
                                     
@@ -1033,7 +1941,70 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l393"><code>lib\p5.play.js:393</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l399"><code>lib&#x2F;p5.play.js:399</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a mouse button is currently up
+                                    Combines mouseIsPressed and mouseButton of p5</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[buttonCode]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Mouse button constant LEFT, RIGHT or CENTER</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the button is up</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseUp" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseUp</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">buttonCode</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l399"><code>__temp_p5.play.js:399</code></a>
                                     		</p>
                                     
                                     
@@ -1096,7 +2067,70 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l418"><code>lib\p5.play.js:418</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l424"><code>lib&#x2F;p5.play.js:424</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a mouse button was pressed during the last cycle.
+                                    It can be used to trigger events once, to be checked in the draw cycle</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[buttonCode]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Mouse button constant LEFT, RIGHT or CENTER</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the button was just pressed</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseWentDown" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseWentDown</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">buttonCode</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l424"><code>__temp_p5.play.js:424</code></a>
                                     		</p>
                                     
                                     
@@ -1159,7 +2193,70 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l405"><code>lib\p5.play.js:405</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l411"><code>lib&#x2F;p5.play.js:411</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Detects if a mouse button was released during the last cycle.
+                                    It can be used to trigger events once, to be checked in the draw cycle</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[buttonCode]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Mouse button constant LEFT, RIGHT or CENTER</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>True if the button was just released</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseWentUp" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseWentUp</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">buttonCode</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l411"><code>__temp_p5.play.js:411</code></a>
                                     		</p>
                                     
                                     
@@ -1219,7 +2316,58 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l160"><code>lib\p5.play.js:160</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l166"><code>lib&#x2F;p5.play.js:166</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Removes a Sprite from the sketch.
+                                    The removed Sprite won't be drawn or updated anymore.
+                                    Equivalent to Sprite.remove()</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">sprite</code>
+                                    						<span class="type">Object</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Sprite to be removed</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-removeSprite" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>removeSprite</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>sprite</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l166"><code>__temp_p5.play.js:166</code></a>
                                     		</p>
                                     
                                     
@@ -1270,7 +2418,59 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l172"><code>lib\p5.play.js:172</code></a>
+                                    		<a href="../files/__temp_p5.play.js.html#l178"><code>__temp_p5.play.js:178</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Updates all the sprites in the sketch (position, animation...)
+                                    it's called automatically at every draw().
+                                    It can be paused by passing a parameter true or false;
+                                    Note: it does not render the sprites.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">updating</code>
+                                    						<span class="type">Boolean</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>false to pause the update, true to resume</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-updateSprites" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>updateSprites</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>updating</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_p5.play.js.html#l178"><code>lib&#x2F;p5.play.js:178</code></a>
                                     		</p>
                                     
                                     
@@ -1322,7 +2522,60 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l643"><code>lib\p5.play.js:643</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l649"><code>lib&#x2F;p5.play.js:649</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Turns the quadTree on or off.
+                                    A quadtree is a data structure used to optimize collision detection.
+                                    It can improve performance when there is a large number of Sprites to be
+                                    checked continuously for overlapping.</p>
+                                    <p>p5.play will create and update a quadtree automatically.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">use</code>
+                                    						<span class="type">Boolean</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Pass true to enable, false to disable</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-useQuadTree" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>useQuadTree</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>use</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l649"><code>__temp_p5.play.js:649</code></a>
                                     		</p>
                                     
                                     
@@ -1372,7 +2625,32 @@
                                         <div class="meta">
                                                     <p>
                                                     Defined in
-                                            <a href="../files/lib_p5.play.js.html#l124"><code>lib\p5.play.js:124</code></a>
+                                            <a href="../files/lib_p5.play.js.html#l124"><code>lib&#x2F;p5.play.js:124</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>A Group containing all the sprites in the sketch.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-allSprites" class="property item">
+                                        <h3 class="name"><code>allSprites</code></h3>
+                                        <span class="type"><a href="../classes/Group.html" class="crosslink">Group</a></span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_p5.play.js.html#l124"><code>__temp_p5.play.js:124</code></a>
                                             </p>
                                     
                                     
@@ -1398,7 +2676,34 @@
                                         <div class="meta">
                                                     <p>
                                                     Defined in
-                                            <a href="../files/lib_p5.play.js.html#l460"><code>lib\p5.play.js:460</code></a>
+                                            <a href="../files/lib_p5.play.js.html#l466"><code>lib&#x2F;p5.play.js:466</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>An object storing all useful keys for easy access
+                                    Key.tab = 9</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-KEY" class="property item private">
+                                        <h3 class="name"><code>KEY</code></h3>
+                                        <span class="type">Object</span>
+                                    
+                                    
+                                            <span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_p5.play.js.html#l466"><code>__temp_p5.play.js:466</code></a>
                                             </p>
                                     
                                     
@@ -1425,7 +2730,34 @@
                                         <div class="meta">
                                                     <p>
                                                     Defined in
-                                            <a href="../files/lib_p5.play.js.html#l563"><code>lib\p5.play.js:563</code></a>
+                                            <a href="../files/lib_p5.play.js.html#l569"><code>lib&#x2F;p5.play.js:569</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>An object storing deprecated key aliases, which we still support but
+                                    should be mapped to valid aliases and generate warnings.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-KEY_DEPRECATIONS" class="property item private">
+                                        <h3 class="name"><code>KEY_DEPRECATIONS</code></h3>
+                                        <span class="type">Object</span>
+                                    
+                                    
+                                            <span class="flag private">private</span>
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_p5.play.js.html#l569"><code>__temp_p5.play.js:569</code></a>
                                             </p>
                                     
                                     

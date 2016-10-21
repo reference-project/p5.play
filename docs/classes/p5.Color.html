@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>p5.Color - p5.play</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
+            p5.play
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5", "classes/p5.Color", "classes/p5.Element", "classes/p5.Font", "classes/p5.Graphics", "classes/p5.Image", "classes/p5.play", "classes/p5.Renderer", "classes/p5.Table", "classes/p5.TableRow", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/2D Primitives", "modules/3D Primitives", "modules/Acceleration", "modules/Array Functions", "modules/Attributes", "modules/Calculation", "modules/Camera", "modules/Color", "modules/Constants", "modules/Conversion", "modules/Creating & Reading", "modules/Curves", "modules/Data", "modules/DOM", "modules/Environment", "modules/Events", "modules/Font", "modules/Image", "modules/Input", "modules/IO", "modules/Keyboard", "modules/Lights", "modules/Lights, Camera", "modules/Loading & Displaying", "modules/Material", "modules/Math", "modules/Mouse", "modules/Noise", "modules/Output", "modules/p5.play", "modules/Pixels", "modules/Random", "modules/Rendering", "modules/Setting", "modules/Shape", "modules/String Functions", "modules/Structure", "modules/Table", "modules/Time & Date", "modules/Touch", "modules/Transform", "modules/Trigonometry", "modules/Typography", "modules/Vertex"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <div id="sidebar">
+	        <div id="classes">
+	            <ul id="api-classes" class="nav nav-list">
+	                    <li><a href="../classes/Animation.html">Animation</a></li>
+	                    <li><a href="../classes/Camera.html">Camera</a></li>
+	                    <li><a href="../classes/Group.html">Group</a></li>
+	                    <li><a href="../classes/p5.html">p5</a></li>
+	                    <li><a href="../classes/p5.Color.html">p5.Color</a></li>
+	                    <li><a href="../classes/p5.Element.html">p5.Element</a></li>
+	                    <li><a href="../classes/p5.Font.html">p5.Font</a></li>
+	                    <li><a href="../classes/p5.Graphics.html">p5.Graphics</a></li>
+	                    <li><a href="../classes/p5.Image.html">p5.Image</a></li>
+	                    <li><a href="../classes/p5.play.html">p5.play</a></li>
+	                    <li><a href="../classes/p5.Renderer.html">p5.Renderer</a></li>
+	                    <li><a href="../classes/p5.Table.html">p5.Table</a></li>
+	                    <li><a href="../classes/p5.TableRow.html">p5.TableRow</a></li>
+	                    <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
+	                    <li><a href="../classes/Sprite.html">Sprite</a></li>
+	                    <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+	            </ul>
+	        </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private" checked>
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>p5.Color</h1>
+                        </div>
+                        
+                        
+                        
+                        	<div class="well well-small">
+                                    Module: <a href="../modules/Setting.html">Setting</a><br>
+                                    Parent Module: <a href="../modules/Color.html">Color</a>
+                            </div>
+                        
+                        
+                        
+                        <div class="yuidoc-class-description">
+                        <p>We define colors to be immutable objects. Each color stores the color mode
+                        and level maxes that applied at the time of its construction. These are
+                        used to interpret the input arguments and to format the output e.g. when
+                        saturation() is requested.</p>
+                        <p>Internally we store an array representing the ideal RGBA values in floating
+                        point form, normalized from 0 to 1. From this we calculate the closest
+                        screen color (RGBA levels from 0 to 255) and expose this to the renderer.</p>
+                        <p>We also cache normalized, floating point components of the color in various
+                        representations as they are calculated. This is done to prevent repeating a
+                        conversion that has already been performed.</p>
+                        
+                        </div>
+                        
+                        <!-- table of contents -->
+                        
+                        <div id="class-toc" class="page-section">
+                        	<h2>Table of Contents</h2>
+                            <ul>
+                        
+                        
+                        
+                        	</ul>
+                        </div>
+                        
+                        <!-- details -->
+                        
+                            <div class="constructor yuidoc-class-constructor page-section">
+                                <h2>Constructor</h2>
+                                <div class="item-list">
+                                <div id="method-p5.Color" class="method item">
+                                	<div class="method-signature">
+                                	<span class="name"><code>p5.Color</code></span>
+                                
+                                		<span class="paren">()</span>
+                                	</div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                	<div class="meta">
+                                				<p>
+                                				Defined in
+                                		<a href="../files/__temp_examples_lib_p5.js.html#l9257"><code>__temp_examples&#x2F;lib&#x2F;p5.js:9257</code></a>
+                                		</p>
+                                
+                                
+                                
+                                	</div>
+                                
+                                
+                                
+                                
+                                </div>
+                                </div>
+                            </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

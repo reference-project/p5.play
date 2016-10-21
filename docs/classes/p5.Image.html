@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>p5.Image - p5.play</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
+            p5.play
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5", "classes/p5.Color", "classes/p5.Element", "classes/p5.Font", "classes/p5.Graphics", "classes/p5.Image", "classes/p5.play", "classes/p5.Renderer", "classes/p5.Table", "classes/p5.TableRow", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/2D Primitives", "modules/3D Primitives", "modules/Acceleration", "modules/Array Functions", "modules/Attributes", "modules/Calculation", "modules/Camera", "modules/Color", "modules/Constants", "modules/Conversion", "modules/Creating & Reading", "modules/Curves", "modules/Data", "modules/DOM", "modules/Environment", "modules/Events", "modules/Font", "modules/Image", "modules/Input", "modules/IO", "modules/Keyboard", "modules/Lights", "modules/Lights, Camera", "modules/Loading & Displaying", "modules/Material", "modules/Math", "modules/Mouse", "modules/Noise", "modules/Output", "modules/p5.play", "modules/Pixels", "modules/Random", "modules/Rendering", "modules/Setting", "modules/Shape", "modules/String Functions", "modules/Structure", "modules/Table", "modules/Time & Date", "modules/Touch", "modules/Transform", "modules/Trigonometry", "modules/Typography", "modules/Vertex"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <div id="sidebar">
+	        <div id="classes">
+	            <ul id="api-classes" class="nav nav-list">
+	                    <li><a href="../classes/Animation.html">Animation</a></li>
+	                    <li><a href="../classes/Camera.html">Camera</a></li>
+	                    <li><a href="../classes/Group.html">Group</a></li>
+	                    <li><a href="../classes/p5.html">p5</a></li>
+	                    <li><a href="../classes/p5.Color.html">p5.Color</a></li>
+	                    <li><a href="../classes/p5.Element.html">p5.Element</a></li>
+	                    <li><a href="../classes/p5.Font.html">p5.Font</a></li>
+	                    <li><a href="../classes/p5.Graphics.html">p5.Graphics</a></li>
+	                    <li><a href="../classes/p5.Image.html">p5.Image</a></li>
+	                    <li><a href="../classes/p5.play.html">p5.play</a></li>
+	                    <li><a href="../classes/p5.Renderer.html">p5.Renderer</a></li>
+	                    <li><a href="../classes/p5.Table.html">p5.Table</a></li>
+	                    <li><a href="../classes/p5.TableRow.html">p5.TableRow</a></li>
+	                    <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
+	                    <li><a href="../classes/Sprite.html">Sprite</a></li>
+	                    <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+	            </ul>
+	        </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private" checked>
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>p5.Image</h1>
+                        </div>
+                        
+                        
+                        
+                        	<div class="well well-small">
+                                    Module: <a href="../modules/Pixels.html">Pixels</a><br>
+                                    Parent Module: <a href="../modules/Image.html">Image</a>
+                            </div>
+                        
+                        
+                        
+                        <div class="yuidoc-class-description">
+                        <p>Creates a new p5.Image. A p5.Image is a canvas backed representation of an
+                        image.
+                        <br><br>
+                        p5 can display .gif, .jpg and .png images. Images may be displayed
+                        in 2D and 3D space. Before an image is used, it must be loaded with the
+                        loadImage() function. The p5.Image class contains fields for the width and
+                        height of the image, as well as an array called pixels[] that contains the
+                        values for every pixel in the image.
+                        <br><br>
+                        The methods described below allow easy access to the image's pixels and
+                        alpha channel and simplify the process of compositing.
+                        <br><br>
+                        Before using the pixels[] array, be sure to use the loadPixels() method on
+                        the image to make sure that the pixel data is properly loaded.</p>
+                        
+                        </div>
+                        
+                        <!-- table of contents -->
+                        
+                        <div id="class-toc" class="page-section">
+                        	<h2>Table of Contents</h2>
+                            <ul>
+                        		<li>
+                        			<strong>Methods</strong>
+                        			<ul>
+                        				<li><a href="#method-blend"><span class="im">blend</span>(<span class="ia">srcImage</span><span class="ia">sx</span><span class="ia">sy</span><span class="ia">sw</span><span class="ia">sh</span><span class="ia">dx</span><span class="ia">dy</span><span class="ia">dw</span><span class="ia">dh</span><span class="ia">blendMode</span>)</a></li>
+                        				<li><a href="#method-copy"><span class="im">copy</span>(<span class="ia">srcImage</span><span class="ia">sx</span><span class="ia">sy</span><span class="ia">sw</span><span class="ia">sh</span><span class="ia">dx</span><span class="ia">dy</span><span class="ia">dw</span><span class="ia">dh</span>)</a></li>
+                        				<li><a href="#method-filter"><span class="im">filter</span>(<span class="ia">operation</span><span class="ia">value</span>)</a></li>
+                        				<li><a href="#method-get"><span class="im">get</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">w</span><span class="ia">h</span>)</a></li>
+                        				<li><a href="#method-loadPixels"><span class="im">loadPixels</span>()</a></li>
+                        				<li><a href="#method-mask"><span class="im">mask</span>(<span class="ia">srcImage</span>)</a></li>
+                        				<li><a href="#method-resize"><span class="im">resize</span>(<span class="ia">width</span><span class="ia">height</span>)</a></li>
+                        				<li><a href="#method-save"><span class="im">save</span>(<span class="ia">filename</span><span class="ia">extension</span>)</a></li>
+                        				<li><a href="#method-set"><span class="im">set</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">a</span>)</a></li>
+                        				<li><a href="#method-updatePixels"><span class="im">updatePixels</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">w</span><span class="ia">h</span>)</a></li>
+                        			</ul>
+                        		</li>
+                        
+                        		<li>
+                        			<strong>Properties</strong>
+                        			<ul>
+                        				<li><a href="#prop-height"><span class="ip">height</span></a></li>
+                        				<li><a href="#prop-pixels[]"><span class="ip">pixels[]</span></a></li>
+                        				<li><a href="#prop-width"><span class="ip">width</span></a></li>
+                        			</ul>
+                        		</li>
+                        
+                        
+                        	</ul>
+                        </div>
+                        
+                        <!-- details -->
+                        
+                            <div class="constructor yuidoc-class-constructor page-section">
+                                <h2>Constructor</h2>
+                                <div class="item-list">
+                                <div id="method-p5.Image" class="method item">
+                                	<div class="method-signature">
+                                	<span class="name"><code>p5.Image</code></span>
+                                
+                                		<div class="args">
+                                			<span class="paren">(</span><ul class="args-list inline commas">
+                                				<li class="arg">
+                                						<code>width</code>
+                                				</li>
+                                				<li class="arg">
+                                						<code>height</code>
+                                				</li>
+                                				<li class="arg">
+                                						<code>pInst</code>
+                                				</li>
+                                			</ul><span class="paren">)</span>
+                                		</div>
+                                	</div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                	<div class="meta">
+                                				<p>
+                                				Defined in
+                                		<a href="../files/__temp_examples_lib_p5.js.html#l20320"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20320</code></a>
+                                		</p>
+                                
+                                
+                                
+                                	</div>
+                                
+                                
+                                		<div class="params">
+                                			<h4>Parameters:</h4>
+                                
+                                			<ul class="params-list">
+                                				<li class="param">
+                                						<code class="param-name">width</code>
+                                						<span class="type">Number</span>
+                                
+                                
+                                
+                                				</li>
+                                				<li class="param">
+                                						<code class="param-name">height</code>
+                                						<span class="type">Number</span>
+                                
+                                
+                                
+                                				</li>
+                                				<li class="param">
+                                						<code class="param-name">pInst</code>
+                                						<span class="type">Object</span>
+                                
+                                
+                                					<div class="param-description"><p>An instance of a p5 sketch.</p>
+                                </div>
+                                
+                                				</li>
+                                			</ul>
+                                		</div>
+                                
+                                
+                                </div>
+                                </div>
+                            </div>
+                        
+                            <div id="methods" class="page-section">
+                                <h2 class="off-left">Methods</h2>
+                                <div class="item-list">
+                                    <div id="method-blend" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>blend</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>srcImage</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>sx</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>sy</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>sw</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>sh</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>dx</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>dy</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>dw</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>dh</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>blendMode</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20714"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20714</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Copies a region of pixels from one image to another, using a specified
+                                    blend mode to do the operation.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">srcImage</code>
+                                    						<span class="type"><a href="../classes/p5.Image.html" class="crosslink">p5.Image</a>  |  Undefined</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>source image</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">sx</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>X coordinate of the source's upper left corner</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">sy</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Y coordinate of the source's upper left corner</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">sw</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>source image width</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">sh</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>source image height</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">dx</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>X coordinate of the destination's upper left corner</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">dy</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Y coordinate of the destination's upper left corner</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">dw</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>destination image width</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">dh</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>destination image height</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">blendMode</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the blend mode</p>
+                                    <p>Available blend modes are: normal | multiply | screen | overlay |
+                                    darken | lighten | color-dodge | color-burn | hard-light |
+                                    soft-light | difference | exclusion | hue | saturation |
+                                    color | luminosity</p>
+                                    <p><a href="http://blogs.adobe.com/webplatform/2013/01/28/blending-features-in-canvas/">http://blogs.adobe.com/webplatform/2013/01/28/blending-features-in-canvas/</a></p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-copy" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>copy</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>srcImage</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>sx</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>sy</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>sw</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>sh</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>dx</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>dy</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>dw</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>dh</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20621"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20621</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Copies a region of pixels from one image to another. If no
+                                    srcImage is specified this is used as the source. If the source
+                                    and destination regions aren't the same size, it will
+                                    automatically resize source pixels to fit the specified
+                                    target region.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">srcImage</code>
+                                    						<span class="type"><a href="../classes/p5.Image.html" class="crosslink">p5.Image</a>  |  Undefined</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>source image</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">sx</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>X coordinate of the source's upper left corner</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">sy</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Y coordinate of the source's upper left corner</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">sw</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>source image width</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">sh</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>source image height</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">dx</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>X coordinate of the destination's upper left corner</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">dy</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>Y coordinate of the destination's upper left corner</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">dw</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>destination image width</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">dh</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>destination image height</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-filter" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>filter</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>operation</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>value</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20701"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20701</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Applies an image filter to a p5.Image</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">operation</code>
+                                    						<span class="type">String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>one of threshold, gray, invert, posterize and
+                                    opaque see Filters.js for docs on each available
+                                    filter</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">value</code>
+                                    						<span class="type">Number  |  Undefined</span>
+                                    
+                                    
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-get" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>get</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">w</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">h</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Array/Color  |  <a href="../classes/p5.Image.html" class="crosslink">p5.Image</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20493"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20493</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Get a region of pixels from an image.</p>
+                                    <p>If no params are passed, those whole image is returned,
+                                    if x and y are the only params passed a single pixel is extracted
+                                    if all params are passed a rectangle region is extracted and a p5.Image
+                                    is returned.</p>
+                                    <p>Returns undefined if the region is outside the bounds of the image</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[x]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>x-coordinate of the pixel</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[y]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>y-coordinate of the pixel</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[w]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>width</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[h]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>height</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Array/Color  |  <a href="../classes/p5.Image.html" class="crosslink">p5.Image</a></span>:
+                                    					<p>color of pixel at x,y in array format
+                                    [R, G, B, A] or p5.Image</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-loadPixels" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>loadPixels</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20466"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20466</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Loads the pixels data for this image into the [pixels] attribute.</p>
+                                    </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="method-mask" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mask</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>srcImage</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20643"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20643</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Masks part of an image from displaying by loading another
+                                    image and using it's blue channel as an alpha channel for
+                                    this image.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">srcImage</code>
+                                    						<span class="type"><a href="../classes/p5.Image.html" class="crosslink">p5.Image</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>source image</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div><code>
+                                    var photo, maskImage;
+                                    function preload() {
+                                      photo = loadImage("assets/rockies.jpg");
+                                      maskImage = loadImage("assets/mask2.png");
+                                    }
+                                    <p>function setup() {
+                                    createCanvas(100, 100);
+                                    photo.mask(maskImage);
+                                    image(photo, 0, 0);
+                                    }
+                                    </code></div></p>
+                                    <p><a href="http://blogs.adobe.com/webplatform/2013/01/28/blending-features-in-canvas/">http://blogs.adobe.com/webplatform/2013/01/28/blending-features-in-canvas/</a></p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-resize" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>resize</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>width</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>height</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20548"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20548</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Resize the image to a new width and height. To make the image scale
+                                    proportionally, use 0 as the value for the wide or high parameter.
+                                    For instance, to make the width of an image 150 pixels, and change
+                                    the height using the same proportion, use resize(150, 0).</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">width</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the resized image width</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">height</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the resized image height</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div><code>
+                                    var img;
+                                    <p>function setup() {
+                                    img = loadImage("assets/rockies.jpg");
+                                    }</p>
+                                    <p>function draw() {
+                                    image(img, 0, 0);
+                                    }</p>
+                                    <p>function mousePressed() {
+                                    img.resize(50, 100);
+                                    }
+                                    </code></div></p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-save" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>save</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>filename</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>extension</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20743"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20743</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Saves the image to a file and force the browser to download it.
+                                    Accepts two strings for filename and file extension
+                                    Supports png (default) and jpg.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">filename</code>
+                                    						<span class="type">String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>give your file a name</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">extension</code>
+                                    						<span class="type">String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>'png' or 'jpg'</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                    <div id="method-set" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>set</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>a</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20515"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20515</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Set the color of a single pixel or write an image into
+                                    this p5.Image.</p>
+                                    <p>Note that for a large number of pixels this will
+                                    be slower than directly manipulating the pixels array
+                                    and then calling updatePixels().</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">x</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>x-coordinate of the pixel</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">y</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>y-coordinate of the pixel</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">a</code>
+                                    						<span class="type">Number  |  Array  |  Object</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>grayscale value | pixel array |
+                                    a p5.Color | image to copy</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div>
+                                    <code>
+                                    img = createImage(66, 66);
+                                    img.loadPixels();
+                                    for (i = 0; i < img.width; i++) {
+                                      for (j = 0; j < img.height; j++) {
+                                        img.set(i, j, color(0, 90, 102, i % img.width * 2));
+                                      }
+                                    }
+                                    img.updatePixels();
+                                    image(img, 17, 17);
+                                    image(img, 34, 34);
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-updatePixels" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>updatePixels</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>w</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>h</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l20475"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20475</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Updates the backing canvas for this image with the contents of
+                                    the [pixels] array.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">x</code>
+                                    						<span class="type">Integer  |  Undefined</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>x-offset of the target update area for the
+                                    underlying canvas</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">y</code>
+                                    						<span class="type">Integer  |  Undefined</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>y-offset of the target update area for the
+                                    underlying canvas</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">w</code>
+                                    						<span class="type">Integer  |  Undefined</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>height of the target update area for the
+                                    underlying canvas</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">h</code>
+                                    						<span class="type">Integer  |  Undefined</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>height of the target update area for the
+                                    underlying canvas</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div id="properties" class="page-section">
+                                <h2 class="off-left">Properties</h2>
+                        
+                                <div class="item-list">
+                                    <div id="prop-height" class="property item">
+                                        <h3 class="name"><code>height</code></h3>
+                                        <span class="type">Unknown</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                        <p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_examples_lib_p5.js.html#l20365"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20365</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>Image height.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                            <div class="example">
+                                                <h4>Example:</h4>
+                                    
+                                                <div class="example-content">
+                                                    <div><code>
+                                    var img;
+                                    function preload() {
+                                      img = loadImage("assets/rockies.jpg");
+                                    }
+                                    <p>function setup() {
+                                    createCanvas(100, 100);
+                                    image(img, 0, 0);
+                                    for (var i=0; i &lt; img.height; i++) {
+                                    var c = img.get(img.width/2, i);
+                                    stroke(c);
+                                    line(0, i, width/2, i);
+                                    }
+                                    }
+                                    </code></div></p>
+                                    
+                                                </div>
+                                            </div>
+                                    
+                                    </div>
+                                    <div id="prop-pixels[]" class="property item">
+                                        <h3 class="name"><code>pixels[]</code></h3>
+                                        <span class="type">Unknown</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                        <p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_examples_lib_p5.js.html#l20394"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20394</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>Array containing the values for all the pixels in the display window.
+                                    These values are numbers. This array is the size (include an appropriate
+                                    factor for pixelDensity) of the display window x4,
+                                    representing the R, G, B, A values in order for each pixel, moving from
+                                    left to right across each row, then down each column. Retina and other
+                                    high denisty displays may have more pixels[] (by a factor of
+                                    pixelDensity^2).
+                                    For example, if the image is 100x100 pixels, there will be 40,000. With
+                                    pixelDensity = 2, there will be 160,000. The first four values
+                                    (indices 0-3) in the array will be the R, G, B, A values of the pixel at
+                                    (0, 0). The second four values (indices 4-7) will contain the R, G, B, A
+                                    values of the pixel at (1, 0). More generally, to set values for a pixel
+                                    at (x, y):
+                                    <code><pre>var d = pixelDensity;
+                                    for (var i = 0; i &lt; d; i++) {
+                                    for (var j = 0; j &lt; d; j++) {
+                                    // loop over
+                                    idx = 4*((y * d + j) * width * d + (x * d + i));
+                                    pixels[idx] = r;
+                                    pixels[idx+1] = g;
+                                    pixels[idx+2] = b;
+                                    pixels[idx+3] = a;
+                                    }
+                                    }</p>
+                                    </pre></code>
+                                    <br><br>
+                                    Before accessing this array, the data must loaded with the loadPixels()
+                                    function. After the array data has been modified, the updatePixels()
+                                    function must be run to update the changes.
+                                        </div>
+                                    
+                                    
+                                            <div class="example">
+                                                <h4>Example:</h4>
+                                    
+                                                <div class="example-content">
+                                                    <div>
+                                    <code>
+                                    img = createImage(66, 66);
+                                    img.loadPixels();
+                                    for (i = 0; i < img.width; i++) {
+                                      for (j = 0; j < img.height; j++) {
+                                        img.set(i, j, color(0, 90, 102));
+                                      }
+                                    }
+                                    img.updatePixels();
+                                    image(img, 17, 17);
+                                    </code>
+                                    </div>
+                                    <div>
+                                    <code>
+                                    var pink = color(255, 102, 204);
+                                    img = createImage(66, 66);
+                                    img.loadPixels();
+                                    for (var i = 0; i < 4*(width*height/2); i+=4) {
+                                      img.pixels[i] = red(pink);
+                                      img.pixels[i+1] = green(pink);
+                                      img.pixels[i+2] = blue(pink);
+                                      img.pixels[i+3] = alpha(pink);
+                                    }
+                                    img.updatePixels();
+                                    image(img, 17, 17);
+                                    </code>
+                                    </div>
+                                                </div>
+                                            </div>
+                                    
+                                    </div>
+                                    <div id="prop-width" class="property item">
+                                        <h3 class="name"><code>width</code></h3>
+                                        <span class="type">Unknown</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                        <p>Provided by the <a href="../modules/Image.html">Image</a> module.</p>
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_examples_lib_p5.js.html#l20343"><code>__temp_examples&#x2F;lib&#x2F;p5.js:20343</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>Image width.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                            <div class="example">
+                                                <h4>Example:</h4>
+                                    
+                                                <div class="example-content">
+                                                    <div><code>
+                                    var img;
+                                    function preload() {
+                                      img = loadImage("assets/rockies.jpg");
+                                    }
+                                    <p>function setup() {
+                                    createCanvas(100, 100);
+                                    image(img, 0, 0);
+                                    for (var i=0; i &lt; img.width; i++) {
+                                    var c = img.get(i, img.height/2);
+                                    stroke(c);
+                                    line(i, height/2, i, height);
+                                    }
+                                    }
+                                    </code></div></p>
+                                    
+                                                </div>
+                                            </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

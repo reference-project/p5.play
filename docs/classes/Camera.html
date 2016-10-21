@@ -15,7 +15,7 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="p5.play" src="..\..\asterisk.png" style="max-height: 65%;" title="p5.play">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
             p5.play
         </h1>
 	<div class="nav">
@@ -27,7 +27,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.play", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5", "classes/p5.Color", "classes/p5.Element", "classes/p5.Font", "classes/p5.Graphics", "classes/p5.Image", "classes/p5.play", "classes/p5.Renderer", "classes/p5.Table", "classes/p5.TableRow", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/2D Primitives", "modules/3D Primitives", "modules/Acceleration", "modules/Array Functions", "modules/Attributes", "modules/Calculation", "modules/Camera", "modules/Color", "modules/Constants", "modules/Conversion", "modules/Creating & Reading", "modules/Curves", "modules/Data", "modules/DOM", "modules/Environment", "modules/Events", "modules/Font", "modules/Image", "modules/Input", "modules/IO", "modules/Keyboard", "modules/Lights", "modules/Lights, Camera", "modules/Loading & Displaying", "modules/Material", "modules/Math", "modules/Mouse", "modules/Noise", "modules/Output", "modules/p5.play", "modules/Pixels", "modules/Random", "modules/Rendering", "modules/Setting", "modules/Shape", "modules/String Functions", "modules/Structure", "modules/Table", "modules/Time & Date", "modules/Touch", "modules/Transform", "modules/Trigonometry", "modules/Typography", "modules/Vertex"]'>
         </form>
     </div>
 </div>
@@ -41,7 +41,17 @@
 	                    <li><a href="../classes/Animation.html">Animation</a></li>
 	                    <li><a href="../classes/Camera.html">Camera</a></li>
 	                    <li><a href="../classes/Group.html">Group</a></li>
+	                    <li><a href="../classes/p5.html">p5</a></li>
+	                    <li><a href="../classes/p5.Color.html">p5.Color</a></li>
+	                    <li><a href="../classes/p5.Element.html">p5.Element</a></li>
+	                    <li><a href="../classes/p5.Font.html">p5.Font</a></li>
+	                    <li><a href="../classes/p5.Graphics.html">p5.Graphics</a></li>
+	                    <li><a href="../classes/p5.Image.html">p5.Image</a></li>
 	                    <li><a href="../classes/p5.play.html">p5.play</a></li>
+	                    <li><a href="../classes/p5.Renderer.html">p5.Renderer</a></li>
+	                    <li><a href="../classes/p5.Table.html">p5.Table</a></li>
+	                    <li><a href="../classes/p5.TableRow.html">p5.TableRow</a></li>
+	                    <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
 	                    <li><a href="../classes/Sprite.html">Sprite</a></li>
 	                    <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
 	            </ul>
@@ -109,6 +119,8 @@
                         			<strong>Methods</strong>
                         			<ul>
                         				<li><a href="#method-off"><span class="im">off</span>()</a></li>
+                        				<li><a href="#method-off"><span class="im">off</span>()</a></li>
+                        				<li><a href="#method-on"><span class="im">on</span>()</a></li>
                         				<li><a href="#method-on"><span class="im">on</span>()</a></li>
                         			</ul>
                         		</li>
@@ -117,9 +129,14 @@
                         			<strong>Properties</strong>
                         			<ul>
                         				<li><a href="#prop-active"><span class="ip">active</span></a></li>
+                        				<li><a href="#prop-active"><span class="ip">active</span></a></li>
+                        				<li><a href="#prop-mouseX"><span class="ip">mouseX</span></a></li>
                         				<li><a href="#prop-mouseX"><span class="ip">mouseX</span></a></li>
                         				<li><a href="#prop-mouseY"><span class="ip">mouseY</span></a></li>
+                        				<li><a href="#prop-mouseY"><span class="ip">mouseY</span></a></li>
                         				<li><a href="#prop-position"><span class="ip">position</span></a></li>
+                        				<li><a href="#prop-position"><span class="ip">position</span></a></li>
+                        				<li><a href="#prop-zoom"><span class="ip">zoom</span></a></li>
                         				<li><a href="#prop-zoom"><span class="ip">zoom</span></a></li>
                         			</ul>
                         		</li>
@@ -160,7 +177,7 @@
                                 	<div class="meta">
                                 				<p>
                                 				Defined in
-                                		<a href="../files/lib_p5.play.js.html#l2293"><code>lib\p5.play.js:2293</code></a>
+                                		<a href="../files/__temp_p5.play.js.html#l2462"><code>__temp_p5.play.js:2462</code></a>
                                 		</p>
                                 
                                 
@@ -225,7 +242,37 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l2375"><code>lib\p5.play.js:2375</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l2544"><code>lib&#x2F;p5.play.js:2544</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Deactivates the camera.
+                                    The canvas will be drawn normally, ignoring the camera's position
+                                    and scale until Camera.on() is called</p>
+                                    </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="method-off" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>off</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l2544"><code>__temp_p5.play.js:2544</code></a>
                                     		</p>
                                     
                                     
@@ -255,7 +302,37 @@
                                     	<div class="meta">
                                     				<p>
                                     				Defined in
-                                    		<a href="../files/lib_p5.play.js.html#l2360"><code>lib\p5.play.js:2360</code></a>
+                                    		<a href="../files/lib_p5.play.js.html#l2529"><code>lib&#x2F;p5.play.js:2529</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Activates the camera.
+                                    The canvas will be drawn according to the camera position and scale until
+                                    Camera.off() is called</p>
+                                    </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="method-on" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>on</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_p5.play.js.html#l2529"><code>__temp_p5.play.js:2529</code></a>
                                     		</p>
                                     
                                     
@@ -288,7 +365,34 @@
                                         <div class="meta">
                                                     <p>
                                                     Defined in
-                                            <a href="../files/lib_p5.play.js.html#l2350"><code>lib\p5.play.js:2350</code></a>
+                                            <a href="../files/lib_p5.play.js.html#l2519"><code>lib&#x2F;p5.play.js:2519</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>True if the camera is active.
+                                    Read only property. Use the methods Camera.on() and Camera.off()
+                                    to enable or disable the camera.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-active" class="property item">
+                                        <h3 class="name"><code>active</code></h3>
+                                        <span class="type">Boolean</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_p5.play.js.html#l2519"><code>__temp_p5.play.js:2519</code></a>
                                             </p>
                                     
                                     
@@ -315,7 +419,35 @@
                                         <div class="meta">
                                                     <p>
                                                     Defined in
-                                            <a href="../files/lib_p5.play.js.html#l2328"><code>lib\p5.play.js:2328</code></a>
+                                            <a href="../files/lib_p5.play.js.html#l2497"><code>lib&#x2F;p5.play.js:2497</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>MouseX translated to the camera view.
+                                    Offsetting and scaling the canvas will not change the sprites' position
+                                    nor the mouseX and mouseY variables. Use this property to read the mouse
+                                    position if the camera moved or zoomed.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-mouseX" class="property item">
+                                        <h3 class="name"><code>mouseX</code></h3>
+                                        <span class="type">Number</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_p5.play.js.html#l2497"><code>__temp_p5.play.js:2497</code></a>
                                             </p>
                                     
                                     
@@ -343,7 +475,35 @@
                                         <div class="meta">
                                                     <p>
                                                     Defined in
-                                            <a href="../files/lib_p5.play.js.html#l2339"><code>lib\p5.play.js:2339</code></a>
+                                            <a href="../files/lib_p5.play.js.html#l2508"><code>lib&#x2F;p5.play.js:2508</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>MouseY translated to the camera view.
+                                    Offsetting and scaling the canvas will not change the sprites' position
+                                    nor the mouseX and mouseY variables. Use this property to read the mouse
+                                    position if the camera moved or zoomed.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-mouseY" class="property item">
+                                        <h3 class="name"><code>mouseY</code></h3>
+                                        <span class="type">Number</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_p5.play.js.html#l2508"><code>__temp_p5.play.js:2508</code></a>
                                             </p>
                                     
                                     
@@ -362,7 +522,7 @@
                                     </div>
                                     <div id="prop-position" class="property item">
                                         <h3 class="name"><code>position</code></h3>
-                                        <span class="type">p5.Vector</span>
+                                        <span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
                                     
                                     
                                     
@@ -371,7 +531,32 @@
                                         <div class="meta">
                                                     <p>
                                                     Defined in
-                                            <a href="../files/lib_p5.play.js.html#l2310"><code>lib\p5.play.js:2310</code></a>
+                                            <a href="../files/lib_p5.play.js.html#l2479"><code>lib&#x2F;p5.play.js:2479</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>Camera position. Defines the global offset of the sketch.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-position" class="property item">
+                                        <h3 class="name"><code>position</code></h3>
+                                        <span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_p5.play.js.html#l2479"><code>__temp_p5.play.js:2479</code></a>
                                             </p>
                                     
                                     
@@ -396,7 +581,34 @@
                                         <div class="meta">
                                                     <p>
                                                     Defined in
-                                            <a href="../files/lib_p5.play.js.html#l2318"><code>lib\p5.play.js:2318</code></a>
+                                            <a href="../files/lib_p5.play.js.html#l2487"><code>lib&#x2F;p5.play.js:2487</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>Camera zoom. Defines the global scale of the sketch.
+                                    A scale of 1 will be the normal size. Setting it to 2 will make everything
+                                    twice the size. .5 will make everything half size.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-zoom" class="property item">
+                                        <h3 class="name"><code>zoom</code></h3>
+                                        <span class="type">Number</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_p5.play.js.html#l2487"><code>__temp_p5.play.js:2487</code></a>
                                             </p>
                                     
                                     

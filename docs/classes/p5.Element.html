@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>p5.Element - p5.play</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
+            p5.play
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5", "classes/p5.Color", "classes/p5.Element", "classes/p5.Font", "classes/p5.Graphics", "classes/p5.Image", "classes/p5.play", "classes/p5.Renderer", "classes/p5.Table", "classes/p5.TableRow", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/2D Primitives", "modules/3D Primitives", "modules/Acceleration", "modules/Array Functions", "modules/Attributes", "modules/Calculation", "modules/Camera", "modules/Color", "modules/Constants", "modules/Conversion", "modules/Creating & Reading", "modules/Curves", "modules/Data", "modules/DOM", "modules/Environment", "modules/Events", "modules/Font", "modules/Image", "modules/Input", "modules/IO", "modules/Keyboard", "modules/Lights", "modules/Lights, Camera", "modules/Loading & Displaying", "modules/Material", "modules/Math", "modules/Mouse", "modules/Noise", "modules/Output", "modules/p5.play", "modules/Pixels", "modules/Random", "modules/Rendering", "modules/Setting", "modules/Shape", "modules/String Functions", "modules/Structure", "modules/Table", "modules/Time & Date", "modules/Touch", "modules/Transform", "modules/Trigonometry", "modules/Typography", "modules/Vertex"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <div id="sidebar">
+	        <div id="classes">
+	            <ul id="api-classes" class="nav nav-list">
+	                    <li><a href="../classes/Animation.html">Animation</a></li>
+	                    <li><a href="../classes/Camera.html">Camera</a></li>
+	                    <li><a href="../classes/Group.html">Group</a></li>
+	                    <li><a href="../classes/p5.html">p5</a></li>
+	                    <li><a href="../classes/p5.Color.html">p5.Color</a></li>
+	                    <li><a href="../classes/p5.Element.html">p5.Element</a></li>
+	                    <li><a href="../classes/p5.Font.html">p5.Font</a></li>
+	                    <li><a href="../classes/p5.Graphics.html">p5.Graphics</a></li>
+	                    <li><a href="../classes/p5.Image.html">p5.Image</a></li>
+	                    <li><a href="../classes/p5.play.html">p5.play</a></li>
+	                    <li><a href="../classes/p5.Renderer.html">p5.Renderer</a></li>
+	                    <li><a href="../classes/p5.Table.html">p5.Table</a></li>
+	                    <li><a href="../classes/p5.TableRow.html">p5.TableRow</a></li>
+	                    <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
+	                    <li><a href="../classes/Sprite.html">Sprite</a></li>
+	                    <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+	            </ul>
+	        </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private" checked>
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>p5.Element</h1>
+                        </div>
+                        
+                        
+                        
+                        	<div class="well well-small">
+                                    Module: <a href="../modules/Rendering.html">Rendering</a><br>
+                                    Parent Module: <a href="../modules/Rendering.html">Rendering</a>
+                            </div>
+                        
+                        
+                        
+                        <div class="yuidoc-class-description">
+                        <p>Base class for all elements added to a sketch, including canvas,
+                        graphics buffers, and other HTML elements. Methods in blue are
+                        included in the core functionality, methods in brown are added
+                        with the <a href="http://p5js.org/libraries/">p5.dom library</a>.
+                        It is not called directly, but p5.Element
+                        objects are created by calling createCanvas, createGraphics,
+                        or in the p5.dom library, createDiv, createImg, createInput, etc.</p>
+                        
+                        </div>
+                        
+                        <!-- table of contents -->
+                        
+                        <div id="class-toc" class="page-section">
+                        	<h2>Table of Contents</h2>
+                            <ul>
+                        		<li>
+                        			<strong>Methods</strong>
+                        			<ul>
+                        				<li><a href="#method-changed"><span class="im">changed</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-class"><span class="im">class</span>(<span class="ia">class</span>)</a></li>
+                        				<li><a href="#method-dragLeave"><span class="im">dragLeave</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-dragOver"><span class="im">dragOver</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-drop"><span class="im">drop</span>(<span class="ia">callback</span><span class="ia">callback</span>)</a></li>
+                        				<li><a href="#method-id"><span class="im">id</span>(<span class="ia">id</span>)</a></li>
+                        				<li><a href="#method-input"><span class="im">input</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-mouseClicked"><span class="im">mouseClicked</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-mouseMoved"><span class="im">mouseMoved</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-mouseOut"><span class="im">mouseOut</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-mouseOver"><span class="im">mouseOver</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-mousePressed"><span class="im">mousePressed</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-mouseReleased"><span class="im">mouseReleased</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-mouseWheel"><span class="im">mouseWheel</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-parent"><span class="im">parent</span>(<span class="ia">parent</span>)</a></li>
+                        				<li><a href="#method-touchEnded"><span class="im">touchEnded</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-touchMoved"><span class="im">touchMoved</span>(<span class="ia">fxn</span>)</a></li>
+                        				<li><a href="#method-touchStarted"><span class="im">touchStarted</span>(<span class="ia">fxn</span>)</a></li>
+                        			</ul>
+                        		</li>
+                        
+                        		<li>
+                        			<strong>Properties</strong>
+                        			<ul>
+                        				<li><a href="#prop-elt"><span class="ip">elt</span></a></li>
+                        			</ul>
+                        		</li>
+                        
+                        
+                        	</ul>
+                        </div>
+                        
+                        <!-- details -->
+                        
+                            <div class="constructor yuidoc-class-constructor page-section">
+                                <h2>Constructor</h2>
+                                <div class="item-list">
+                                <div id="method-p5.Element" class="method item">
+                                	<div class="method-signature">
+                                	<span class="name"><code>p5.Element</code></span>
+                                
+                                		<div class="args">
+                                			<span class="paren">(</span><ul class="args-list inline commas">
+                                				<li class="arg">
+                                						<code>elt</code>
+                                				</li>
+                                				<li class="arg">
+                                						<code class="optional">pInst</code>
+                                				</li>
+                                			</ul><span class="paren">)</span>
+                                		</div>
+                                	</div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                	<div class="meta">
+                                				<p>
+                                				Defined in
+                                		<a href="../files/__temp_examples_lib_p5.js.html#l13327"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13327</code></a>
+                                		</p>
+                                
+                                
+                                
+                                	</div>
+                                
+                                
+                                		<div class="params">
+                                			<h4>Parameters:</h4>
+                                
+                                			<ul class="params-list">
+                                				<li class="param">
+                                						<code class="param-name">elt</code>
+                                						<span class="type">String</span>
+                                
+                                
+                                					<div class="param-description"><p>DOM node that is wrapped</p>
+                                </div>
+                                
+                                				</li>
+                                				<li class="param">
+                                						<code class="param-name optional">[pInst]</code>
+                                						<span class="type">Object</span>
+                                						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+                                
+                                					<div class="param-description"><p>pointer to p5 instance</p>
+                                </div>
+                                
+                                				</li>
+                                			</ul>
+                                		</div>
+                                
+                                
+                                </div>
+                                </div>
+                            </div>
+                        
+                            <div id="methods" class="page-section">
+                                <h2 class="off-left">Methods</h2>
+                                <div class="item-list">
+                                    <div id="method-changed" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>changed</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13572"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13572</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .changed() function is called when the value of an
+                                    element is changed.
+                                    This can be used to attach an element specific event listener.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when the value of an
+                                    element changes.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div><code>
+                                    var sel;
+                                    <p>function setup() {
+                                    textAlign(CENTER);
+                                    background(200);
+                                    sel = createSelect();
+                                    sel.position(10, 10);
+                                    sel.option('pear');
+                                    sel.option('kiwi');
+                                    sel.option('grape');
+                                    sel.changed(mySelectEvent);
+                                    }</p>
+                                    <p>function mySelectEvent() {
+                                    var item = sel.value();
+                                    background(200);
+                                    text("it's a "+item+"!", 50, 50);
+                                    }
+                                    </code></div></p>
+                                    <div><code>
+                                    var checkbox;
+                                    var cnv;
+                                    <p>function setup() {
+                                    checkbox = createCheckbox(" fill");
+                                    checkbox.changed(changeFill);
+                                    cnv = createCanvas(100, 100);
+                                    cnv.position(0, 30);
+                                    noFill();
+                                    }</p>
+                                    <p>function draw() {
+                                    background(200);
+                                    ellipse(50, 50, 50, 50);
+                                    }</p>
+                                    <p>function changeFill() {
+                                    if (checkbox.checked()) {
+                                    fill(0);
+                                    } else {
+                                    noFill();
+                                    }
+                                    }
+                                    </code></div></p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-class" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>class</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>class</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13425"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13425</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Adds given class to the element</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">class</code>
+                                    						<span class="type">String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>class to add</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-dragLeave" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>dragLeave</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13805"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13805</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .dragLeave() function is called once after every time a
+                                    dragged file leaves the element area. This can be used to attach an
+                                    element specific event listener.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse is
+                                    dragged over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-dragOver" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>dragOver</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13790"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13790</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .dragOver() function is called once after every time a
+                                    file is dragged over the element. This can be used to attach an
+                                    element specific event listener.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse is
+                                    dragged over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-drop" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>drop</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>callback</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>callback</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13820"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13820</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .drop() function is called for each file dropped on the element.
+                                    It requires a callback that is passed a p5.File object.  You can
+                                    optionally pass two callbacks, the first one (required) is triggered
+                                    for each file dropped when the file is loaded.  The second (optional)
+                                    is triggered just once when a file (or files) are dropped.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">callback</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>triggered when files are dropped.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">callback</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>to receive loaded file.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-id" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>id</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>id</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13406"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13406</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Sets the ID of the element</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">id</code>
+                                    						<span class="type">String</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>ID of the element</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-input" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>input</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13633"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13633</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .input() function is called when any user input is
+                                    detected with an element. The input event is often used
+                                    to detect keystrokes in a input element, or changes on a
+                                    slider element. This can be used to attach an element specific
+                                    event listener.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired on user input.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseClicked" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseClicked</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13525"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13525</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .mouseClicked() function is called once after a mouse button is
+                                    pressed and released over the element. This can be used to
+                                    attach element specific event listeners.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse is
+                                    clicked over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseMoved" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseMoved</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13540"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13540</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .mouseMoved() function is called once every time a
+                                    mouse moves over the element. This can be used to attach an
+                                    element specific event listener.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse is
+                                    moved over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseOut" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseOut</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13649"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13649</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .mouseOut() function is called once after every time a
+                                    mouse moves off the element. This can be used to attach an
+                                    element specific event listener.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse is
+                                    moved off the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseOver" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseOver</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13556"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13556</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .mouseOver() function is called once after every time a
+                                    mouse moves onto the element. This can be used to attach an
+                                    element specific event listener.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse is
+                                    moved over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mousePressed" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mousePressed</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13444"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13444</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .mousePressed() function is called once after every time a
+                                    mouse button is pressed over the element. This can be used to
+                                    attach element specific event listeners.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse is
+                                    pressed over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class='norender'><code>
+                                    var cnv;
+                                    var d;
+                                    var g;
+                                    function setup() {
+                                      cnv = createCanvas(100, 100);
+                                      cnv.mousePressed(changeGray); // attach listener for
+                                                                    // canvas click only
+                                      d = 10;
+                                      g = 100;
+                                    }
+                                    <p>function draw() {
+                                    background(g);
+                                    ellipse(width/2, height/2, d, d);
+                                    }</p>
+                                    <p>// this function fires with any click anywhere
+                                    function mousePressed() {
+                                    d = d + 10;
+                                    }</p>
+                                    <p>// this function fires only when cnv is clicked
+                                    function changeGray() {
+                                    g = random(0, 255);
+                                    }
+                                    </code></div></p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-mouseReleased" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseReleased</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13508"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13508</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .mouseReleased() function is called once after every time a
+                                    mouse button is released over the element. This can be used to
+                                    attach element specific event listeners.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse is
+                                    released over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-mouseWheel" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mouseWheel</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13489"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13489</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .mouseWheel() function is called once after every time a
+                                    mouse wheel is scrolled over the element. This can be used to
+                                    attach element specific event listeners.<br><br>
+                                    The event.wheelDelta or event.detail property returns negative values if
+                                    the mouse wheel if rotated up or away from the user and positive in the
+                                    other direction. On OS X with "natural" scrolling enabled, the values are
+                                    opposite.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when mouse wheel is
+                                    scrolled over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    </div>
+                                    <div id="method-parent" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>parent</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>parent</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13354"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13354</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Attaches the element to the parent specified. A way of setting
+                                    the container for the element. Accepts either a string ID, DOM
+                                    node, or p5.Element. If no arguments given, parent node is returned.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">parent</code>
+                                    						<span class="type">String  |  Object</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the ID, DOM node, or p5.Element
+                                    of desired parent element</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				 <div class="norender"><code>
+                                     // in the html file:
+                                     &lt;div id="myContainer">&lt;/div>
+                                     // in the js file:
+                                     var cnv = createCanvas(100, 100);
+                                     cnv.parent("myContainer");
+                                     </code></div>
+                                     <div class='norender'><code>
+                                     var div0 = createDiv('this is the parent');
+                                     var div1 = createDiv('this is the child');
+                                     div1.parent(div0); // use p5.Element
+                                     </code></div>
+                                     <div class='norender'><code>
+                                     var div0 = createDiv('this is the parent');
+                                     div0.id('apples');
+                                     var div1 = createDiv('this is the child');
+                                     div1.parent('apples'); // use id
+                                     </code></div>
+                                     <div class='norender'><code>
+                                     var elt = document.getElementById('myParentDiv');
+                                     var div1 = createDiv('this is the child');
+                                     div1.parent(elt); // use element from page
+                                     </code></div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-touchEnded" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>touchEnded</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13744"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13744</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .touchEnded() function is called once after every time a touch is
+                                    registered. This can be used to attach element specific event listeners.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when touch is
+                                    ended over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class='norender'><code>
+                                    var cnv;
+                                    var d;
+                                    var g;
+                                    function setup() {
+                                      cnv = createCanvas(100, 100);
+                                      cnv.touchEnded(changeGray);   // attach listener for
+                                                                    // canvas click only
+                                      d = 10;
+                                      g = 100;
+                                    }
+                                    <p>function draw() {
+                                    background(g);
+                                    ellipse(width/2, height/2, d, d);
+                                    }</p>
+                                    <p>// this function fires with any touch anywhere
+                                    function touchEnded() {
+                                    d = d + 10;
+                                    }</p>
+                                    <p>// this function fires only when cnv is clicked
+                                    function changeGray() {
+                                    g = random(0, 255);
+                                    }
+                                    </code></div></p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-touchMoved" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>touchMoved</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13708"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13708</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .touchMoved() function is called once after every time a touch move is
+                                    registered. This can be used to attach element specific event listeners.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when touch is moved
+                                    over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class='norender'><code>
+                                    var cnv;
+                                    var g;
+                                    function setup() {
+                                      cnv = createCanvas(100, 100);
+                                      cnv.touchMoved(changeGray); // attach listener for
+                                                                  // canvas click only
+                                      g = 100;
+                                    }
+                                    <p>function draw() {
+                                    background(g);
+                                    }</p>
+                                    <p>// this function fires only when cnv is clicked
+                                    function changeGray() {
+                                    g = random(0, 255);
+                                    }
+                                    </code></div></p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-touchStarted" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>touchStarted</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>fxn</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l13664"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13664</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>The .touchStarted() function is called once after every time a touch is
+                                    registered. This can be used to attach element specific event listeners.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">fxn</code>
+                                    						<span class="type">Function</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>function to be fired when touch is
+                                    started over the element.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Element.html" class="crosslink">p5.Element</a></span>
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class='norender'><code>
+                                    var cnv;
+                                    var d;
+                                    var g;
+                                    function setup() {
+                                      cnv = createCanvas(100, 100);
+                                      cnv.touchStarted(changeGray); // attach listener for
+                                                                    // canvas click only
+                                      d = 10;
+                                      g = 100;
+                                    }
+                                    <p>function draw() {
+                                    background(g);
+                                    ellipse(width/2, height/2, d, d);
+                                    }</p>
+                                    <p>// this function fires with any touch anywhere
+                                    function touchStarted() {
+                                    d = d + 10;
+                                    }</p>
+                                    <p>// this function fires only when cnv is clicked
+                                    function changeGray() {
+                                    g = random(0, 255);
+                                    }
+                                    </code></div></p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div id="properties" class="page-section">
+                                <h2 class="off-left">Properties</h2>
+                        
+                                <div class="item-list">
+                                    <div id="prop-elt" class="property item">
+                                        <h3 class="name"><code>elt</code></h3>
+                                        <span class="type">Unknown</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                        <p>Provided by the <a href="../modules/DOM.html">DOM</a> module.</p>
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_examples_lib_p5.js.html#l13342"><code>__temp_examples&#x2F;lib&#x2F;p5.js:13342</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>Underlying HTML element. All normal HTML methods can be called on this.</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

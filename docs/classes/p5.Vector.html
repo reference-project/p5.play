@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>p5.Vector - p5.play</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
+            p5.play
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5", "classes/p5.Color", "classes/p5.Element", "classes/p5.Font", "classes/p5.Graphics", "classes/p5.Image", "classes/p5.play", "classes/p5.Renderer", "classes/p5.Table", "classes/p5.TableRow", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/2D Primitives", "modules/3D Primitives", "modules/Acceleration", "modules/Array Functions", "modules/Attributes", "modules/Calculation", "modules/Camera", "modules/Color", "modules/Constants", "modules/Conversion", "modules/Creating & Reading", "modules/Curves", "modules/Data", "modules/DOM", "modules/Environment", "modules/Events", "modules/Font", "modules/Image", "modules/Input", "modules/IO", "modules/Keyboard", "modules/Lights", "modules/Lights, Camera", "modules/Loading & Displaying", "modules/Material", "modules/Math", "modules/Mouse", "modules/Noise", "modules/Output", "modules/p5.play", "modules/Pixels", "modules/Random", "modules/Rendering", "modules/Setting", "modules/Shape", "modules/String Functions", "modules/Structure", "modules/Table", "modules/Time & Date", "modules/Touch", "modules/Transform", "modules/Trigonometry", "modules/Typography", "modules/Vertex"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <div id="sidebar">
+	        <div id="classes">
+	            <ul id="api-classes" class="nav nav-list">
+	                    <li><a href="../classes/Animation.html">Animation</a></li>
+	                    <li><a href="../classes/Camera.html">Camera</a></li>
+	                    <li><a href="../classes/Group.html">Group</a></li>
+	                    <li><a href="../classes/p5.html">p5</a></li>
+	                    <li><a href="../classes/p5.Color.html">p5.Color</a></li>
+	                    <li><a href="../classes/p5.Element.html">p5.Element</a></li>
+	                    <li><a href="../classes/p5.Font.html">p5.Font</a></li>
+	                    <li><a href="../classes/p5.Graphics.html">p5.Graphics</a></li>
+	                    <li><a href="../classes/p5.Image.html">p5.Image</a></li>
+	                    <li><a href="../classes/p5.play.html">p5.play</a></li>
+	                    <li><a href="../classes/p5.Renderer.html">p5.Renderer</a></li>
+	                    <li><a href="../classes/p5.Table.html">p5.Table</a></li>
+	                    <li><a href="../classes/p5.TableRow.html">p5.TableRow</a></li>
+	                    <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
+	                    <li><a href="../classes/Sprite.html">Sprite</a></li>
+	                    <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+	            </ul>
+	        </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private" checked>
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>p5.Vector</h1>
+                        </div>
+                        
+                        
+                        
+                        	<div class="well well-small">
+                                    Module: <a href="../modules/Random.html">Random</a><br>
+                                    Parent Module: <a href="../modules/Math.html">Math</a>
+                            </div>
+                        
+                        
+                        
+                        <div class="yuidoc-class-description">
+                        <p>A class to describe a two or three dimensional vector, specifically
+                        a Euclidean (also known as geometric) vector. A vector is an entity
+                        that has both magnitude and direction. The datatype, however, stores
+                        the components of the vector (x, y for 2D, and x, y, z for 3D). The magnitude
+                        and direction can be accessed via the methods mag() and heading().
+                        <br><br>
+                        In many of the p5.js examples, you will see p5.Vector used to describe a
+                        position, velocity, or acceleration. For example, if you consider a rectangle
+                        moving across the screen, at any given instant it has a position (a vector
+                        that points from the origin to its location), a velocity (the rate at which
+                        the object's position changes per time unit, expressed as a vector), and
+                        acceleration (the rate at which the object's velocity changes per time
+                        unit, expressed as a vector).
+                        <br><br>
+                        Since vectors represent groupings of values, we cannot simply use
+                        traditional addition/multiplication/etc. Instead, we'll need to do some
+                        "vector" math, which is made easy by the methods inside the p5.Vector class.</p>
+                        
+                        </div>
+                        
+                        <!-- table of contents -->
+                        
+                        <div id="class-toc" class="page-section">
+                        	<h2>Table of Contents</h2>
+                            <ul>
+                        		<li>
+                        			<strong>Methods</strong>
+                        			<ul>
+                        				<li><a href="#method-add"><span class="im">add</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">z</span>)</a></li>
+                        				<li><a href="#method-array"><span class="im">array</span>()</a></li>
+                        				<li><a href="#method-copy"><span class="im">copy</span>()</a></li>
+                        				<li><a href="#method-cross"><span class="im">cross</span>(<span class="ia">v</span>)</a></li>
+                        				<li><a href="#method-dist"><span class="im">dist</span>(<span class="ia">v</span>)</a></li>
+                        				<li><a href="#method-div"><span class="im">div</span>(<span class="ia">n</span>)</a></li>
+                        				<li><a href="#method-dot"><span class="im">dot</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">z</span>)</a></li>
+                        				<li><a href="#method-equals"><span class="im">equals</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">z</span>)</a></li>
+                        				<li><a href="#method-heading"><span class="im">heading</span>()</a></li>
+                        				<li><a href="#method-lerp"><span class="im">lerp</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">z</span><span class="ia">amt</span>)</a></li>
+                        				<li><a href="#method-limit"><span class="im">limit</span>(<span class="ia">max</span>)</a></li>
+                        				<li><a href="#method-mag"><span class="im">mag</span>()</a></li>
+                        				<li><a href="#method-magSq"><span class="im">magSq</span>()</a></li>
+                        				<li><a href="#method-mult"><span class="im">mult</span>(<span class="ia">n</span>)</a></li>
+                        				<li><a href="#method-normalize"><span class="im">normalize</span>()</a></li>
+                        				<li><a href="#method-rotate"><span class="im">rotate</span>(<span class="ia">angle</span>)</a></li>
+                        				<li><a href="#method-set"><span class="im">set</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">z</span>)</a></li>
+                        				<li><a href="#method-setMag"><span class="im">setMag</span>(<span class="ia">len</span>)</a></li>
+                        				<li><a href="#method-sub"><span class="im">sub</span>(<span class="ia">x</span><span class="ia">y</span><span class="ia">z</span>)</a></li>
+                        				<li><a href="#method-toString"><span class="im">toString</span>()</a></li>
+                        			</ul>
+                        		</li>
+                        
+                        		<li>
+                        			<strong>Properties</strong>
+                        			<ul>
+                        				<li><a href="#prop-x"><span class="ip">x</span></a></li>
+                        				<li><a href="#prop-y"><span class="ip">y</span></a></li>
+                        				<li><a href="#prop-z"><span class="ip">z</span></a></li>
+                        			</ul>
+                        		</li>
+                        
+                        
+                        		<li>
+                        			<strong>Static Methods</strong>
+                        			<ul>
+                        				<li><a href="#method-angleBetween"><span class="im">p5.Vector.angleBetween</span>(<span class="ia">v1</span><span class="ia">v2</span>)</a></li>
+                        				<li><a href="#method-fromAngle"><span class="im">p5.Vector.fromAngle</span>(<span class="ia">angle</span>)</a></li>
+                        				<li><a href="#method-random2D"><span class="im">p5.Vector.random2D</span>()</a></li>
+                        				<li><a href="#method-random3D"><span class="im">p5.Vector.random3D</span>()</a></li>
+                        			</ul>
+                        		</li>
+                        	</ul>
+                        </div>
+                        
+                        <!-- details -->
+                        
+                            <div class="constructor yuidoc-class-constructor page-section">
+                                <h2>Constructor</h2>
+                                <div class="item-list">
+                                <div id="method-p5.Vector" class="method item">
+                                	<div class="method-signature">
+                                	<span class="name"><code>p5.Vector</code></span>
+                                
+                                		<div class="args">
+                                			<span class="paren">(</span><ul class="args-list inline commas">
+                                				<li class="arg">
+                                						<code class="optional">x</code>
+                                				</li>
+                                				<li class="arg">
+                                						<code class="optional">y</code>
+                                				</li>
+                                				<li class="arg">
+                                						<code class="optional">z</code>
+                                				</li>
+                                			</ul><span class="paren">)</span>
+                                		</div>
+                                	</div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                	<div class="meta">
+                                				<p>
+                                				Defined in
+                                		<a href="../files/__temp_examples_lib_p5.js.html#l25042"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25042</code></a>
+                                		</p>
+                                
+                                
+                                
+                                	</div>
+                                
+                                
+                                		<div class="params">
+                                			<h4>Parameters:</h4>
+                                
+                                			<ul class="params-list">
+                                				<li class="param">
+                                						<code class="param-name optional">[x]</code>
+                                						<span class="type">Number</span>
+                                						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+                                
+                                					<div class="param-description"><p>x component of the vector</p>
+                                </div>
+                                
+                                				</li>
+                                				<li class="param">
+                                						<code class="param-name optional">[y]</code>
+                                						<span class="type">Number</span>
+                                						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+                                
+                                					<div class="param-description"><p>y component of the vector</p>
+                                </div>
+                                
+                                				</li>
+                                				<li class="param">
+                                						<code class="param-name optional">[z]</code>
+                                						<span class="type">Number</span>
+                                						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+                                
+                                					<div class="param-description"><p>z component of the vector</p>
+                                </div>
+                                
+                                				</li>
+                                			</ul>
+                                		</div>
+                                
+                                
+                                		<div class="example">
+                                			<h4>Example:</h4>
+                                
+                                			<div class="example-content">
+                                				<div>
+                                <code>
+                                var v1 = createVector(40, 50);
+                                var v2 = createVector(40, 50);
+                                <p>ellipse(v1.x, v1.y, 50, 50);
+                                ellipse(v2.x, v2.y, 50, 50);
+                                v1.add(v2);
+                                ellipse(v1.x, v1.y, 50, 50);
+                                </code></p>
+                                </div>
+                                			</div>
+                                		</div>
+                                </div>
+                                </div>
+                            </div>
+                        
+                            <div id="methods" class="page-section">
+                                <h2 class="off-left">Methods</h2>
+                                <div class="item-list">
+                                    <div id="method-add" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>add</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">z</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    		<span class="flag chainable">chainable</span>
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25197"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25197</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Adds x, y, and z components to a vector, adds one vector to another, or
+                                    adds two independent vectors together. The version of the method that adds
+                                    two vectors together is a static method and returns a p5.Vector, the others
+                                    acts directly on the vector. See the examples for more context.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">x</code>
+                                    						<span class="type">Number  |  <a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a>  |  Array</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the x component of the vector to be
+                                    added or a p5.Vector or an Array</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[y]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the y component of the vector to be
+                                    added</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[z]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the z component of the vector to be
+                                    added</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>the p5.Vector object.</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(1, 2, 3);
+                                    v.add(4,5,6);
+                                    // v's compnents are set to [5, 7, 9]
+                                    </code>
+                                    </div>
+                                    <div class="norender">
+                                    <code>
+                                    // Static method
+                                    var v1 = createVector(1, 2, 3);
+                                    var v2 = createVector(2, 3, 4);
+                                    <p>var v3 = p5.Vector.add(v1, v2);
+                                    // v3 has components [3, 5, 7]
+                                    </code></p>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-array" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>array</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Array</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25693"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25693</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Return a representation of this vector as a float array. This is only
+                                    for temporary use. If used in any other fashion, the contents should be
+                                    copied by using the <b>p5.Vector.copy()</b> method to copy into your own
+                                    array.</p>
+                                    </div>
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Array</span>:
+                                    					<p>an Array with the 3 values</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class = "norender"><code>
+                                    function setup() {
+                                      var v = createVector(20,30);
+                                      print(v.array()); // Prints : Array [20, 30, 0]
+                                    }
+                                    </div></code>
+                                    <div class="norender">
+                                    <code>
+                                    var v = createVector(10.0, 20.0, 30.0);
+                                    var f = v.array();
+                                    print(f[0]); // Prints "10.0"
+                                    print(f[1]); // Prints "20.0"
+                                    print(f[2]); // Prints "30.0"
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-copy" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>copy</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25174"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25174</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Gets a copy of the vector, returns a p5.Vector object.</p>
+                                    </div>
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>the copy of the p5.Vector object</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v1 = createVector(1, 2, 3);
+                                    var v2 = v.copy();
+                                    print(v1.x == v2.x && v1.y == v2.y && v1.z == v2.z);
+                                    // Prints "true"
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-cross" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>cross</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>v</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25450"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25450</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Calculates and returns a vector composed of the cross product between
+                                    two vectors. Both the static and non static methods return a new p5.Vector.
+                                    See the examples for more context.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">v</code>
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>p5.Vector to be crossed</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>p5.Vector composed of cross product</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v1 = createVector(1, 2, 3);
+                                    var v2 = createVector(1, 2, 3);
+                                    <p>v1.cross(v2); // v's components are [0, 0, 0]
+                                    </code></p>
+                                    </div>
+                                    <div class="norender">
+                                    <code>
+                                    // Static method
+                                    var v1 = createVector(1, 0, 0);
+                                    var v2 = createVector(0, 1, 0);
+                                    <p>var crossProduct = p5.Vector.cross(v1, v2);
+                                    // crossProduct has components [0, 0, 1]
+                                    </code></p>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-dist" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>dist</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>v</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Number</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25490"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25490</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Calculates the Euclidean distance between two points (considering a
+                                    point as a vector object).</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">v</code>
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the x, y, and z coordinates of a p5.Vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Number</span>:
+                                    					<p>the distance</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v1 = createVector(1, 0, 0);
+                                    var v2 = createVector(0, 1, 0);
+                                    <p>var distance = v1.dist(v2); // distance is 1.4142...
+                                    </code></p>
+                                    </div>
+                                    <div class="norender">
+                                    <code>
+                                    // Static method
+                                    var v1 = createVector(1, 0, 0);
+                                    var v2 = createVector(0, 1, 0);
+                                    <p>var distance = p5.Vector.dist(v1,v2);
+                                    // distance is 1.4142...
+                                    </code></p>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-div" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>div</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>n</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    		<span class="flag chainable">chainable</span>
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25336"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25336</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Divide the vector by a scalar. The static version of this method creates a
+                                    new p5.Vector while the non static version acts on the vector directly.
+                                    See the examples for more context.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">n</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the number to divide the vector by</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>a reference to the p5.Vector object (allow chaining)</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(6, 4, 2);
+                                    v.div(2); //v's compnents are set to [3, 2, 1]
+                                    </code>
+                                    </div>
+                                    <div class="norender">
+                                    <code>
+                                    // Static method
+                                    var v1  = createVector(6, 4, 2);
+                                    var v2 = p5.Vector.div(v, 2);
+                                    // v2 has compnents [3, 2, 1]
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-dot" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>dot</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">z</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Number</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25410"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25410</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Calculates the dot product of two vectors. The version of the method
+                                    that computes the dot product of two independent vectors is a static
+                                    method. See the examples for more context.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">x</code>
+                                    						<span class="type">Number  |  <a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>x component of the vector or a p5.Vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[y]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>y component of the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[z]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>z component of the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Number</span>:
+                                    					<p>the dot product</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v1 = createVector(1, 2, 3);
+                                    var v2 = createVector(2, 3, 4);
+                                    <p>print(v1.dot(v2)); // Prints "20"
+                                    </code></p>
+                                    </div>
+                                    <div class="norender">
+                                    <code>
+                                    //Static method
+                                    var v1 = createVector(1, 2, 3);
+                                    var v2 = createVector(3, 2, 1);
+                                    print (p5.Vector.dot(v1, v2)); // Prints "10"
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-equals" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>equals</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">z</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Boolean</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25722"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25722</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Equality check against a p5.Vector</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[x]</code>
+                                    						<span class="type">Number  |  <a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a>  |  Array</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the x component of the vector or a
+                                    p5.Vector or an Array</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[y]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the y component of the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[z]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the z component of the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Boolean</span>:
+                                    					<p>whether the vectors are equals</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class = "norender"><code>
+                                    v1 = createVector(5,10,20);
+                                    v2 = createVector(5,10,20);
+                                    v3 = createVector(13,10,19);
+                                    <p>print(v1.equals(v2.x,v2.y,v2.z)); // true
+                                    print(v1.equals(v3.x,v3.y,v3.z)); // false</p>
+                                    </div></code>
+                                    <div class="norender">
+                                    <code>
+                                    var v1 = createVector(10.0, 20.0, 30.0);
+                                    var v2 = createVector(10.0, 20.0, 30.0);
+                                    var v3 = createVector(0.0, 0.0, 0.0);
+                                    print (v1.equals(v2)) // true
+                                    print (v1.equals(v3)) // false
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-heading" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>heading</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Number</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25591"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25591</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Calculate the angle of rotation for this vector (only 2D vectors)</p>
+                                    </div>
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Number</span>:
+                                    					<p>the angle of rotation</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class = "norender"><code>
+                                    function setup() {
+                                      var v1 = createVector(30,50);
+                                      print(v1.heading()); // 1.0303768265243125
+                                    <p>var v1 = createVector(40,50);
+                                    print(v1.heading()); // 0.8960553845713439</p>
+                                    <p>var v1 = createVector(30,70);
+                                    print(v1.heading()); // 1.1659045405098132
+                                    }</p>
+                                    </div></code>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-lerp" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>lerp</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">z</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>amt</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25653"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25653</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Linear interpolate the vector to another vector</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">x</code>
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the x component or the p5.Vector to lerp to</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[y]</code>
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>y the y component</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[z]</code>
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>z the z component</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">amt</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the amount of interpolation; some value between 0.0
+                                    (old vector) and 1.0 (new vector). 0.1 is very near
+                                    the new vector. 0.5 is halfway in between.</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>the modified p5.Vector</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(1, 1, 0);
+                                    <p>v.lerp(3, 3, 0, 0.5); // v now has components [2,2,0]
+                                    </code></p>
+                                    </div>
+                                    <div class="norender">
+                                    <code>
+                                    var v1 = createVector(0, 0, 0);
+                                    var v2 = createVector(100, 100, 0);
+                                    <p>var v3 = p5.Vector.lerp(v1, v2, 0.5);
+                                    // v3 has components [50,50,0]
+                                    </code></p>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-limit" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>limit</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>max</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25543"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25543</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Limit the magnitude of this vector to the value used for the <b>max</b>
+                                    parameter.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">max</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the maximum magnitude for the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>the modified p5.Vector</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(10, 20, 2);
+                                    // v has compnents [10.0, 20.0, 2.0]
+                                    v.limit(5);
+                                    // v's compnents are set to
+                                    // [2.2271771, 4.4543543, 0.4454354]
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-mag" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mag</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Number</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25369"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25369</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Calculates the magnitude (length) of the vector and returns the result as
+                                    a float (this is simply the equation sqrt(x<em>x + y</em>y + z*z).)</p>
+                                    </div>
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Number</span>:
+                                    					<p>magnitude of the vector</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(20.0, 30.0, 40.0);
+                                    var m = v.mag(10);
+                                    print(m); // Prints "53.85164807134504"
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-magSq" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>magSq</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type">Number</span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25388"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25388</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Calculates the squared magnitude of the vector and returns the result
+                                    as a float (this is simply the equation <em>(x<em>x + y</em>y + z*z)</em>.)
+                                    Faster if the real length is not required in the
+                                    case of comparing vectors, etc.</p>
+                                    </div>
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type">Number</span>:
+                                    					<p>squared magnitude of the vector</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    // Static method
+                                    var v1 = createVector(6, 4, 2);
+                                    print(v1.magSq()); // Prints "56"
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-mult" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>mult</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>n</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    		<span class="flag chainable">chainable</span>
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25302"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25302</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Multiply the vector by a scalar. The static version of this method
+                                    creates a new p5.Vector while the non static version acts on the vector
+                                    directly. See the examples for more context.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">n</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the number to multiply with the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>a reference to the p5.Vector object (allow chaining)</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(1, 2, 3);
+                                    v.mult(2);
+                                    // v's compnents are set to [2, 4, 6]
+                                    </code>
+                                    </div>
+                                    <div class="norender">
+                                    <code>
+                                    // Static method
+                                    var v1 = createVector(1, 2, 3);
+                                    var v2 = p5.Vector.mult(v1, 2);
+                                    // v2 has compnents [2, 4, 6]
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-normalize" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>normalize</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25522"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25522</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Normalize the vector to length 1 (make it a unit vector).</p>
+                                    </div>
+                                    
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>normalized p5.Vector</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(10, 20, 2);
+                                    // v has compnents [10.0, 20.0, 2.0]
+                                    v.normalize();
+                                    // v's compnents are set to
+                                    // [0.4454354, 0.8908708, 0.089087084]
+                                    </code>
+                                    </div>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-rotate" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>rotate</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>angle</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25623"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25623</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Rotate the vector by an angle (only 2D vectors), magnitude remains the
+                                    same</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">angle</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the angle of rotation</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>the modified p5.Vector</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(10.0, 20.0);
+                                    // v has compnents [10.0, 20.0, 0.0]
+                                    v.rotate(HALF_PI);
+                                    // v's compnents are set to [-20.0, 9.999999, 0.0]
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-set" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>set</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code class="optional">x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">z</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25132"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25132</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Sets the x, y, and z component of the vector using two or three separate
+                                    variables, the data from a p5.Vector, or the values from a float array.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name optional">[x]</code>
+                                    						<span class="type">Number  |  <a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a>  |  Array</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the x component of the vector or a
+                                    p5.Vector or an Array</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[y]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the y component of the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[z]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the z component of the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    function setup() {
+                                       var v = createVector(1, 2, 3);
+                                       v.set(4,5,6); // Sets vector to [4, 5, 6]
+                                    <p>var v1 = createVector(0, 0, 0);
+                                    var arr = [1, 2, 3];
+                                    v1.set(arr); // Sets vector to [1, 2, 3]
+                                    }
+                                    </code></p>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-setMag" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>setMag</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>len</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25570"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25570</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Set the magnitude of this vector to the value used for the <b>len</b>
+                                    parameter.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">len</code>
+                                    						<span class="type">Number</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the new length for this vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>the modified p5.Vector</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v1 = createVector(10, 20, 2);
+                                    // v has compnents [10.0, 20.0, 2.0]
+                                    v1.setMag(10);
+                                    // v's compnents are set to [6.0, 8.0, 0.0]
+                                    </code>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-sub" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>sub</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>x</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">y</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code class="optional">z</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    		<span class="flag chainable">chainable</span>
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25250"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25250</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Subtracts x, y, and z components from a vector, subtracts one vector from
+                                    another, or subtracts two independent vectors. The version of the method
+                                    that subtracts two vectors is a static method and returns a p5.Vector, the
+                                    other acts directly on the vector. See the examples for more context.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">x</code>
+                                    						<span class="type">Number  |  <a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a>  |  Array</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the x component of the vector or a
+                                    p5.Vector or an Array</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[y]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the y component of the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name optional">[z]</code>
+                                    						<span class="type">Number</span>
+                                    						<span class="flag optional" title="This parameter is optional.">optional</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>the z component of the vector</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                                    					<p>p5.Vector object.</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class="norender">
+                                    <code>
+                                    var v = createVector(4, 5, 6);
+                                    v.sub(1, 1, 1);
+                                    // v's compnents are set to [3, 4, 5]
+                                    </code>
+                                    </div>
+                                    <div class="norender">
+                                    <code>
+                                    // Static method
+                                    var v1 = createVector(2, 3, 4);
+                                    var v2 = createVector(1, 2, 3);
+                                    <p>var v3 = p5.Vector.sub(v1, v2);
+                                    // v3 has compnents [1, 1, 1]
+                                    </code></p>
+                                    </div>
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-toString" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>toString</code></span>
+                                    
+                                    		<span class="paren">()</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/__temp_examples_lib_p5.js.html#l25114"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25114</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    	</div>
+                                    
+                                    	<div class="description"><p>Returns a string representation of a vector v by calling String(v)
+                                    or v.toString(). This method is useful for logging vectors in the
+                                    console.</p>
+                                    </div>
+                                    
+                                    
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<div class = "norender"><code>
+                                    function setup() {
+                                      var v = createVector(20,30);
+                                      print(String(v)); // prints "p5.Vector Object : [20, 30, 0]"
+                                    }
+                                    </div></code>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div id="properties" class="page-section">
+                                <h2 class="off-left">Properties</h2>
+                        
+                                <div class="item-list">
+                                    <div id="prop-x" class="property item">
+                                        <h3 class="name"><code>x</code></h3>
+                                        <span class="type">Number</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                        <p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_examples_lib_p5.js.html#l25094"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25094</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>The x component of the vector</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-y" class="property item">
+                                        <h3 class="name"><code>y</code></h3>
+                                        <span class="type">Number</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                        <p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_examples_lib_p5.js.html#l25100"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25100</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>The y component of the vector</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div id="prop-z" class="property item">
+                                        <h3 class="name"><code>z</code></h3>
+                                        <span class="type">Number</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="meta">
+                                                        <p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                                                    <p>
+                                                    Defined in
+                                            <a href="../files/__temp_examples_lib_p5.js.html#l25106"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25106</code></a>
+                                            </p>
+                                    
+                                    
+                                        </div>
+                                    
+                                        <div class="description">
+                                            <p>The z component of the vector</p>
+                                    
+                                        </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        
+                            <div id="static-methods" class="page-section">
+                                <h2 class="off-left">Static Methods</h2>
+                                <div class="item-list">
+                            	        <div id="method-angleBetween" class="method item">
+                            	        	<div class="method-signature">
+                            	        	<span class="name"><code>p5.Vector.angleBetween</code></span>
+                            	        
+                            	        		<div class="args">
+                            	        			<span class="paren">(</span><ul class="args-list inline commas">
+                            	        				<li class="arg">
+                            	        						<code>v1</code>
+                            	        				</li>
+                            	        				<li class="arg">
+                            	        						<code>v2</code>
+                            	        				</li>
+                            	        			</ul><span class="paren">)</span>
+                            	        		</div>
+                            	        		<span class="returns-inline">
+                            	        			<span class="type">Number</span>
+                            	        		</span>
+                            	        	</div>
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        	<div class="meta">
+                            	        					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                            	        				<p>
+                            	        				Defined in
+                            	        		<a href="../files/__temp_examples_lib_p5.js.html#l26039"><code>__temp_examples&#x2F;lib&#x2F;p5.js:26039</code></a>
+                            	        		</p>
+                            	        
+                            	        
+                            	        
+                            	        	</div>
+                            	        
+                            	        	<div class="description"><p>Calculates and returns the angle (in radians) between two vectors.</p>
+                            	        </div>
+                            	        
+                            	        		<div class="params">
+                            	        			<h4>Parameters:</h4>
+                            	        
+                            	        			<ul class="params-list">
+                            	        				<li class="param">
+                            	        						<code class="param-name">v1</code>
+                            	        						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                            	        
+                            	        
+                            	        					<div class="param-description"><p>the x, y, and z components of a p5.Vector</p>
+                            	        </div>
+                            	        
+                            	        				</li>
+                            	        				<li class="param">
+                            	        						<code class="param-name">v2</code>
+                            	        						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                            	        
+                            	        
+                            	        					<div class="param-description"><p>the x, y, and z components of a p5.Vector</p>
+                            	        </div>
+                            	        
+                            	        				</li>
+                            	        			</ul>
+                            	        		</div>
+                            	        
+                            	        		<div class="returns">
+                            	        			<h4>Returns:</h4>
+                            	        
+                            	        			<div class="returns-description">
+                            	        						<span class="type">Number</span>:
+                            	        					<p>the angle between (in radians)</p>
+                            	        
+                            	        			</div>
+                            	        		</div>
+                            	        
+                            	        		<div class="example">
+                            	        			<h4>Example:</h4>
+                            	        
+                            	        			<div class="example-content">
+                            	        				<div class="norender">
+                            	        <code>
+                            	        var v1 = createVector(1, 0, 0);
+                            	        var v2 = createVector(0, 1, 0);
+                            	        <p>var angle = p5.Vector.angleBetween(v1, v2);
+                            	        // angle is PI/2
+                            	        </code></p>
+                            	        </div>
+                            	        			</div>
+                            	        		</div>
+                            	        </div>
+                            	        <div id="method-fromAngle" class="method item">
+                            	        	<div class="method-signature">
+                            	        	<span class="name"><code>p5.Vector.fromAngle</code></span>
+                            	        
+                            	        		<div class="args">
+                            	        			<span class="paren">(</span><ul class="args-list inline commas">
+                            	        				<li class="arg">
+                            	        						<code>angle</code>
+                            	        				</li>
+                            	        			</ul><span class="paren">)</span>
+                            	        		</div>
+                            	        		<span class="returns-inline">
+                            	        			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                            	        		</span>
+                            	        	</div>
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        	<div class="meta">
+                            	        					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                            	        				<p>
+                            	        				Defined in
+                            	        		<a href="../files/__temp_examples_lib_p5.js.html#l25772"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25772</code></a>
+                            	        		</p>
+                            	        
+                            	        
+                            	        
+                            	        	</div>
+                            	        
+                            	        	<div class="description"><p>Make a new 2D unit vector from an angle</p>
+                            	        </div>
+                            	        
+                            	        		<div class="params">
+                            	        			<h4>Parameters:</h4>
+                            	        
+                            	        			<ul class="params-list">
+                            	        				<li class="param">
+                            	        						<code class="param-name">angle</code>
+                            	        						<span class="type">Number</span>
+                            	        
+                            	        
+                            	        					<div class="param-description"><p>the desired angle</p>
+                            	        </div>
+                            	        
+                            	        				</li>
+                            	        			</ul>
+                            	        		</div>
+                            	        
+                            	        		<div class="returns">
+                            	        			<h4>Returns:</h4>
+                            	        
+                            	        			<div class="returns-description">
+                            	        						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                            	        					<p>the new p5.Vector object</p>
+                            	        
+                            	        			</div>
+                            	        		</div>
+                            	        
+                            	        		<div class="example">
+                            	        			<h4>Example:</h4>
+                            	        
+                            	        			<div class="example-content">
+                            	        				<div>
+                            	        <code>
+                            	        function draw() {
+                            	          background (200);
+                            	        <p>// Create a variable, proportional to the mouseX,
+                            	        // varying from 0-360, to represent an angle in degrees.
+                            	        angleMode(DEGREES);
+                            	        var myDegrees = map(mouseX, 0,width, 0,360);</p>
+                            	        <p>// Display that variable in an onscreen text.
+                            	        // (Note the nfc() function to truncate additional decimal places,
+                            	        // and the "\xB0" character for the degree symbol.)
+                            	        var readout = "angle = " + nfc(myDegrees,1,1) + "\xB0"
+                            	        noStroke();
+                            	        fill (0);
+                            	        text (readout, 5, 15);</p>
+                            	        <p>// Create a p5.Vector using the fromAngle function,
+                            	        // and extract its x and y components.
+                            	        var v = p5.Vector.fromAngle(radians(myDegrees));
+                            	        var vx = v.x;
+                            	        var vy = v.y;</p>
+                            	        <p>push();
+                            	        translate (width/2, height/2);
+                            	        noFill();
+                            	        stroke (150);
+                            	        line (0,0, 30,0);
+                            	        stroke (0);
+                            	        line (0,0, 30<em>vx, 30</em>vy);
+                            	        pop()
+                            	        }
+                            	        </code></p>
+                            	        </div>
+                            	        			</div>
+                            	        		</div>
+                            	        </div>
+                            	        <div id="method-random2D" class="method item">
+                            	        	<div class="method-signature">
+                            	        	<span class="name"><code>p5.Vector.random2D</code></span>
+                            	        
+                            	        		<span class="paren">()</span>
+                            	        		<span class="returns-inline">
+                            	        			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                            	        		</span>
+                            	        	</div>
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        	<div class="meta">
+                            	        					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                            	        				<p>
+                            	        				Defined in
+                            	        		<a href="../files/__temp_examples_lib_p5.js.html#l25829"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25829</code></a>
+                            	        		</p>
+                            	        
+                            	        
+                            	        
+                            	        	</div>
+                            	        
+                            	        	<div class="description"><p>Make a new 2D unit vector from a random angle</p>
+                            	        </div>
+                            	        
+                            	        
+                            	        		<div class="returns">
+                            	        			<h4>Returns:</h4>
+                            	        
+                            	        			<div class="returns-description">
+                            	        						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                            	        					<p>the new p5.Vector object</p>
+                            	        
+                            	        			</div>
+                            	        		</div>
+                            	        
+                            	        		<div class="example">
+                            	        			<h4>Example:</h4>
+                            	        
+                            	        			<div class="example-content">
+                            	        				<div class="norender">
+                            	        <code>
+                            	        var v = p5.Vector.random2D();
+                            	        // May make v's attributes something like:
+                            	        // [0.61554617, -0.51195765, 0.0] or
+                            	        // [-0.4695841, -0.14366731, 0.0] or
+                            	        // [0.6091097, -0.22805278, 0.0]
+                            	        </code>
+                            	        </div>
+                            	        			</div>
+                            	        		</div>
+                            	        </div>
+                            	        <div id="method-random3D" class="method item">
+                            	        	<div class="method-signature">
+                            	        	<span class="name"><code>p5.Vector.random3D</code></span>
+                            	        
+                            	        		<span class="paren">()</span>
+                            	        		<span class="returns-inline">
+                            	        			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+                            	        		</span>
+                            	        	</div>
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        
+                            	        	<div class="meta">
+                            	        					<p>Provided by the <a href="../modules/Math.html">Math</a> module.</p>
+                            	        				<p>
+                            	        				Defined in
+                            	        		<a href="../files/__temp_examples_lib_p5.js.html#l25862"><code>__temp_examples&#x2F;lib&#x2F;p5.js:25862</code></a>
+                            	        		</p>
+                            	        
+                            	        
+                            	        
+                            	        	</div>
+                            	        
+                            	        	<div class="description"><p>Make a new random 3D unit vector.</p>
+                            	        </div>
+                            	        
+                            	        
+                            	        		<div class="returns">
+                            	        			<h4>Returns:</h4>
+                            	        
+                            	        			<div class="returns-description">
+                            	        						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>:
+                            	        					<p>the new p5.Vector object</p>
+                            	        
+                            	        			</div>
+                            	        		</div>
+                            	        
+                            	        		<div class="example">
+                            	        			<h4>Example:</h4>
+                            	        
+                            	        			<div class="example-content">
+                            	        				<div class="norender">
+                            	        <code>
+                            	        var v = p5.Vector.random3D();
+                            	        // May make v's attributes something like:
+                            	        // [0.61554617, -0.51195765, 0.599168] or
+                            	        // [-0.4695841, -0.14366731, -0.8711202] or
+                            	        // [0.6091097, -0.22805278, -0.7595902]
+                            	        </code>
+                            	        </div>
+                            	        			</div>
+                            	        		</div>
+                            	        </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
