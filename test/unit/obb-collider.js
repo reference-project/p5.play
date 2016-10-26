@@ -12,11 +12,11 @@ describe('OBB', function() {
 
   it('stores properties', function() {
     var a = new pInst.OBB(1, 2, new p5.Vector(3,4), 5);
-    expect(a._width).to.equal(1);
-    expect(a._height).to.equal(2);
-    expect(a._center.x).to.equal(3);
-    expect(a._center.y).to.equal(4);
-    expect(a._rotation).to.equal(5);
+    expect(a.width).to.equal(1);
+    expect(a.height).to.equal(2);
+    expect(a.center.x).to.equal(3);
+    expect(a.center.y).to.equal(4);
+    expect(a.rotation).to.equal(5);
   });
 
   describe('axis-aligned boxes', function() {
@@ -35,7 +35,7 @@ describe('OBB', function() {
       ];
 
       testPositionsForB.forEach(function (position) {
-        b._center = position;
+        b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
         expect(displacement.y).to.equal(0);
@@ -43,28 +43,28 @@ describe('OBB', function() {
     });
 
     it('detects overlap when b to the right', function() {
-      b._center = new p5.Vector(9, 0);
+      b.center = new p5.Vector(9, 0);
       var displacement = a.collide(b);
       expect(displacement.x).to.equal(-1);
       expect(displacement.y).to.equal(0);
     });
 
     it('detects overlap when b to the left', function() {
-      b._center = new p5.Vector(-9, 0);
+      b.center = new p5.Vector(-9, 0);
       var displacement = a.collide(b);
       expect(displacement.x).to.equal(1);
       expect(displacement.y).to.equal(0);
     });
 
     it('detects overlap when b is above', function() {
-      b._center = new p5.Vector(0, -9);
+      b.center = new p5.Vector(0, -9);
       var displacement = a.collide(b);
       expect(displacement.x).to.be.closeTo(0, MARGIN_OF_ERROR);
       expect(displacement.y).to.be.closeTo(1, MARGIN_OF_ERROR);
     });
 
     it('detects overlap when b is below', function() {
-      b._center = new p5.Vector(0, 9);
+      b.center = new p5.Vector(0, 9);
       var displacement = a.collide(b);
       expect(displacement.x).to.be.closeTo(0, MARGIN_OF_ERROR);
       expect(displacement.y).to.be.closeTo(-1, MARGIN_OF_ERROR);
@@ -72,7 +72,7 @@ describe('OBB', function() {
 
     it('picks smallest overlap when overlap occurs on both axes', function () {
       // Here the y-axis overlap is smaller, so that should be our exit vector
-      b._center = new p5.Vector(8, 9);
+      b.center = new p5.Vector(8, 9);
       var displacement = a.collide(b);
       expect(displacement.x).to.be.closeTo(0, MARGIN_OF_ERROR);
       expect(displacement.y).to.be.closeTo(-1, MARGIN_OF_ERROR);
@@ -92,7 +92,7 @@ describe('OBB', function() {
       ];
 
       testPositionsForB.forEach(function (position) {
-        b._center = position;
+        b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
         expect(displacement.y).to.equal(0);
@@ -117,7 +117,7 @@ describe('OBB', function() {
       ];
 
       testPositionsForB.forEach(function (position) {
-        b._center = position;
+        b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
         expect(displacement.y).to.equal(0);
@@ -126,7 +126,7 @@ describe('OBB', function() {
 
     it('detects overlap when b up and to the right', function() {
       var axisSeparation = 9 / Math.SQRT2;
-      b._center = new p5.Vector(axisSeparation, -axisSeparation);
+      b.center = new p5.Vector(axisSeparation, -axisSeparation);
       var displacement = a.collide(b);
       expect(displacement.x).to.be.closeTo(-1 / Math.SQRT2, MARGIN_OF_ERROR);
       expect(displacement.y).to.be.closeTo(1 / Math.SQRT2, MARGIN_OF_ERROR);
@@ -134,7 +134,7 @@ describe('OBB', function() {
 
     it('detects overlap when b up and to the left', function() {
       var axisSeparation = 9 / Math.SQRT2;
-      b._center = new p5.Vector(-axisSeparation, -axisSeparation);
+      b.center = new p5.Vector(-axisSeparation, -axisSeparation);
       var displacement = a.collide(b);
       expect(displacement.x).to.be.closeTo(1 / Math.SQRT2, MARGIN_OF_ERROR);
       expect(displacement.y).to.be.closeTo(1 / Math.SQRT2, MARGIN_OF_ERROR);
@@ -142,7 +142,7 @@ describe('OBB', function() {
 
     it('detects overlap when b down and to the right', function() {
       var axisSeparation = 9 / Math.SQRT2;
-      b._center = new p5.Vector(axisSeparation, axisSeparation);
+      b.center = new p5.Vector(axisSeparation, axisSeparation);
       var displacement = a.collide(b);
       expect(displacement.x).to.be.closeTo(-1 / Math.SQRT2, MARGIN_OF_ERROR);
       expect(displacement.y).to.be.closeTo(-1 / Math.SQRT2, MARGIN_OF_ERROR);
@@ -150,7 +150,7 @@ describe('OBB', function() {
 
     it('detects overlap when b down and to the left', function() {
       var axisSeparation = 9 / Math.SQRT2;
-      b._center = new p5.Vector(-axisSeparation, axisSeparation);
+      b.center = new p5.Vector(-axisSeparation, axisSeparation);
       var displacement = a.collide(b);
       expect(displacement.x).to.be.closeTo(1 / Math.SQRT2, MARGIN_OF_ERROR);
       expect(displacement.y).to.be.closeTo(-1 / Math.SQRT2, MARGIN_OF_ERROR);
@@ -159,7 +159,7 @@ describe('OBB', function() {
     it('picks smallest overlap', function() {
       // Here b is down a little and to the right quite a bit.  Expect to
       // displace diagonally up-left.
-      b._center = new p5.Vector(1, 3);
+      b.center = new p5.Vector(1, 3);
       var displacement = a.collide(b);
       expect(displacement.x).to.be.closeTo(-5.0710678, MARGIN_OF_ERROR);
       expect(displacement.y).to.be.closeTo(-5.0710678, MARGIN_OF_ERROR);
@@ -190,7 +190,7 @@ describe('OBB', function() {
       ];
 
       testPositionsForB.forEach(function (position) {
-        b._center = position;
+        b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
         expect(displacement.y).to.equal(0);
@@ -222,7 +222,7 @@ describe('OBB', function() {
       ];
 
       testPositionsForB.forEach(function (position) {
-        b._center = position;
+        b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
         expect(displacement.y).to.equal(0);
