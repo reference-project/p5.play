@@ -175,18 +175,18 @@ describe('OBB', function() {
 
     it('detects no collision when separated', function() {
       var testPositionsForB = [
-        new p5.Vector(11.84, 0),
-        new p5.Vector(10, 7.89),
-        new p5.Vector(7.89, 10),
-        new p5.Vector(0, 11.84),
-        new p5.Vector(-7.89, 10),
-        new p5.Vector(-10, 7.89),
-        new p5.Vector(-11.84, 0),
-        new p5.Vector(-10, -7.89),
-        new p5.Vector(-7.89, -10),
-        new p5.Vector(0, -11.89),
-        new p5.Vector(7.89, -10),
-        new p5.Vector(10, -7.89),
+        new p5.Vector(11.84, 0),   // E
+        new p5.Vector(10, 7.89),   // ESE
+        new p5.Vector(7.89, 10),   // SSE
+        new p5.Vector(0, 11.84),   // S
+        new p5.Vector(-7.89, 10),  // SSW
+        new p5.Vector(-10, 7.89),  // WSW
+        new p5.Vector(-11.84, 0),  // W
+        new p5.Vector(-10, -7.89), // WNW
+        new p5.Vector(-7.89, -10), // NNW
+        new p5.Vector(0, -11.89),  // N
+        new p5.Vector(7.89, -10),  // NNE
+        new p5.Vector(10, -7.89),  // ENE
       ];
 
       testPositionsForB.forEach(function (position) {
@@ -202,23 +202,19 @@ describe('OBB', function() {
     var a, b;
     beforeEach(function () {
       a = new pInst.OBB(10, 10, new p5.Vector(0,0), 0);
-      b = new pInst.OBB(10, 10, new p5.Vector(0,0), Math.PI / 3);
+      b = new pInst.OBB(10, 10, new p5.Vector(0,0), Math.PI / 4);
     });
 
     it('detects no collision when separated', function() {
       var testPositionsForB = [
-        new p5.Vector(11.84, 0),
-        new p5.Vector(10, 7.89),
-        new p5.Vector(7.89, 10),
-        new p5.Vector(0, 11.84),
-        new p5.Vector(-7.89, 10),
-        new p5.Vector(-10, 7.89),
-        new p5.Vector(-11.84, 0),
-        new p5.Vector(-10, -7.89),
-        new p5.Vector(-7.89, -10),
-        new p5.Vector(0, -11.89),
-        new p5.Vector(7.89, -10),
-        new p5.Vector(10, -7.89),
+        new p5.Vector(12.08, 0),     // right
+        new p5.Vector(8.54, 8.54),   // down-right
+        new p5.Vector(0, 12.08),     // down
+        new p5.Vector(-8.54, 8.54),  // down-left
+        new p5.Vector(-12.08, 0),    // left
+        new p5.Vector(-8.54, -8.54), // up-left
+        new p5.Vector(0, -12.08),    // up
+        new p5.Vector(8.54, -8.54)   // up-right
       ];
 
       testPositionsForB.forEach(function (position) {
@@ -227,6 +223,62 @@ describe('OBB', function() {
         expect(displacement.x).to.equal(0);
         expect(displacement.y).to.equal(0);
       });
+    });
+
+    it('smallest displacement aligned with a', function() {
+      var displacement;
+
+      // b directly to the right
+      b.center = new p5.Vector(10, 0);
+      displacement = a.collide(b);
+      expect(displacement.x).to.be.closeTo(-2.0710678, MARGIN_OF_ERROR);
+      expect(displacement.y).to.be.closeTo(0, MARGIN_OF_ERROR);
+
+      // b to the right and up quite a bit
+      b.center = new p5.Vector(10, -4);
+      displacement = a.collide(b);
+      expect(displacement.x).to.be.closeTo(-2.0710678, MARGIN_OF_ERROR);
+      expect(displacement.y).to.be.closeTo(0, MARGIN_OF_ERROR);
+
+      // b directly up
+      b.center = new p5.Vector(0, -10);
+      displacement = a.collide(b);
+      expect(displacement.x).to.be.closeTo(0, MARGIN_OF_ERROR);
+      expect(displacement.y).to.be.closeTo(2.0710678, MARGIN_OF_ERROR);
+
+      // b up and to the right quite a bit
+      b.center = new p5.Vector(4, -10);
+      displacement = a.collide(b);
+      expect(displacement.x).to.be.closeTo(0, MARGIN_OF_ERROR);
+      expect(displacement.y).to.be.closeTo(2.0710678, MARGIN_OF_ERROR);
+    });
+
+    it('smallest displacement aligned with b', function() {
+      var displacement;
+
+      // b up-right
+      b.center = new p5.Vector(8, -8);
+      displacement = a.collide(b);
+      expect(displacement.x).to.be.closeTo(-0.535533, MARGIN_OF_ERROR);
+      expect(displacement.y).to.be.closeTo(0.535533, MARGIN_OF_ERROR);
+
+      // b down-right
+      b.center = new p5.Vector(8, 8);
+      displacement = a.collide(b);
+      expect(displacement.x).to.be.closeTo(-0.535533, MARGIN_OF_ERROR);
+      expect(displacement.y).to.be.closeTo(-0.535533, MARGIN_OF_ERROR);
+
+      // b down-left
+      b.center = new p5.Vector(-8, 8);
+      displacement = a.collide(b);
+      expect(displacement.x).to.be.closeTo(0.535533, MARGIN_OF_ERROR);
+      expect(displacement.y).to.be.closeTo(-0.535533, MARGIN_OF_ERROR);
+
+      // b up-left
+      b.center = new p5.Vector(-8, -8);
+      displacement = a.collide(b);
+      expect(displacement.x).to.be.closeTo(0.535533, MARGIN_OF_ERROR);
+      expect(displacement.y).to.be.closeTo(0.535533, MARGIN_OF_ERROR);
     });
   });
 });
