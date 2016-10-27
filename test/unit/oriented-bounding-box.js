@@ -11,7 +11,7 @@ describe('OrientedBoundingBox', function() {
   });
 
   it('stores properties', function() {
-    var a = new pInst.OrientedBoundingBox(1, 2, new p5.Vector(3,4), 5);
+    var a = new pInst.OrientedBoundingBox(1, 2, new p5.Vector(3, 4), 5);
     expect(a.width).to.equal(1);
     expect(a.height).to.equal(2);
     expect(a.center.x).to.equal(3);
@@ -21,9 +21,9 @@ describe('OrientedBoundingBox', function() {
 
   describe('axis-aligned boxes', function() {
     var a, b;
-    beforeEach(function () {
-      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), 0);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), 0);
+    beforeEach(function() {
+      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
+      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
     });
 
     it('detects no collision when separated', function() {
@@ -34,7 +34,7 @@ describe('OrientedBoundingBox', function() {
         new p5.Vector(-10, 0)
       ];
 
-      testPositionsForB.forEach(function (position) {
+      testPositionsForB.forEach(function(position) {
         b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
@@ -70,7 +70,7 @@ describe('OrientedBoundingBox', function() {
       expect(displacement.y).to.be.closeTo(-1, MARGIN_OF_ERROR);
     });
 
-    it('picks smallest overlap when overlap occurs on both axes', function () {
+    it('picks smallest overlap when overlap occurs on both axes', function() {
       // Here the y-axis overlap is smaller, so that should be our exit vector
       b.center = new p5.Vector(8, 9);
       var displacement = a.collide(b);
@@ -81,9 +81,9 @@ describe('OrientedBoundingBox', function() {
 
   describe('one long box rotated 90deg', function() {
     var a, b;
-    beforeEach(function () {
-      a = new pInst.OrientedBoundingBox(10, 4, new p5.Vector(0,0), Math.PI / 2);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), 0);
+    beforeEach(function() {
+      a = new pInst.OrientedBoundingBox(10, 4, new p5.Vector(0, 0), Math.PI / 2);
+      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
     });
 
     it('detects no collision when separated', function() {
@@ -91,7 +91,7 @@ describe('OrientedBoundingBox', function() {
         new p5.Vector(7 + MARGIN_OF_ERROR, 0)
       ];
 
-      testPositionsForB.forEach(function (position) {
+      testPositionsForB.forEach(function(position) {
         b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
@@ -100,11 +100,11 @@ describe('OrientedBoundingBox', function() {
     });
   });
 
-  describe('Two 45deg rotated boxes', function () {
+  describe('Two 45deg rotated boxes', function() {
     var a, b;
-    beforeEach(function () {
-      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), Math.PI / 4);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), Math.PI / 4);
+    beforeEach(function() {
+      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
+      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
     });
 
     it('detects no collision when separated', function() {
@@ -116,7 +116,7 @@ describe('OrientedBoundingBox', function() {
         new p5.Vector(-axisSeparation, axisSeparation)
       ];
 
-      testPositionsForB.forEach(function (position) {
+      testPositionsForB.forEach(function(position) {
         b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
@@ -166,11 +166,11 @@ describe('OrientedBoundingBox', function() {
     });
   });
 
-  describe('0deg box vs 30deg box', function () {
+  describe('0deg box vs 30deg box', function() {
     var a, b;
-    beforeEach(function () {
-      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), 0);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), Math.PI / 3);
+    beforeEach(function() {
+      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
+      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 3);
     });
 
     it('detects no collision when separated', function() {
@@ -189,7 +189,7 @@ describe('OrientedBoundingBox', function() {
         new p5.Vector(10, -7.89),  // ENE
       ];
 
-      testPositionsForB.forEach(function (position) {
+      testPositionsForB.forEach(function(position) {
         b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
@@ -198,11 +198,11 @@ describe('OrientedBoundingBox', function() {
     });
   });
 
-  describe('0deg box vs 45deg box', function () {
+  describe('0deg box vs 45deg box', function() {
     var a, b;
-    beforeEach(function () {
-      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), 0);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0,0), Math.PI / 4);
+    beforeEach(function() {
+      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
+      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
     });
 
     it('detects no collision when separated', function() {
@@ -217,7 +217,7 @@ describe('OrientedBoundingBox', function() {
         new p5.Vector(8.54, -8.54)   // up-right
       ];
 
-      testPositionsForB.forEach(function (position) {
+      testPositionsForB.forEach(function(position) {
         b.center = position;
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
