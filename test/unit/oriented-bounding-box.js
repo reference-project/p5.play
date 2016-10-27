@@ -11,7 +11,7 @@ describe('OrientedBoundingBox', function() {
   });
 
   it('stores properties', function() {
-    var a = new pInst.OrientedBoundingBox(1, 2, new p5.Vector(3, 4), 5);
+    var a = new p5.OrientedBoundingBox(1, 2, new p5.Vector(3, 4), 5);
     expect(a.width).to.equal(1);
     expect(a.height).to.equal(2);
     expect(a.center.x).to.equal(3);
@@ -22,8 +22,8 @@ describe('OrientedBoundingBox', function() {
   describe('axis-aligned boxes', function() {
     var a, b;
     beforeEach(function() {
-      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
+      a = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
+      b = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
     });
 
     it('detects no collision when separated', function() {
@@ -82,8 +82,8 @@ describe('OrientedBoundingBox', function() {
   describe('one long box rotated 90deg', function() {
     var a, b;
     beforeEach(function() {
-      a = new pInst.OrientedBoundingBox(10, 4, new p5.Vector(0, 0), Math.PI / 2);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
+      a = new p5.OrientedBoundingBox(10, 4, new p5.Vector(0, 0), Math.PI / 2);
+      b = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
     });
 
     it('detects no collision when separated', function() {
@@ -103,8 +103,8 @@ describe('OrientedBoundingBox', function() {
   describe('Two 45deg rotated boxes', function() {
     var a, b;
     beforeEach(function() {
-      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
+      a = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
+      b = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
     });
 
     it('detects no collision when separated', function() {
@@ -169,8 +169,8 @@ describe('OrientedBoundingBox', function() {
   describe('0deg box vs 30deg box', function() {
     var a, b;
     beforeEach(function() {
-      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 3);
+      a = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
+      b = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 3);
     });
 
     it('detects no collision when separated', function() {
@@ -201,8 +201,8 @@ describe('OrientedBoundingBox', function() {
   describe('0deg box vs 45deg box', function() {
     var a, b;
     beforeEach(function() {
-      a = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
-      b = new pInst.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
+      a = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), 0);
+      b = new p5.OrientedBoundingBox(10, 10, new p5.Vector(0, 0), Math.PI / 4);
     });
 
     it('detects no collision when separated', function() {
