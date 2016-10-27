@@ -1,14 +1,5 @@
 describe('OrientedBoundingBox', function() {
   var MARGIN_OF_ERROR = 0.000001;
-  var pInst;
-
-  beforeEach(function() {
-    pInst = new p5(function() {});
-  });
-
-  afterEach(function() {
-    pInst.remove();
-  });
 
   it('stores properties', function() {
     var a = new p5.OrientedBoundingBox(1, 2, new p5.Vector(3, 4), 5);
