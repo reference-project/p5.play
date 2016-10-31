@@ -5,8 +5,7 @@ describe('Transform2D', function() {
     var t = new p5.Transform2D();
     expect(t.equals([
       1, 0, 0,
-      0, 1, 0,
-      0, 0, 1
+      0, 1, 0
     ])).to.be.true;
   });
 
@@ -15,8 +14,7 @@ describe('Transform2D', function() {
       var t1 = new p5.Transform2D();
       var t2 = new p5.Transform2D([
         1, 0, 0,
-        0, 1, 0,
-        0, 0, 1
+        0, 1, 0
       ]);
       expect(t1.equals(t2)).to.be.true;
     });
@@ -24,13 +22,11 @@ describe('Transform2D', function() {
     it('detects equality with arrays', function() {
       var t1 = new p5.Transform2D([
         2, 1, 0,
-        1, 2, 0,
-        0, 0, 1
+        1, 2, 0
       ]);
       expect(t1.equals([
         2, 1, 0,
-        1, 2, 0,
-        0, 0, 1
+        1, 2, 0
       ])).to.be.true;
     });
   });
@@ -39,15 +35,13 @@ describe('Transform2D', function() {
     it('multiplies correctly', function() {
       var t1 = new p5.Transform2D([
         1, 2, 3,
-        4, 5, 6,
-        7, 8, 9
+        4, 5, 6
       ]);
 
       var result = t1.mult(t1);
       expect(result.equals([
-        30, 36, 42,
-        66, 81, 96,
-        102, 126, 150
+        9, 12, 18,
+        24, 33, 48
       ])).to.be.true;
     });
   });
