@@ -4,7 +4,7 @@
  *  changes to position/velocity.
  */
 
-describe('Groups and displace()', function() {
+describe.skip('Groups and displace()', function() {
   var SIZE = 10;
   var pInst;
   var spriteA, spriteB, spriteC, spriteD;

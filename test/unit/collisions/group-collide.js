@@ -4,7 +4,7 @@
  *  changes to position/velocity.
  */
 
-describe('Groups and collide()', function() {
+describe.skip('Groups and collide()', function() {
   var SIZE = 10;
   var pInst;
   var spriteA, spriteB, spriteC, spriteD;

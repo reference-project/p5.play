@@ -3,12 +3,12 @@ describe('AxisAlignedBoundingBox', function() {
 
   var a, b;
   beforeEach(function() {
-    a = new p5.AxisAlignedBoundingBox(10, 10, new p5.Vector(0, 0));
-    b = new p5.AxisAlignedBoundingBox(10, 10, new p5.Vector(0, 0));
+    a = new p5.AxisAlignedBoundingBox(new p5.Vector(0, 0), 10, 10);
+    b = new p5.AxisAlignedBoundingBox(new p5.Vector(0, 0), 10, 10);
   });
 
   it('stores properties', function() {
-    var a = new p5.AxisAlignedBoundingBox(1, 2, new p5.Vector(3, 4));
+    var a = new p5.AxisAlignedBoundingBox(new p5.Vector(3, 4), 1, 2);
     expect(a.width).to.equal(1);
     expect(a.height).to.equal(2);
     expect(a.center.x).to.equal(3);

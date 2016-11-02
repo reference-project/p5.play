@@ -3,7 +3,7 @@
  *  See sprite-overlap.js for Sprite.overlap(Sprite) tests.
  */
 
-describe('Groups and overlap()', function() {
+describe.skip('Groups and overlap()', function() {
   var SIZE = 10;
   var pInst;
   var spriteA, spriteB, spriteC, spriteD;

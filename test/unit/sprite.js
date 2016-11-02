@@ -1,4 +1,5 @@
 describe('Sprite', function() {
+  var MARGIN_OF_ERROR = 0.0000001;
   var pInst;
 
   beforeEach(function() {
@@ -128,7 +129,7 @@ describe('Sprite', function() {
     });
   });
 
-  describe('mouse events', function() {
+  describe.skip('mouse events', function() {
     var sprite;
 
     beforeEach(function() {
@@ -303,112 +304,270 @@ describe('Sprite', function() {
       expect(sprite.collider).to.be.undefined;
     });
 
-    it('throws if first argument is not "circle" or "rectangle"', function() {
+    it('throws if first argument is not a valid type', function() {
+      // Also throws if undefined
+      expect(function() {
+        sprite.setCollider('notAType');
+      }).to.throw(TypeError, 'setCollider expects the first argument to be one of "point", "circle", "rectangle", "aabb" or "obb"');
+
       // Also throws if undefined
       expect(function() {
         sprite.setCollider();
-      }).to.throw(TypeError, 'setCollider expects the first argument to be either "circle" or "rectangle"');
+      }).to.throw(TypeError, 'setCollider expects the first argument to be one of "point", "circle", "rectangle", "aabb" or "obb"');
 
-      // Note, it's case-sensitive
+      // Note that it's not case-sensitive
       expect(function() {
         sprite.setCollider('CIRCLE');
-      }).to.throw(TypeError, 'setCollider expects the first argument to be either "circle" or "rectangle"');
+      }).not.to.throw();
     });
 
-    it('can construct a circle collider with default radius and offset', function() {
-      sprite.setCollider('circle');
-      expect(sprite.collider).to.be.an.instanceOf(pInst.CircleCollider);
-      expect(sprite.collider.center).to.eq(sprite.position);
-      // Radius should be half of sprite's larger dimension.
-      expect(sprite.collider.radius).to.eq(sprite.height / 2);
-      // Offset should be zero
-      expect(sprite.collider.offset).to.be.an.instanceOf(p5.Vector);
-      expect(sprite.collider.offset.x).to.eq(0);
-      expect(sprite.collider.offset.y).to.eq(0);
+    describe('"point"', function() {
+      it('can construct a collider with default offset', function() {
+        sprite.setCollider('point');
+        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider.center.equals(sprite.position)).to.be.true;
+      });
+
+      it('can construct a collider with custom offset', function() {
+        sprite.setCollider('point', 2, 3);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
+        expect(sprite.collider.center.y).to.eq(sprite.position.y + 3);
+        expect(sprite.collider._localTransform.equals([
+          1, 0, 2,
+          0, 1, 3,
+          0, 0, 1
+        ])).to.be.true;
+      });
+
+      it('stores unscaled custom offset', function() {
+        sprite.scale = 2;
+        sprite.setCollider('point', 4, 6);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider.center.x).to.eq(sprite.position.x + 8);
+        expect(sprite.collider.center.y).to.eq(sprite.position.y + 12);
+        // Local transform should be unscaled
+        expect(sprite.collider._localTransform.equals([
+          1, 0, 4,
+          0, 1, 6,
+          0, 0, 1
+        ])).to.be.true;
+      });
+
+      it('stores unrotated custom offset', function() {
+        sprite.rotation = 90;
+        sprite.setCollider('point', 2, 3);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider.center.x).to.eq(sprite.position.x - 3);
+        expect(sprite.collider.center.y).to.eq(sprite.position.y + 2);
+
+        // Offset should be unrotated
+        expect(sprite.collider._localTransform.equals([
+          1, 0, 2,
+          0, 1, 3,
+          0, 0, 1
+        ])).to.be.true;
+      });
+
+      it('stores unrotated and unscaled custom offset if sprite was already rotated and scaled', function() {
+        sprite.scale = 2;
+        sprite.rotation = 90;
+        sprite.setCollider('point', 2, 3);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider.center.x).to.eq(sprite.position.x - 6);
+        expect(sprite.collider.center.y).to.eq(sprite.position.y + 4);
+
+        // Offset should be unrotated and unscaled
+        expect(sprite.collider._localTransform.equals([
+          1, 0, 2,
+          0, 1, 3,
+          0, 0, 1
+        ])).to.be.true;
+      });
+
+      it('throws if creating a point collider with 2 or 4+ params', function() {
+        // setCollider('point') is okay
+
+        expect(function() {
+          sprite.setCollider('point', 2);
+        }).to.throw(TypeError);
+
+        // setCollider('point', offsetX, offsetY) is okay
+
+        expect(function() {
+          sprite.setCollider('point', 1, 2, 3);
+        }).to.throw(TypeError);
+
+        expect(function() {
+          sprite.setCollider('point', 1, 2, 3, 4);
+        }).to.throw(TypeError);
+      });
     });
 
-    it('scaling sprite without animation does not affect default circle collider size', function() {
-      sprite.scale = 0.25;
-      sprite.setCollider('circle');
-      expect(sprite.collider.radius).to.eq(sprite.height / 2);
+    describe('"circle"', function() {
+      it('can construct collider with default radius and offset', function() {
+        sprite.setCollider('circle');
+        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionCircle);
+
+        // Center should match sprite position
+        expect(sprite.collider.center.equals(sprite.position)).to.be.true;
+
+        // Radius should be half of sprite's larger dimension.
+        expect(sprite.height).to.be.greaterThan(sprite.width);
+        expect(sprite.collider.radius).to.eq(sprite.height / 2);
+      });
+
+      it('can construct a collider with default radius and custom offset', function() {
+        sprite.setCollider('circle', 2, 3);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionCircle);
+
+        // Center should be sprite position + offset
+        expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
+        expect(sprite.collider.center.y).to.eq(sprite.position.y + 3);
+
+        // Radius should be half of sprite's larger dimension.
+        expect(sprite.height).to.be.greaterThan(sprite.width);
+        expect(sprite.collider.radius).to.eq(sprite.height / 2);
+      });
+
+      it('can construct a collider with custom radius and offset', function() {
+        sprite.setCollider('circle', 2, 3, 4);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionCircle);
+
+        // Center should be sprite position + offset
+        expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
+        expect(sprite.collider.center.y).to.eq(sprite.position.y + 3);
+
+        // Radius should be as given
+        expect(sprite.collider.radius).to.be.closeTo(4, MARGIN_OF_ERROR);
+      });
+
+      it('scaling sprite without animation affects default circle collider size', function() {
+        sprite.scale = 0.25;
+        sprite.setCollider('circle');
+        expect(sprite.collider.radius).to.eq(sprite.height / 8);
+      });
+
+      it('throws if creating a circle collider with 2 or 5+ params', function() {
+        // setCollider('circle') is fine
+
+        expect(function() {
+          sprite.setCollider('circle', 1);
+        }).to.throw(TypeError);
+
+        // setCollider('circle', offsetX, offsetY) is fine
+
+
+        // setCollider('circle', offsetX, offsetY, radius) is fine
+
+        expect(function() {
+          sprite.setCollider('circle', 1, 2, 3, 4);
+        }).to.throw(TypeError);
+        expect(function() {
+          sprite.setCollider('circle', 1, 2, 3, 4, 5);
+        }).to.throw(TypeError);
+      });
     });
 
-    it('can construct a circle collider with explicit radius and offset', function() {
-      sprite.setCollider('circle', 1, 2, 3);
-      expect(sprite.collider).to.be.an.instanceOf(pInst.CircleCollider);
-      expect(sprite.collider.center).to.eq(sprite.position);
-      expect(sprite.collider.offset).to.be.an.instanceOf(p5.Vector);
-      expect(sprite.collider.radius).to.eq(3);
-      expect(sprite.collider.offset.x).to.eq(1);
-      expect(sprite.collider.offset.y).to.eq(2);
+    describe.skip('"aabb"', function() {
+      it('can construct a collider with default dimensions and offset', function() {
+        sprite.setCollider('rectangle');
+        expect(sprite.collider).to.be.an.instanceOf(p5.AxisAlignedBoundingBox);
+
+        // Center should match sprite position
+        expect(sprite.collider.center.equals(sprite.position)).to.be.true;
+
+        // Width and height should match sprite dimensions
+        expect(sprite.collider.width).to.eq(sprite.width);
+        expect(sprite.collider.height).to.eq(sprite.height);
+      });
+
+      it('scaling sprite without animation does not affect default rectangle collider size', function() {
+        sprite.scale = 0.25;
+        sprite.setCollider('rectangle');
+        expect(sprite.collider.extents.x).to.eq(sprite.width);
+        expect(sprite.collider.extents.y).to.eq(sprite.height);
+      });
+
+      it('can construct a rectangle collider with explicit dimensions and offset', function() {
+        sprite.setCollider('rectangle', 1, 2, 3, 4);
+        expect(sprite.collider).to.be.an.instanceOf(pInst.AABB);
+        expect(sprite.collider.center).to.eq(sprite.position);
+        expect(sprite.collider.extents).to.be.an.instanceOf(p5.Vector);
+        expect(sprite.collider.extents.x).to.eq(3);
+        expect(sprite.collider.extents.y).to.eq(4);
+        expect(sprite.collider.offset).to.be.an.instanceOf(p5.Vector);
+        expect(sprite.collider.offset.x).to.eq(1);
+        expect(sprite.collider.offset.y).to.eq(2);
+      });
+
+      it('throws if creating a rectangle collider with 1, 2, 3, or 5+ params', function() {
+        expect(function() {
+          sprite.setCollider('rectangle', 1);
+        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+        expect(function() {
+          sprite.setCollider('rectangle', 1, 2);
+        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+        expect(function() {
+          sprite.setCollider('rectangle', 1, 2, 3);
+        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+        // setCollider('rectangle', 1, 2, 3, 4) is fine.
+        expect(function() {
+          sprite.setCollider('rectangle', 1, 2, 3, 4, 5);
+        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+        expect(function() {
+          sprite.setCollider('rectangle', 1, 2, 3, 4, 5, 6);
+        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+      });
     });
 
-    it('throws if creating a circle collider with 1, 2, or 4+ params', function() {
-      expect(function() {
-        sprite.setCollider('circle', 1);
-      }).to.throw(TypeError, 'Usage: setCollider("circle") or setCollider("circle", offsetX, offsetY, radius)');
-      expect(function() {
-        sprite.setCollider('circle', 1, 2);
-      }).to.throw(TypeError, 'Usage: setCollider("circle") or setCollider("circle", offsetX, offsetY, radius)');
-      // setCollider('circle', 1, 2, 3) is fine
-      expect(function() {
-        sprite.setCollider('circle', 1, 2, 3, 4);
-      }).to.throw(TypeError, 'Usage: setCollider("circle") or setCollider("circle", offsetX, offsetY, radius)');
-      expect(function() {
-        sprite.setCollider('circle', 1, 2, 3, 4, 5);
-      }).to.throw(TypeError, 'Usage: setCollider("circle") or setCollider("circle", offsetX, offsetY, radius)');
-    });
+    describe('"obb"', function() {
+      it('can construct a collider with default offset, dimensions, and rotation', function() {
+        sprite.setCollider('obb');
+        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBox);
 
-    it('can construct a rectangle collider with default dimensions and offset', function() {
-      sprite.setCollider('rectangle');
-      expect(sprite.collider).to.be.an.instanceOf(pInst.AABB);
-      expect(sprite.collider.center).to.eq(sprite.position);
-      // Extents should be sprite dimensions
-      expect(sprite.collider.extents).to.be.an.instanceOf(p5.Vector);
-      expect(sprite.collider.extents.x).to.eq(sprite.width);
-      expect(sprite.collider.extents.y).to.eq(sprite.height);
-      // Offset should be zero
-      expect(sprite.collider.offset).to.be.an.instanceOf(p5.Vector);
-      expect(sprite.collider.offset.x).to.eq(0);
-      expect(sprite.collider.offset.y).to.eq(0);
-    });
+        // Center should match sprite position
+        expect(sprite.collider.center.equals(sprite.position)).to.be.true;
 
-    it('scaling sprite without animation does not affect default rectangle collider size', function() {
-      sprite.scale = 0.25;
-      sprite.setCollider('rectangle');
-      expect(sprite.collider.extents.x).to.eq(sprite.width);
-      expect(sprite.collider.extents.y).to.eq(sprite.height);
-    });
+        // Width and height should match sprite dimensions
+        expect(sprite.collider.width).to.eq(sprite.width);
+        expect(sprite.collider.height).to.eq(sprite.height);
 
-    it('can construct a rectangle collider with explicit dimensions and offset', function() {
-      sprite.setCollider('rectangle', 1, 2, 3, 4);
-      expect(sprite.collider).to.be.an.instanceOf(pInst.AABB);
-      expect(sprite.collider.center).to.eq(sprite.position);
-      expect(sprite.collider.extents).to.be.an.instanceOf(p5.Vector);
-      expect(sprite.collider.extents.x).to.eq(3);
-      expect(sprite.collider.extents.y).to.eq(4);
-      expect(sprite.collider.offset).to.be.an.instanceOf(p5.Vector);
-      expect(sprite.collider.offset.x).to.eq(1);
-      expect(sprite.collider.offset.y).to.eq(2);
-    });
+        // Rotation should match sprite rotation
+        expect(sprite.collider.rotation).to.eq(p5.prototype.radians(sprite.rotation));
+      });
 
-    it('throws if creating a rectangle collider with 1, 2, 3, or 5+ params', function() {
-      expect(function() {
-        sprite.setCollider('rectangle', 1);
-      }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
-      expect(function() {
-        sprite.setCollider('rectangle', 1, 2);
-      }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
-      expect(function() {
-        sprite.setCollider('rectangle', 1, 2, 3);
-      }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
-      // setCollider('rectangle', 1, 2, 3, 4) is fine.
-      expect(function() {
-        sprite.setCollider('rectangle', 1, 2, 3, 4, 5);
-      }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
-      expect(function() {
-        sprite.setCollider('rectangle', 1, 2, 3, 4, 5, 6);
-      }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+      it('can construct a collider with custom offset, default dimensions and rotation', function() {
+        sprite.setCollider('obb', 2, 3);
+        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBox);
+
+        // Center should be sprite position + offset
+        expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
+        expect(sprite.collider.center.y).to.eq(sprite.position.y + 3);
+
+        // Width and height should match sprite dimensions
+        expect(sprite.collider.width).to.eq(sprite.width);
+        expect(sprite.collider.height).to.eq(sprite.height);
+
+        // Rotation should match sprite rotation
+        expect(sprite.collider.rotation).to.eq(p5.prototype.radians(sprite.rotation));
+      });
+
+      it('can construct a collider with custom offset and dimensions, default rotation', function() {
+        sprite.setCollider('obb', 2, 3, 4, 5);
+        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBox);
+
+        // Center should be sprite position + offset
+        expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
+        expect(sprite.collider.center.y).to.eq(sprite.position.y + 3);
+
+        // Width and height should match sprite dimensions
+        expect(sprite.collider.width).to.eq(4);
+        expect(sprite.collider.height).to.eq(5);
+
+        // Rotation should match sprite rotation
+        expect(sprite.collider.rotation).to.eq(p5.prototype.radians(sprite.rotation));
+      });
     });
   });
 
