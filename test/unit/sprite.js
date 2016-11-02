@@ -129,7 +129,7 @@ describe('Sprite', function() {
     });
   });
 
-  describe.skip('mouse events', function() {
+  describe('mouse events', function() {
     var sprite;
 
     beforeEach(function() {
