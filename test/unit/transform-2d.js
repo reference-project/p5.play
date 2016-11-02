@@ -124,6 +124,33 @@ describe('Transform2D', function() {
     expect(v.y).to.equal(3);
   });
 
+  it('can extract translation', function() {
+    var t = new p5.Transform2D().translate(2, 3);
+    expect(t.getTranslation().x).to.be.closeTo(2, MARGIN_OF_ERROR);
+    expect(t.getTranslation().y).to.be.closeTo(3, MARGIN_OF_ERROR);
+    t.rotate(Math.PI / 2);
+    expect(t.getTranslation().x).to.be.closeTo(-3, MARGIN_OF_ERROR);
+    expect(t.getTranslation().y).to.be.closeTo(2, MARGIN_OF_ERROR);
+    t.scale(2);
+    expect(t.getTranslation().x).to.be.closeTo(-6, MARGIN_OF_ERROR);
+    expect(t.getTranslation().y).to.be.closeTo(4, MARGIN_OF_ERROR);
+  });
+
+  it('can extract scale', function() {
+    var t = new p5.Transform2D().scale(2, 3);
+    expect(t.getScale().x).to.be.closeTo(2, MARGIN_OF_ERROR);
+    expect(t.getScale().y).to.be.closeTo(3, MARGIN_OF_ERROR);
+    t.scale(2);
+    expect(t.getScale().x).to.be.closeTo(4, MARGIN_OF_ERROR);
+    expect(t.getScale().y).to.be.closeTo(6, MARGIN_OF_ERROR);
+    t.translate(5, 7);
+    expect(t.getScale().x).to.be.closeTo(4, MARGIN_OF_ERROR);
+    expect(t.getScale().y).to.be.closeTo(6, MARGIN_OF_ERROR);
+    t.rotate(Math.PI / 2);
+    expect(t.getScale().x).to.be.closeTo(6, MARGIN_OF_ERROR);
+    expect(t.getScale().y).to.be.closeTo(4, MARGIN_OF_ERROR);
+  });
+
   it('can extract rotations', function() {
     var t = new p5.Transform2D().rotate(1);
     expect(t.getRotation()).to.be.closeTo(1, MARGIN_OF_ERROR);
