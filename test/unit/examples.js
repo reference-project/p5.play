@@ -1,4 +1,4 @@
-describe.skip('Example sketches', function() {
+describe('Example sketches', function() {
   var FRAMES_TO_DRAW = 3;
 
   var iframe;
