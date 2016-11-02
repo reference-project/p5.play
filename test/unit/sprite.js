@@ -365,7 +365,7 @@ describe('Sprite', function() {
         expect(sprite.collider.center.x).to.eq(sprite.position.x - 6);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 4);
         expect(sprite.collider.offset.x).to.eq(2);
-        expect(sprite.collider.offset.y).to.eq(3  );
+        expect(sprite.collider.offset.y).to.eq(3);
       });
 
       it('throws if creating a point collider with 2 or 4+ params', function() {

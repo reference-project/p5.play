@@ -11,7 +11,7 @@ describe('CollisionCircle', function() {
   describe('_getRadiusOnAxis()', function() {
     var circle;
 
-    beforeEach(function () {
+    beforeEach(function() {
       circle = new p5.CollisionCircle(new p5.Vector(), 5);
     });
 
@@ -41,7 +41,7 @@ describe('CollisionCircle', function() {
     });
 
     it('incorporates local scale', function() {
-      circle.scale = new p5.Vector(2,2);
+      circle.scale = new p5.Vector(2, 2);
       expect(circle._getRadiusOnAxis()).to.equal(10);
     });
 
@@ -52,7 +52,7 @@ describe('CollisionCircle', function() {
 
     it('combines parent and local scale', function() {
       circle.setParentTransform(new p5.Transform2D().scale(3));
-      circle.scale = new p5.Vector(2,2);
+      circle.scale = new p5.Vector(2, 2);
       expect(circle._getRadiusOnAxis()).to.equal(30);
     });
 
@@ -60,7 +60,7 @@ describe('CollisionCircle', function() {
     // collider report correct radius on axis when scaleX != scaleY
   });
 
-  describe('circles of same radii', function () {
+  describe('circles of same radii', function() {
     var a, b;
     beforeEach(function() {
       a = new p5.CollisionCircle(new p5.Vector(0, 0), 5);
@@ -71,8 +71,8 @@ describe('CollisionCircle', function() {
       // Move circle B just around the perimeter of circle A
       for (var t = 0; t < Math.PI / 2; t += 0.1) {
         b.center = new p5.Vector(
-          Math.cos(t) * (10+MARGIN_OF_ERROR),
-          Math.sin(t) * (10+MARGIN_OF_ERROR));
+          Math.cos(t) * (10 + MARGIN_OF_ERROR),
+          Math.sin(t) * (10 + MARGIN_OF_ERROR));
         var displacement = a.collide(b);
         expect(displacement.x).to.equal(0);
         expect(displacement.y).to.equal(0);
@@ -111,7 +111,7 @@ describe('CollisionCircle', function() {
       b.center = new p5.Vector(6, 2);
       var displacement = a.collide(b);
       expect(displacement.mag()).to.be.closeTo(3.6754446, MARGIN_OF_ERROR);
-      expect(displacement.y / displacement.x).to.closeTo(2/6, MARGIN_OF_ERROR);
+      expect(displacement.y / displacement.x).to.closeTo(2 / 6, MARGIN_OF_ERROR);
     });
   });
 });
