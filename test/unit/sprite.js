@@ -333,11 +333,8 @@ describe('Sprite', function() {
         expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
         expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 3);
-        expect(sprite.collider._localTransform.equals([
-          1, 0, 2,
-          0, 1, 3,
-          0, 0, 1
-        ])).to.be.true;
+        expect(sprite.collider.offset.x).to.eq(2);
+        expect(sprite.collider.offset.y).to.eq(3);
       });
 
       it('stores unscaled custom offset', function() {
@@ -346,12 +343,8 @@ describe('Sprite', function() {
         expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
         expect(sprite.collider.center.x).to.eq(sprite.position.x + 8);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 12);
-        // Local transform should be unscaled
-        expect(sprite.collider._localTransform.equals([
-          1, 0, 4,
-          0, 1, 6,
-          0, 0, 1
-        ])).to.be.true;
+        expect(sprite.collider.offset.x).to.eq(4);
+        expect(sprite.collider.offset.y).to.eq(6);
       });
 
       it('stores unrotated custom offset', function() {
@@ -360,13 +353,8 @@ describe('Sprite', function() {
         expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
         expect(sprite.collider.center.x).to.eq(sprite.position.x - 3);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 2);
-
-        // Offset should be unrotated
-        expect(sprite.collider._localTransform.equals([
-          1, 0, 2,
-          0, 1, 3,
-          0, 0, 1
-        ])).to.be.true;
+        expect(sprite.collider.offset.x).to.eq(2);
+        expect(sprite.collider.offset.y).to.eq(3);
       });
 
       it('stores unrotated and unscaled custom offset if sprite was already rotated and scaled', function() {
@@ -376,13 +364,8 @@ describe('Sprite', function() {
         expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
         expect(sprite.collider.center.x).to.eq(sprite.position.x - 6);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 4);
-
-        // Offset should be unrotated and unscaled
-        expect(sprite.collider._localTransform.equals([
-          1, 0, 2,
-          0, 1, 3,
-          0, 0, 1
-        ])).to.be.true;
+        expect(sprite.collider.offset.x).to.eq(2);
+        expect(sprite.collider.offset.y).to.eq(3  );
       });
 
       it('throws if creating a point collider with 2 or 4+ params', function() {
@@ -442,10 +425,23 @@ describe('Sprite', function() {
         expect(sprite.collider.radius).to.be.closeTo(4, MARGIN_OF_ERROR);
       });
 
-      it('scaling sprite without animation affects default circle collider size', function() {
+      it('when created from a scaled sprite, has correct scaled radius', function() {
         sprite.scale = 0.25;
         sprite.setCollider('circle');
-        expect(sprite.collider.radius).to.eq(sprite.height / 8);
+        // collider.radius is unscaled
+        expect(sprite.collider.radius).to.eq(sprite.height / 2);
+        // collider radius on axis will be in world-space though, and scaled.
+        expect(sprite.collider._getRadiusOnAxis()).to.eq(sprite.height / 8);
+
+        // Just changing the sprite scale is not enough to update the collider...
+        // though it'd be fine if this changed in the future.
+        sprite.scale = 0.5;
+        expect(sprite.collider._getRadiusOnAxis()).to.eq(sprite.height / 8);
+
+        // Right now, an update() call is required for a new sprite scale to
+        // get picked up.
+        sprite.update();
+        expect(sprite.collider._getRadiusOnAxis()).to.eq(sprite.height / 4);
       });
 
       it('throws if creating a circle collider with 2 or 5+ params', function() {
@@ -469,9 +465,9 @@ describe('Sprite', function() {
       });
     });
 
-    describe.skip('"aabb"', function() {
+    describe('"aabb"', function() {
       it('can construct a collider with default dimensions and offset', function() {
-        sprite.setCollider('rectangle');
+        sprite.setCollider('aabb');
         expect(sprite.collider).to.be.an.instanceOf(p5.AxisAlignedBoundingBox);
 
         // Center should match sprite position
@@ -482,42 +478,47 @@ describe('Sprite', function() {
         expect(sprite.collider.height).to.eq(sprite.height);
       });
 
-      it('scaling sprite without animation does not affect default rectangle collider size', function() {
+      it('scaling sprite without animation does not affect default collider size', function() {
         sprite.scale = 0.25;
-        sprite.setCollider('rectangle');
-        expect(sprite.collider.extents.x).to.eq(sprite.width);
-        expect(sprite.collider.extents.y).to.eq(sprite.height);
+        sprite.setCollider('aabb');
+        expect(sprite.collider.width).to.eq(sprite.width);
+        expect(sprite.collider.height).to.eq(sprite.height);
       });
 
-      it('can construct a rectangle collider with explicit dimensions and offset', function() {
-        sprite.setCollider('rectangle', 1, 2, 3, 4);
-        expect(sprite.collider).to.be.an.instanceOf(pInst.AABB);
-        expect(sprite.collider.center).to.eq(sprite.position);
-        expect(sprite.collider.extents).to.be.an.instanceOf(p5.Vector);
-        expect(sprite.collider.extents.x).to.eq(3);
-        expect(sprite.collider.extents.y).to.eq(4);
+      it('can construct a collider with explicit dimensions and offset', function() {
+        sprite.setCollider('aabb', 1, 2, 3, 4);
+        expect(sprite.collider).to.be.an.instanceOf(p5.AxisAlignedBoundingBox);
+        expect(sprite.collider.center.x).to.equal(sprite.position.x + 1);
+        expect(sprite.collider.center.y).to.equal(sprite.position.y + 2);
+        expect(sprite.collider.width).to.eq(3);
+        expect(sprite.collider.height).to.eq(4);
         expect(sprite.collider.offset).to.be.an.instanceOf(p5.Vector);
         expect(sprite.collider.offset.x).to.eq(1);
         expect(sprite.collider.offset.y).to.eq(2);
       });
 
-      it('throws if creating a rectangle collider with 1, 2, 3, or 5+ params', function() {
+      it('throws if creating a collider with 2, 4, or 6+ params', function() {
+        // setCollider('rectangle') is fine
+
         expect(function() {
-          sprite.setCollider('rectangle', 1);
-        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+          sprite.setCollider('aabb', 1);
+        }).to.throw(TypeError);
+
+        // setCollider('aabb', offsetX, offsetY) is fine
+
         expect(function() {
-          sprite.setCollider('rectangle', 1, 2);
-        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+          sprite.setCollider('aabb', 1, 2, 3);
+        }).to.throw(TypeError);
+
+        // setCollider('aabb', offsetX, offsetY, width, height) is fine.
+
         expect(function() {
-          sprite.setCollider('rectangle', 1, 2, 3);
-        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
-        // setCollider('rectangle', 1, 2, 3, 4) is fine.
+          sprite.setCollider('aabb', 1, 2, 3, 4, 5);
+        }).to.throw(TypeError);
+
         expect(function() {
-          sprite.setCollider('rectangle', 1, 2, 3, 4, 5);
-        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
-        expect(function() {
-          sprite.setCollider('rectangle', 1, 2, 3, 4, 5, 6);
-        }).to.throw(TypeError, 'Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+          sprite.setCollider('aabb', 1, 2, 3, 4, 5, 6);
+        }).to.throw(TypeError);
       });
     });
 
@@ -569,7 +570,15 @@ describe('Sprite', function() {
         expect(sprite.collider.rotation).to.eq(p5.prototype.radians(sprite.rotation));
       });
     });
+
+    describe('"rectangle"', function() {
+      it('is an alias to OBB', function() {
+        sprite.setCollider('rectangle');
+        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBox);
+      });
+    });
   });
+
 
   describe('friction', function() {
     var sprite;
