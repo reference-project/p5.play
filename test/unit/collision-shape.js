@@ -5,7 +5,7 @@ describe('CollisionShape interface', function() {
   // to ensure that none of them break these assumptions.
   [
     'PointCollider',
-    'CollisionCircle',
+    'CircleCollider',
     'AxisAlignedBoundingBox',
     'OrientedBoundingBox'
   ].forEach(function(typeName) {

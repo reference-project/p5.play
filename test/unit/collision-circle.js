@@ -1,8 +1,8 @@
-describe('CollisionCircle', function() {
+describe('CircleCollider', function() {
   var MARGIN_OF_ERROR = 0.000001;
 
   it('stores properties', function() {
-    var a = new p5.CollisionCircle(new p5.Vector(2, 3), 4);
+    var a = new p5.CircleCollider(new p5.Vector(2, 3), 4);
     expect(a.center.x).to.equal(2);
     expect(a.center.y).to.equal(3);
     expect(a.radius).to.equal(4);
@@ -12,7 +12,7 @@ describe('CollisionCircle', function() {
     var circle;
 
     beforeEach(function() {
-      circle = new p5.CollisionCircle(new p5.Vector(), 5);
+      circle = new p5.CircleCollider(new p5.Vector(), 5);
     });
 
     it('gives the set radius when no transforms are set', function() {
@@ -63,8 +63,8 @@ describe('CollisionCircle', function() {
   describe('circles of same radii', function() {
     var a, b;
     beforeEach(function() {
-      a = new p5.CollisionCircle(new p5.Vector(0, 0), 5);
-      b = new p5.CollisionCircle(new p5.Vector(0, 0), 5);
+      a = new p5.CircleCollider(new p5.Vector(0, 0), 5);
+      b = new p5.CircleCollider(new p5.Vector(0, 0), 5);
     });
 
     it('detects no collision when separated', function() {

@@ -390,7 +390,7 @@ describe('Sprite', function() {
     describe('"circle"', function() {
       it('can construct collider with default radius and offset', function() {
         sprite.setCollider('circle');
-        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionCircle);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CircleCollider);
 
         // Center should match sprite position
         expect(sprite.collider.center.equals(sprite.position)).to.be.true;
@@ -402,7 +402,7 @@ describe('Sprite', function() {
 
       it('can construct a collider with default radius and custom offset', function() {
         sprite.setCollider('circle', 2, 3);
-        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionCircle);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CircleCollider);
 
         // Center should be sprite position + offset
         expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
@@ -415,7 +415,7 @@ describe('Sprite', function() {
 
       it('can construct a collider with custom radius and offset', function() {
         sprite.setCollider('circle', 2, 3, 4);
-        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionCircle);
+        expect(sprite.collider).to.be.an.instanceOf(p5.CircleCollider);
 
         // Center should be sprite position + offset
         expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
