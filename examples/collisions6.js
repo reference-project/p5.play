@@ -46,14 +46,12 @@ function setup() {
   }
 }
 
-
-
 function draw() {
   background(255, 255, 255);
 
   // Follow the mouse
-  hero.velocity.x = (mouseX-hero.position.x)/10;
-  hero.velocity.y = (mouseY-hero.position.y)/10;
+  hero.velocity.x = (mouseX-hero.position.x) / 10;
+  hero.velocity.y = (mouseY-hero.position.y) / 10;
 
   // Shift sprites with mouseX to show colliders following positions.
   point.position.x = 100 - (mouseX - 100) / 10;
