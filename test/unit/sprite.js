@@ -468,7 +468,7 @@ describe('Sprite', function() {
     describe('"aabb"', function() {
       it('can construct a collider with default dimensions and offset', function() {
         sprite.setCollider('aabb');
-        expect(sprite.collider).to.be.an.instanceOf(p5.AxisAlignedBoundingBox);
+        expect(sprite.collider).to.be.an.instanceOf(p5.AxisAlignedBoundingBoxCollider);
 
         // Center should match sprite position
         expect(sprite.collider.center.equals(sprite.position)).to.be.true;
@@ -487,7 +487,7 @@ describe('Sprite', function() {
 
       it('can construct a collider with explicit dimensions and offset', function() {
         sprite.setCollider('aabb', 1, 2, 3, 4);
-        expect(sprite.collider).to.be.an.instanceOf(p5.AxisAlignedBoundingBox);
+        expect(sprite.collider).to.be.an.instanceOf(p5.AxisAlignedBoundingBoxCollider);
         expect(sprite.collider.center.x).to.equal(sprite.position.x + 1);
         expect(sprite.collider.center.y).to.equal(sprite.position.y + 2);
         expect(sprite.collider.width).to.eq(3);

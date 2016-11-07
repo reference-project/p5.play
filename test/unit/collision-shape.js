@@ -6,7 +6,7 @@ describe('CollisionShape interface', function() {
   [
     'PointCollider',
     'CircleCollider',
-    'AxisAlignedBoundingBox',
+    'AxisAlignedBoundingBoxCollider',
     'OrientedBoundingBox'
   ].forEach(function(typeName) {
     describe('as implemented by ' + typeName, function() {
