@@ -272,4 +272,46 @@ describe('OrientedBoundingBox', function() {
       expect(displacement.y).to.be.closeTo(0.535533, MARGIN_OF_ERROR);
     });
   });
+
+  describe('can deduplicate potential separating axes', function() {
+    var a, b;
+
+    beforeEach(function() {
+      a = new p5.OrientedBoundingBox(new p5.Vector(), 1, 1);
+      b = new p5.OrientedBoundingBox(new p5.Vector(), 1, 1);
+    });
+
+    it('for unrotated OBBs', function() {
+      var candidateAxes = p5.CollisionShape._getCandidateAxesForShapes(a, b);
+      expect(candidateAxes.length).to.equal(2);
+    });
+
+    it('for same-rotated OBBs', function() {
+      a.rotation = Math.PI / 4;
+      b.rotation = Math.PI / 4;
+      var candidateAxes = p5.CollisionShape._getCandidateAxesForShapes(a, b);
+      expect(candidateAxes.length).to.equal(2);
+    });
+
+    it('for 0deg vs 90deg', function() {
+      a.rotation = 0;
+      b.rotation = Math.PI / 2;
+      var candidateAxes = p5.CollisionShape._getCandidateAxesForShapes(a, b);
+      expect(candidateAxes.length).to.equal(2);
+    });
+
+    it('for 45deg vs -45deg', function() {
+      a.rotation = Math.PI / 4;
+      b.rotation = -Math.PI / 4;
+      var candidateAxes = p5.CollisionShape._getCandidateAxesForShapes(a, b);
+      expect(candidateAxes.length).to.equal(2);
+    });
+
+    it('for 30deg vs -60deg', function() {
+      a.rotation = Math.PI / 3;
+      b.rotation = -2 * Math.PI / 3;
+      var candidateAxes = p5.CollisionShape._getCandidateAxesForShapes(a, b);
+      expect(candidateAxes.length).to.equal(2);
+    });
+  });
 });
