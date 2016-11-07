@@ -324,13 +324,13 @@ describe('Sprite', function() {
     describe('"point"', function() {
       it('can construct a collider with default offset', function() {
         sprite.setCollider('point');
-        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider).to.be.an.instanceOf(p5.PointCollider);
         expect(sprite.collider.center.equals(sprite.position)).to.be.true;
       });
 
       it('can construct a collider with custom offset', function() {
         sprite.setCollider('point', 2, 3);
-        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider).to.be.an.instanceOf(p5.PointCollider);
         expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 3);
         expect(sprite.collider.offset.x).to.eq(2);
@@ -340,7 +340,7 @@ describe('Sprite', function() {
       it('stores unscaled custom offset', function() {
         sprite.scale = 2;
         sprite.setCollider('point', 4, 6);
-        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider).to.be.an.instanceOf(p5.PointCollider);
         expect(sprite.collider.center.x).to.eq(sprite.position.x + 8);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 12);
         expect(sprite.collider.offset.x).to.eq(4);
@@ -350,7 +350,7 @@ describe('Sprite', function() {
       it('stores unrotated custom offset', function() {
         sprite.rotation = 90;
         sprite.setCollider('point', 2, 3);
-        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider).to.be.an.instanceOf(p5.PointCollider);
         expect(sprite.collider.center.x).to.eq(sprite.position.x - 3);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 2);
         expect(sprite.collider.offset.x).to.eq(2);
@@ -361,7 +361,7 @@ describe('Sprite', function() {
         sprite.scale = 2;
         sprite.rotation = 90;
         sprite.setCollider('point', 2, 3);
-        expect(sprite.collider).to.be.an.instanceOf(p5.CollisionPoint);
+        expect(sprite.collider).to.be.an.instanceOf(p5.PointCollider);
         expect(sprite.collider.center.x).to.eq(sprite.position.x - 6);
         expect(sprite.collider.center.y).to.eq(sprite.position.y + 4);
         expect(sprite.collider.offset.x).to.eq(2);

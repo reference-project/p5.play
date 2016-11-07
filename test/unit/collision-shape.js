@@ -4,7 +4,7 @@ describe('CollisionShape interface', function() {
   // We run this suite of tests for every type that extends from CollisionShape,
   // to ensure that none of them break these assumptions.
   [
-    'CollisionPoint',
+    'PointCollider',
     'CollisionCircle',
     'AxisAlignedBoundingBox',
     'OrientedBoundingBox'
