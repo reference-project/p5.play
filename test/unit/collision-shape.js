@@ -7,7 +7,7 @@ describe('CollisionShape interface', function() {
     'PointCollider',
     'CircleCollider',
     'AxisAlignedBoundingBoxCollider',
-    'OrientedBoundingBox'
+    'OrientedBoundingBoxCollider'
   ].forEach(function(typeName) {
     describe('as implemented by ' + typeName, function() {
       var ShapeType = p5[typeName];

@@ -525,7 +525,7 @@ describe('Sprite', function() {
     describe('"obb"', function() {
       it('can construct a collider with default offset, dimensions, and rotation', function() {
         sprite.setCollider('obb');
-        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBox);
+        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBoxCollider);
 
         // Center should match sprite position
         expect(sprite.collider.center.equals(sprite.position)).to.be.true;
@@ -540,7 +540,7 @@ describe('Sprite', function() {
 
       it('can construct a collider with custom offset, default dimensions and rotation', function() {
         sprite.setCollider('obb', 2, 3);
-        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBox);
+        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBoxCollider);
 
         // Center should be sprite position + offset
         expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
@@ -556,7 +556,7 @@ describe('Sprite', function() {
 
       it('can construct a collider with custom offset and dimensions, default rotation', function() {
         sprite.setCollider('obb', 2, 3, 4, 5);
-        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBox);
+        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBoxCollider);
 
         // Center should be sprite position + offset
         expect(sprite.collider.center.x).to.eq(sprite.position.x + 2);
@@ -574,7 +574,7 @@ describe('Sprite', function() {
     describe('"rectangle"', function() {
       it('is an alias to OBB', function() {
         sprite.setCollider('rectangle');
-        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBox);
+        expect(sprite.collider).to.be.an.instanceOf(p5.OrientedBoundingBoxCollider);
       });
     });
   });
