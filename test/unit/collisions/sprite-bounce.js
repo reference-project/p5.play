@@ -90,4 +90,236 @@ describe('sprite.bounce(sprite)', function() {
       expect(pairs).to.deep.equal([[spriteB.name, spriteA.name]]);
     });
   });
+
+  it('passes all velocity from a moving object to a stationary one in an equal-mass perfectly elastic collision', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = 0;
+    spriteA.mass = 1;
+    spriteB.mass = 1;
+    spriteA.restitution = 1;
+    spriteB.restitution = 1;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    // Expect all velocity to go to B
+    expect(spriteA.velocity.x).to.equal(0);
+    expect(spriteB.velocity.x).to.equal(3);
+  });
+
+  it('passes some momentum from a heavier moving object to a lighter stationary one in a perfectly elastic collision', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = 0;
+    spriteA.mass = 2;
+    spriteB.mass = 1;
+    spriteA.restitution = 1;
+    spriteB.restitution = 1;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    expect(spriteA.velocity.x).to.equal(1);
+    expect(spriteB.velocity.x).to.equal(4);
+  });
+
+  it('passes some momentum from a lighter moving object to a heavier stationary one in a perfectly elastic collision', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = 0;
+    spriteA.mass = 1;
+    spriteB.mass = 2;
+    spriteA.restitution = 1;
+    spriteB.restitution = 1;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    expect(spriteA.velocity.x).to.equal(-1);
+    expect(spriteB.velocity.x).to.equal(2);
+  });
+
+  it('a simply reverses direction when b is immovable and stationary in a perfectly elastic collision', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = 0;
+    spriteA.mass = 1;
+    spriteB.mass = 1;
+    spriteA.restitution = 1;
+    spriteB.restitution = 1;
+    spriteB.immovable = true;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    expect(spriteA.velocity.x).to.equal(-3);
+    expect(spriteB.velocity.x).to.equal(0);
+  });
+
+  it('a gains speed when b is immovable and moving toward it in a perfectly elastic collision', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = -1;
+    spriteA.mass = 1;
+    spriteB.mass = 1;
+    spriteA.restitution = 1;
+    spriteB.restitution = 1;
+    spriteB.immovable = true;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    expect(spriteA.velocity.x).to.equal(-5);
+    expect(spriteB.velocity.x).to.equal(-1);
+  });
+
+  it('a loses speed when b is immovable and moving away from it in a perfectly elastic collision', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = 1;
+    spriteA.mass = 1;
+    spriteB.mass = 1;
+    spriteA.restitution = 1;
+    spriteB.restitution = 1;
+    spriteB.immovable = true;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    expect(spriteA.velocity.x).to.equal(-1);
+    expect(spriteB.velocity.x).to.equal(1);
+  });
+
+  it('retains all momentum together in a perfectly inelastic collision of idential masses', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = 0;
+    spriteA.mass = 1;
+    spriteB.mass = 1;
+    spriteA.restitution = 0;
+    spriteB.restitution = 0;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    expect(spriteA.velocity.x).to.equal(1.5);
+    expect(spriteB.velocity.x).to.equal(1.5);
+  });
+
+  it('retains all momentum together in a perfectly inelastic collision of different masses', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = 0;
+    spriteA.mass = 1;
+    spriteB.mass = 3;
+    spriteA.restitution = 0;
+    spriteB.restitution = 0;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    expect(spriteA.velocity.x).to.equal(0.75);
+    expect(spriteB.velocity.x).to.equal(0.75);
+  });
+
+
+
+  it('loses energy in a partially inelastic collision', function() {
+    var expectedOverlap = 2;
+    spriteA.position.x = spriteB.position.x - (spriteA.width - expectedOverlap);
+    spriteA.velocity.x = 3;
+    spriteB.velocity.x = 0;
+    spriteA.mass = 1;
+    spriteB.mass = 1;
+    spriteA.restitution = 0.5;
+    spriteB.restitution = 1;
+
+    var spriteAInitialPosition = spriteA.position.x;
+    var spriteBInitialPosition = spriteB.position.x;
+
+    // Perform bounce
+    var result = spriteA.bounce(spriteB);
+    expect(result).to.be.true;
+
+    // Expect displacement of spriteA out of spriteB
+    expect(spriteA.position.x).to.equal(spriteAInitialPosition - expectedOverlap);
+    expect(spriteB.position.x).to.equal(spriteBInitialPosition);
+
+    // Expect all velocity to go to
+    expect(spriteA.velocity.x).to.equal(0.75);
+    expect(spriteB.velocity.x).to.equal(2.25);
+  });
 });
