@@ -27,133 +27,165 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5", "classes/p5.Color", "classes/p5.Element", "classes/p5.Font", "classes/p5.Graphics", "classes/p5.Image", "classes/p5.play", "classes/p5.Renderer", "classes/p5.Table", "classes/p5.TableRow", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/2D Primitives", "modules/3D Primitives", "modules/Acceleration", "modules/Array Functions", "modules/Attributes", "modules/Calculation", "modules/Camera", "modules/Color", "modules/Constants", "modules/Conversion", "modules/Creating & Reading", "modules/Curves", "modules/Data", "modules/DOM", "modules/Environment", "modules/Events", "modules/Font", "modules/Image", "modules/Input", "modules/IO", "modules/Keyboard", "modules/Lights", "modules/Lights, Camera", "modules/Loading & Displaying", "modules/Material", "modules/Math", "modules/Mouse", "modules/Noise", "modules/Output", "modules/p5.play", "modules/Pixels", "modules/Random", "modules/Rendering", "modules/Setting", "modules/Shape", "modules/String Functions", "modules/Structure", "modules/Table", "modules/Time & Date", "modules/Touch", "modules/Transform", "modules/Trigonometry", "modules/Typography", "modules/Vertex"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.AxisAlignedBoundingBoxCollider", "classes/p5.CircleCollider", "classes/p5.CollisionShape", "classes/p5.OrientedBoundingBoxCollider", "classes/p5.play", "classes/p5.PointCollider", "classes/p5.Transform2D", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
         </form>
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="span3">
-	    <div>
-	        <div id="sidebar">
-	        <div id="classes">
-	            <ul id="api-classes" class="nav nav-list">
-	                    <li><a href="../classes/Animation.html">Animation</a></li>
-	                    <li><a href="../classes/Camera.html">Camera</a></li>
-	                    <li><a href="../classes/Group.html">Group</a></li>
-	                    <li><a href="../classes/p5.html">p5</a></li>
-	                    <li><a href="../classes/p5.Color.html">p5.Color</a></li>
-	                    <li><a href="../classes/p5.Element.html">p5.Element</a></li>
-	                    <li><a href="../classes/p5.Font.html">p5.Font</a></li>
-	                    <li><a href="../classes/p5.Graphics.html">p5.Graphics</a></li>
-	                    <li><a href="../classes/p5.Image.html">p5.Image</a></li>
-	                    <li><a href="../classes/p5.play.html">p5.play</a></li>
-	                    <li><a href="../classes/p5.Renderer.html">p5.Renderer</a></li>
-	                    <li><a href="../classes/p5.Table.html">p5.Table</a></li>
-	                    <li><a href="../classes/p5.TableRow.html">p5.TableRow</a></li>
-	                    <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
-	                    <li><a href="../classes/Sprite.html">Sprite</a></li>
-	                    <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
-	            </ul>
-	        </div>
-	        </div>
-	    </div>
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/Animation.html">Animation</a></li>
+                <li><a href="../classes/Camera.html">Camera</a></li>
+                <li><a href="../classes/Group.html">Group</a></li>
+                <li><a href="../classes/p5.AxisAlignedBoundingBoxCollider.html">p5.AxisAlignedBoundingBoxCollider</a></li>
+                <li><a href="../classes/p5.CircleCollider.html">p5.CircleCollider</a></li>
+                <li><a href="../classes/p5.CollisionShape.html">p5.CollisionShape</a></li>
+                <li><a href="../classes/p5.OrientedBoundingBoxCollider.html">p5.OrientedBoundingBoxCollider</a></li>
+                <li><a href="../classes/p5.play.html">p5.play</a></li>
+                <li><a href="../classes/p5.PointCollider.html">p5.PointCollider</a></li>
+                <li><a href="../classes/p5.Transform2D.html">p5.Transform2D</a></li>
+                <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
+                <li><a href="../classes/Sprite.html">Sprite</a></li>
+                <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
         </div>
         <div class="span9">
-                <form id="options-form" class="form-inline pull-right">
-                    Show:
-                    <label for="api-show-inherited" class="checkbox">
-                        <input type="checkbox" id="api-show-inherited" checked>
-                        Inherited
-                    </label>
-            
-                    <label for="api-show-protected" class="checkbox">
-                        <input type="checkbox" id="api-show-protected">
-                        Protected
-                    </label>
-            
-                    <label for="api-show-private" class="checkbox">
-                        <input type="checkbox" id="api-show-private" checked>
-                        Private
-                    </label>
-                    <label for="api-show-deprecated" class="checkbox">
-                        <input type="checkbox" id="api-show-deprecated">
-                        Deprecated
-                    </label>
-            
-                </form>
-            
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <div class="page-header">
-                            <h1>p5.play <small>Module</small></h1>
-                        </div>
-                        
-                        <div class="clearfix well well-small">
-                        
-                        
-                                <div class="foundat">
-                                    Defined in: <a href="../files/__temp_p5.play.js.html#l3829"><code>__temp_p5.play.js:3829</code></a>
-                                </div>
-                        
-                        </div>
-                        
-                        
-                        <div class="moduledesc well well-small">
-                            <p>p5.play is a library for p5.js to facilitate the creation of games and gamelike
-                        projects.</p>
-                        <p>It provides a flexible Sprite class to manage visual objects in 2D space
-                        and features such as animation support, basic collision detection
-                        and resolution, mouse and keyboard interactions, and a virtual camera.</p>
-                        <p>p5.play is not a box2D-derived physics engine, it doesn't use events, and it's
-                        designed to be understood and possibly modified by intermediate programmers.</p>
-                        <p>See the examples folder for more info on how to use this library.</p>
-                        
-                        </div>
-                        
-                        
-                        <div class="yui3-g">
-                            <div class="yui3-u-1-2">
-                                    <p>This module provides the following classes:</p>
-                        
-                                    <ul class="module-classes">
-                                        <li class="module-class">
-                                            <a href="../classes/Animation.html">
-                                                Animation
-                                            </a>
-                                        </li>
-                                        <li class="module-class">
-                                            <a href="../classes/Camera.html">
-                                                Camera
-                                            </a>
-                                        </li>
-                                        <li class="module-class">
-                                            <a href="../classes/Group.html">
-                                                Group
-                                            </a>
-                                        </li>
-                                        <li class="module-class">
-                                            <a href="../classes/p5.play.html">
-                                                p5.play
-                                            </a>
-                                        </li>
-                                        <li class="module-class">
-                                            <a href="../classes/Sprite.html">
-                                                Sprite
-                                            </a>
-                                        </li>
-                                        <li class="module-class">
-                                            <a href="../classes/SpriteSheet.html">
-                                                SpriteSheet
-                                            </a>
-                                        </li>
-                                    </ul>
-                            </div>
-                        
-                            <div class="yui3-u-1-2">
-                            </div>
-                        </div>
+<div class="page-header">
+    <h1>p5.play <small>Module</small></h1>
+</div>
+
+<div class="clearfix well well-small">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/lib_p5.play.js.html#l5020"><code>lib&#x2F;p5.play.js:5020</code></a>
+        </div>
+
+</div>
+
+
+<div class="moduledesc well well-small">
+    <p>p5.play is a library for p5.js to facilitate the creation of games and gamelike
+projects.</p>
+<p>It provides a flexible Sprite class to manage visual objects in 2D space
+and features such as animation support, basic collision detection
+and resolution, mouse and keyboard interactions, and a virtual camera.</p>
+<p>p5.play is not a box2D-derived physics engine, it doesn't use events, and it's
+designed to be understood and possibly modified by intermediate programmers.</p>
+<p>See the examples folder for more info on how to use this library.</p>
+
+</div>
+
+
+<div class="yui3-g">
+    <div class="yui3-u-1-2">
+            <p>This module provides the following classes:</p>
+
+            <ul class="module-classes">
+                <li class="module-class">
+                    <a href="../classes/Animation.html">
+                        Animation
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Camera.html">
+                        Camera
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Group.html">
+                        Group
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/p5.AxisAlignedBoundingBoxCollider.html">
+                        p5.AxisAlignedBoundingBoxCollider
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/p5.CircleCollider.html">
+                        p5.CircleCollider
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/p5.CollisionShape.html">
+                        p5.CollisionShape
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/p5.OrientedBoundingBoxCollider.html">
+                        p5.OrientedBoundingBoxCollider
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/p5.play.html">
+                        p5.play
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/p5.PointCollider.html">
+                        p5.PointCollider
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/p5.Transform2D.html">
+                        p5.Transform2D
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/p5.Vector.html">
+                        p5.Vector
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Sprite.html">
+                        Sprite
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/SpriteSheet.html">
+                        SpriteSheet
+                    </a>
+                </li>
+            </ul>
+    </div>
+
+    <div class="yui3-u-1-2">
+    </div>
+</div>
                     </div>
                 </div>
             </div>

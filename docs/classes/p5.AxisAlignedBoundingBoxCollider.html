@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>p5.AxisAlignedBoundingBoxCollider - p5.play</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
+            p5.play
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.AxisAlignedBoundingBoxCollider", "classes/p5.CircleCollider", "classes/p5.CollisionShape", "classes/p5.OrientedBoundingBoxCollider", "classes/p5.play", "classes/p5.PointCollider", "classes/p5.Transform2D", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/Animation.html">Animation</a></li>
+                <li><a href="../classes/Camera.html">Camera</a></li>
+                <li><a href="../classes/Group.html">Group</a></li>
+                <li><a href="../classes/p5.AxisAlignedBoundingBoxCollider.html">p5.AxisAlignedBoundingBoxCollider</a></li>
+                <li><a href="../classes/p5.CircleCollider.html">p5.CircleCollider</a></li>
+                <li><a href="../classes/p5.CollisionShape.html">p5.CollisionShape</a></li>
+                <li><a href="../classes/p5.OrientedBoundingBoxCollider.html">p5.OrientedBoundingBoxCollider</a></li>
+                <li><a href="../classes/p5.play.html">p5.play</a></li>
+                <li><a href="../classes/p5.PointCollider.html">p5.PointCollider</a></li>
+                <li><a href="../classes/p5.Transform2D.html">p5.Transform2D</a></li>
+                <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
+                <li><a href="../classes/Sprite.html">Sprite</a></li>
+                <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>p5.AxisAlignedBoundingBoxCollider</h1>
+</div>
+
+
+	<div class="well well-small">
+        <div class="extends">
+            Extends <a href="../classes/p5.CollisionShape.html" class="crosslink">p5.CollisionShape</a>
+        </div>
+    </div>
+
+	<div class="well well-small">
+            Module: <a href="../modules/p5.play.html">p5.play</a><br>
+            Parent Module: <a href="../modules/p5.play.html">p5.play</a>
+    </div>
+
+
+
+<div class="yuidoc-class-description">
+<p>An Axis-Aligned Bounding Box (AABB) collision shape, used to detect overlap
+and compute minimum displacement vectors with other collision shapes.</p>
+<p>Cannot be rotated - hence the name.  You might use this in place of an
+OBB because it simplifies some of the math and may improve performance.</p>
+
+</div>
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+		<li>
+			<strong>Methods</strong>
+			<ul>
+				<li class="private"><a href="#method-_computeHalfDiagonals"><span class="im">_computeHalfDiagonals</span>()</a></li>
+				<li class="protected"><a href="#method-_getCandidateAxes"><span class="im">_getCandidateAxes</span>()</a></li>
+				<li class="protected"><a href="#method-_getRadiusOnAxis"><span class="im">_getRadiusOnAxis</span>(<span class="ia">axis</span>)</a></li>
+				<li class="protected"><a href="#method-_onTransformChanged"><span class="im">_onTransformChanged</span>()</a></li>
+				<li class="inherited"><a href="#method-collide"><span class="im">collide</span>(<span class="ia">other</span>)</a></li>
+				<li class=""><a href="#method-draw"><span class="im">draw</span>(<span class="ia">sketch</span>)</a></li>
+				<li class="inherited"><a href="#method-getBoundingBox"><span class="im">getBoundingBox</span>()</a></li>
+				<li class="inherited"><a href="#method-overlap"><span class="im">overlap</span>(<span class="ia">other</span>)</a></li>
+				<li class="inherited"><a href="#method-setParentTransform"><span class="im">setParentTransform</span>(<span class="ia">parent</span>)</a></li>
+				<li class=""><a href="#method-updateFromSprite"><span class="im">updateFromSprite</span>(<span class="ia">sprite</span>)</a></li>
+			</ul>
+		</li>
+
+		<li>
+			<strong>Properties</strong>
+			<ul>
+				<li class="private inherited"><a href="#prop-_center"><span class="ip">_center</span></a></li>
+				<li class="private"><a href="#prop-_halfDiagonals"><span class="ip">_halfDiagonals</span></a></li>
+				<li class="protected inherited"><a href="#prop-_localTransform"><span class="ip">_localTransform</span></a></li>
+				<li class="private inherited"><a href="#prop-_offset"><span class="ip">_offset</span></a></li>
+				<li class="protected inherited"><a href="#prop-_parentTransform"><span class="ip">_parentTransform</span></a></li>
+				<li class="private inherited"><a href="#prop-_rotation"><span class="ip">_rotation</span></a></li>
+				<li class="private inherited"><a href="#prop-_scale"><span class="ip">_scale</span></a></li>
+				<li class="private"><a href="#prop-_width"><span class="ip">_width</span></a></li>
+				<li class="private"><a href="#prop-_width"><span class="ip">_width</span></a></li>
+				<li class="inherited"><a href="#prop-center"><span class="ip">center</span></a></li>
+				<li class="inherited"><a href="#prop-getsDimensionsFromSprite"><span class="ip">getsDimensionsFromSprite</span></a></li>
+				<li class=""><a href="#prop-halfDiagonals"><span class="ip">halfDiagonals</span></a></li>
+				<li class=""><a href="#prop-height"><span class="ip">height</span></a></li>
+				<li class="inherited"><a href="#prop-offset"><span class="ip">offset</span></a></li>
+				<li class="inherited"><a href="#prop-rotation"><span class="ip">rotation</span></a></li>
+				<li class="inherited"><a href="#prop-scale"><span class="ip">scale</span></a></li>
+				<li class=""><a href="#prop-width"><span class="ip">width</span></a></li>
+			</ul>
+		</li>
+
+
+		<li>
+			<strong>Static Methods</strong>
+			<ul>
+				<li class=""><a href="#method-createFromSprite"><span class="im">p5.AxisAlignedBoundingBoxCollider.createFromSprite</span>(<span class="ia">sprite</span><span class="ia">offset</span>)</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<!-- details -->
+
+    <div class="constructor yuidoc-class-constructor page-section">
+        <h2>Constructor</h2>
+        <div class="item-list">
+<div id="method-p5.AxisAlignedBoundingBoxCollider" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>p5.AxisAlignedBoundingBoxCollider</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>center</code>
+				</li>
+				<li class="arg">
+						<code>width</code>
+				</li>
+				<li class="arg">
+						<code>height</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l4574"><code>lib&#x2F;p5.play.js:4574</code></a>
+		</p>
+
+
+
+	</div>
+
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">center</code>
+						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+
+				</li>
+				<li class="param">
+						<code class="param-name">width</code>
+						<span class="type">Number</span>
+
+
+
+				</li>
+				<li class="param">
+						<code class="param-name">height</code>
+						<span class="type">Number</span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+        </div>
+    </div>
+
+    <div id="methods" class="page-section">
+        <h2 class="off-left">Methods</h2>
+        <div class="item-list">
+<div id="method-_computeHalfDiagonals" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>_computeHalfDiagonals</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Array.<p5.Vector></span>
+		</span>
+	</div>
+
+
+		<span class="flag private">private</span>
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l4718"><code>lib&#x2F;p5.play.js:4718</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Recompute this bounding box's half-diagonal vectors.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Array.<p5.Vector></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-_getCandidateAxes" class="method item protected">
+	<div class="method-signature">
+	<span class="name"><code>_getCandidateAxes</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Array.<p5.Vector></span>
+		</span>
+	</div>
+
+
+		<span class="flag protected">protected</span>
+
+
+
+
+	<div class="meta">
+			<p>Inherited from
+			<a href="../classes/p5.CollisionShape.html#method__getCandidateAxes">
+				p5.CollisionShape
+			</a>
+			but overwritten in
+		<a href="../files/lib_p5.play.js.html#l4767"><code>lib&#x2F;p5.play.js:4767</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Compute candidate separating axes relative to another object.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Array.<p5.Vector></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-_getRadiusOnAxis" class="method item protected">
+	<div class="method-signature">
+	<span class="name"><code>_getRadiusOnAxis</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>axis</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Number</span>
+		</span>
+	</div>
+
+
+		<span class="flag protected">protected</span>
+
+
+
+
+	<div class="meta">
+			<p>Inherited from
+			<a href="../classes/p5.CollisionShape.html#method__getRadiusOnAxis">
+				p5.CollisionShape
+			</a>
+			but overwritten in
+		<a href="../files/lib_p5.play.js.html#l4777"><code>lib&#x2F;p5.play.js:4777</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get this shape's radius (half-width of its projection) along the given axis.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">axis</code>
+						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Number</span>
+			</div>
+		</div>
+
+</div>
+<div id="method-_onTransformChanged" class="method item protected">
+	<div class="method-signature">
+	<span class="name"><code>_onTransformChanged</code></span>
+
+		<span class="paren">()</span>
+	</div>
+
+
+		<span class="flag protected">protected</span>
+
+
+
+
+	<div class="meta">
+			<p>Inherited from
+			<a href="../classes/p5.CollisionShape.html#method__onTransformChanged">
+				p5.CollisionShape
+			</a>
+			but overwritten in
+		<a href="../files/lib_p5.play.js.html#l4705"><code>lib&#x2F;p5.play.js:4705</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Recalculate cached properties, relevant vectors, etc. when at least one
+of the shape's transforms changes.  The base CollisionShape (and PointCollider)
+only need to recompute the shape's center, but other shapes may need to
+override this method and do additional recomputation.</p>
+</div>
+
+
+
+</div>
+<div id="method-collide" class="method item inherited">
+	<div class="method-signature">
+	<span class="name"><code>collide</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>other</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>Inherited from
+				<a href="../classes/p5.CollisionShape.html#method_collide">p5.CollisionShape</a>:
+		<a href="../files/lib_p5.play.js.html#l4180"><code>lib&#x2F;p5.play.js:4180</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Compute the smallest movement needed to move this collision shape out of
+another collision shape.  If the shapes are not overlapping, returns a
+zero vector to indicate that no displacement is necessary.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">other</code>
+						<span class="type"><a href="../classes/p5.CollisionShape.html" class="crosslink">p5.CollisionShape</a></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-draw" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>draw</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>sketch</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l4751"><code>lib&#x2F;p5.play.js:4751</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Debug-draw this collider.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">sketch</code>
+						<span class="type">P5</span>
+
+
+					<div class="param-description"><ul>
+<li>p5 instance to use for drawing</li>
+</ul>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+<div id="method-getBoundingBox" class="method item inherited">
+	<div class="method-signature">
+	<span class="name"><code>getBoundingBox</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Top: number, bottom: number, left: number, right: number, width: number, height: number</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>Inherited from
+				<a href="../classes/p5.CollisionShape.html#method_getBoundingBox">p5.CollisionShape</a>:
+		<a href="../files/lib_p5.play.js.html#l4348"><code>lib&#x2F;p5.play.js:4348</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get world-space axis-aligned bounds information for this collision shape.
+Used primarily for the quadtree.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Top: number, bottom: number, left: number, right: number, width: number, height: number</span>:
+					<p>}</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-overlap" class="method item inherited">
+	<div class="method-signature">
+	<span class="name"><code>overlap</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>other</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Boolean</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>Inherited from
+				<a href="../classes/p5.CollisionShape.html#method_overlap">p5.CollisionShape</a>:
+		<a href="../files/lib_p5.play.js.html#l4253"><code>lib&#x2F;p5.play.js:4253</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Check whether this shape overlaps another.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">other</code>
+						<span class="type"><a href="../classes/p5.CollisionShape.html" class="crosslink">p5.CollisionShape</a></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Boolean</span>
+			</div>
+		</div>
+
+</div>
+<div id="method-setParentTransform" class="method item inherited">
+	<div class="method-signature">
+	<span class="name"><code>setParentTransform</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>parent</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>Inherited from
+				<a href="../classes/p5.CollisionShape.html#method_setParentTransform">p5.CollisionShape</a>:
+		<a href="../files/lib_p5.play.js.html#l4128"><code>lib&#x2F;p5.play.js:4128</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Update this collider's parent transform, which will in turn adjust its
+position, rotation and scale in world-space and recompute cached values
+if necessary.
+If a Sprite is passed as the 'parent' then a new transform will be computed
+from the sprite's position/rotation/scale and used.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">parent</code>
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a>  |  <a href="../classes/Sprite.html" class="crosslink">Sprite</a></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+<div id="method-updateFromSprite" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>updateFromSprite</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>sprite</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+			<p>Inherited from
+			<a href="../classes/p5.CollisionShape.html#method_updateFromSprite">
+				p5.CollisionShape
+			</a>
+			but overwritten in
+		<a href="../files/lib_p5.play.js.html#l4691"><code>lib&#x2F;p5.play.js:4691</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Update this collider based on the properties of a parent Sprite.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">sprite</code>
+						<span class="type"><a href="../classes/Sprite.html" class="crosslink">Sprite</a></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+        </div>
+    </div>
+
+    <div id="properties" class="page-section">
+        <h2 class="off-left">Properties</h2>
+
+        <div class="item-list">
+<div id="prop-_center" class="property item private inherited">
+    <h3 class="name"><code>_center</code></h3>
+    <span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property__center">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l3985"><code>lib&#x2F;p5.play.js:3985</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The center of the collision shape in world-space.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-_halfDiagonals" class="property item private">
+    <h3 class="name"><code>_halfDiagonals</code></h3>
+    <span class="type">Array.<p5.Vector></span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.play.js.html#l4607"><code>lib&#x2F;p5.play.js:4607</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Cached half-diagonals, used for computing a projected radius.
+Already transformed into world-space.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-_localTransform" class="property item protected inherited">
+    <h3 class="name"><code>_localTransform</code></h3>
+    <span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+
+
+        <span class="flag protected">protected</span>
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property__localTransform">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l3959"><code>lib&#x2F;p5.play.js:3959</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Transform of this shape relative to its parent.  If there is no parent,
+this is pretty much the world-space transform.
+This should stay consistent with _offset, _rotation and _scale properties.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-_offset" class="property item private inherited">
+    <h3 class="name"><code>_offset</code></h3>
+    <span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property__offset">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l3993"><code>lib&#x2F;p5.play.js:3993</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The center of the collision shape in local-space; also, the offset of the
+collision shape's center from its parent sprite's center.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-_parentTransform" class="property item protected inherited">
+    <h3 class="name"><code>_parentTransform</code></h3>
+    <span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+
+
+        <span class="flag protected">protected</span>
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property__parentTransform">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l3975"><code>lib&#x2F;p5.play.js:3975</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Transform of whatever parent object (probably a sprite) this shape is
+associated with.  If this is a free-floating shape, the parent transform
+will remain an identity matrix.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-_rotation" class="property item private inherited">
+    <h3 class="name"><code>_rotation</code></h3>
+    <span class="type">Number</span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property__rotation">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l4002"><code>lib&#x2F;p5.play.js:4002</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Rotation in radians in local space (relative to parent).
+Note that this will only be meaningful for shapes that can rotate,
+i.e. Oriented Bounding Boxes</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-_scale" class="property item private inherited">
+    <h3 class="name"><code>_scale</code></h3>
+    <span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property__scale">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l4012"><code>lib&#x2F;p5.play.js:4012</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Scale X and Y in local space.  Note that this will only be meaningful
+for shapes that have dimensions (e.g. not for point colliders)</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-_width" class="property item private">
+    <h3 class="name"><code>_width</code></h3>
+    <span class="type">Number</span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.play.js.html#l4591"><code>lib&#x2F;p5.play.js:4591</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Unscaled box width.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-_width" class="property item private">
+    <h3 class="name"><code>_width</code></h3>
+    <span class="type">Number</span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.play.js.html#l4599"><code>lib&#x2F;p5.play.js:4599</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Unscaled box height.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-center" class="property item inherited">
+    <h3 class="name"><code>center</code></h3>
+    <span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property_center">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l4033"><code>lib&#x2F;p5.play.js:4033</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The center of the collision shape in world-space.
+Note: You can set this property with a value in world-space, but it will
+actually modify the collision shape's local transform.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-getsDimensionsFromSprite" class="property item inherited">
+    <h3 class="name"><code>getsDimensionsFromSprite</code></h3>
+    <span class="type">Boolean</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property_getsDimensionsFromSprite">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l4021"><code>lib&#x2F;p5.play.js:4021</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>If true, when calling <code>updateFromSprite</code> this collider will adopt the
+base dimensions of the sprite in addition to adopting its transform.
+If false, only the transform (position/rotation/scale) will be adopted.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-halfDiagonals" class="property item ">
+    <h3 class="name"><code>halfDiagonals</code></h3>
+    <span class="type">Array.<p5.Vector></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.play.js.html#l4652"><code>lib&#x2F;p5.play.js:4652</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Two vectors representing adjacent half-diagonals of the box at its
+current dimensions and orientation.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-height" class="property item ">
+    <h3 class="name"><code>height</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.play.js.html#l4635"><code>lib&#x2F;p5.play.js:4635</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The unrotated height of the box collider.
+Recomputes diagonals when set.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-offset" class="property item inherited">
+    <h3 class="name"><code>offset</code></h3>
+    <span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property_offset">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l4053"><code>lib&#x2F;p5.play.js:4053</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The center of the collision shape in local-space - if this collider is
+owned by a sprite, the offset of the collider center from the sprite center.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-rotation" class="property item inherited">
+    <h3 class="name"><code>rotation</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property_rotation">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l4072"><code>lib&#x2F;p5.play.js:4072</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The local-space rotation of the collider, in radians.</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-scale" class="property item inherited">
+    <h3 class="name"><code>scale</code></h3>
+    <span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/p5.CollisionShape.html#property_scale">p5.CollisionShape</a>:
+        <a href="../files/lib_p5.play.js.html#l4092"><code>lib&#x2F;p5.play.js:4092</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The local-space scale of the collider</p>
+
+    </div>
+
+
+
+</div>
+<div id="prop-width" class="property item ">
+    <h3 class="name"><code>width</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/lib_p5.play.js.html#l4618"><code>lib&#x2F;p5.play.js:4618</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The untransformed width of the box collider.
+Recomputes diagonals when set.</p>
+
+    </div>
+
+
+
+</div>
+        </div>
+    </div>
+
+
+
+    <div id="static-methods" class="page-section">
+        <h2 class="off-left">Static Methods</h2>
+        <div class="item-list">
+<div id="method-createFromSprite" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>p5.AxisAlignedBoundingBoxCollider.createFromSprite</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>sprite</code>
+				</li>
+				<li class="arg">
+						<code class="optional">offset</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.CircleCollider.html" class="crosslink">p5.CircleCollider</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l4671"><code>lib&#x2F;p5.play.js:4671</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Construct a new AxisAlignedBoundingBoxCollider with given offset for the given sprite.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">sprite</code>
+						<span class="type"><a href="../classes/Sprite.html" class="crosslink">Sprite</a></span>
+
+
+
+				</li>
+				<li class="param">
+						<code class="param-name optional">[offset]</code>
+						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+					<div class="param-description"><p>from the sprite's center</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.CircleCollider.html" class="crosslink">p5.CircleCollider</a></span>
+			</div>
+		</div>
+
+</div>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

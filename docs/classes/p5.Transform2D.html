@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>p5.Transform2D - p5.play</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="p5.play" src="../../asterisk.png" style="max-height: 65%;" title="p5.play">
+            p5.play
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Animation", "classes/Camera", "classes/Group", "classes/p5.AxisAlignedBoundingBoxCollider", "classes/p5.CircleCollider", "classes/p5.CollisionShape", "classes/p5.OrientedBoundingBoxCollider", "classes/p5.play", "classes/p5.PointCollider", "classes/p5.Transform2D", "classes/p5.Vector", "classes/Sprite", "classes/SpriteSheet", "modules/p5.play"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/Animation.html">Animation</a></li>
+                <li><a href="../classes/Camera.html">Camera</a></li>
+                <li><a href="../classes/Group.html">Group</a></li>
+                <li><a href="../classes/p5.AxisAlignedBoundingBoxCollider.html">p5.AxisAlignedBoundingBoxCollider</a></li>
+                <li><a href="../classes/p5.CircleCollider.html">p5.CircleCollider</a></li>
+                <li><a href="../classes/p5.CollisionShape.html">p5.CollisionShape</a></li>
+                <li><a href="../classes/p5.OrientedBoundingBoxCollider.html">p5.OrientedBoundingBoxCollider</a></li>
+                <li><a href="../classes/p5.play.html">p5.play</a></li>
+                <li><a href="../classes/p5.PointCollider.html">p5.PointCollider</a></li>
+                <li><a href="../classes/p5.Transform2D.html">p5.Transform2D</a></li>
+                <li><a href="../classes/p5.Vector.html">p5.Vector</a></li>
+                <li><a href="../classes/Sprite.html">Sprite</a></li>
+                <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>p5.Transform2D</h1>
+</div>
+
+
+	<div class="well well-small">
+        <div class="extends">
+            Extends Array
+        </div>
+    </div>
+
+	<div class="well well-small">
+            Module: <a href="../modules/p5.play.html">p5.play</a><br>
+            Parent Module: <a href="../modules/p5.play.html">p5.play</a>
+    </div>
+
+
+
+<div class="yuidoc-class-description">
+<p>A 2D affine transformation (translation, rotation, scale) stored as a
+3x3 matrix that uses homogeneous coordinates.  Used to quickly transform
+points or vectors between reference frames.</p>
+
+</div>
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+		<li>
+			<strong>Methods</strong>
+			<ul>
+				<li class=""><a href="#method-clear"><span class="im">clear</span>()</a></li>
+				<li class=""><a href="#method-copy"><span class="im">copy</span>()</a></li>
+				<li class=""><a href="#method-equals"><span class="im">equals</span>(<span class="ia">other</span>)</a></li>
+				<li class=""><a href="#method-getRotation"><span class="im">getRotation</span>()</a></li>
+				<li class=""><a href="#method-getScale"><span class="im">getScale</span>()</a></li>
+				<li class=""><a href="#method-getTranslation"><span class="im">getTranslation</span>()</a></li>
+				<li class=""><a href="#method-mult"><span class="im">mult</span>(<span class="ia">other</span>)</a></li>
+				<li class=""><a href="#method-rotate"><span class="im">rotate</span>(<span class="ia">radians</span>)</a></li>
+				<li class=""><a href="#method-scale"><span class="im">scale</span>()</a></li>
+				<li class=""><a href="#method-translate"><span class="im">translate</span>()</a></li>
+			</ul>
+		</li>
+
+
+
+		<li>
+			<strong>Static Methods</strong>
+			<ul>
+				<li class=""><a href="#method-mult"><span class="im">p5.Transform2D.mult</span>(<span class="ia">t1</span><span class="ia">t2</span><span class="ia">dest</span>)</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<!-- details -->
+
+    <div class="constructor yuidoc-class-constructor page-section">
+        <h2>Constructor</h2>
+        <div class="item-list">
+<div id="method-p5.Transform2D" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>p5.Transform2D</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code class="optional">source</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5020"><code>lib&#x2F;p5.play.js:5020</code></a>
+		</p>
+
+
+
+	</div>
+
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name optional">[source]</code>
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a>  |  Array.<number></span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+        </div>
+    </div>
+
+    <div id="methods" class="page-section">
+        <h2 class="off-left">Methods</h2>
+        <div class="item-list">
+<div id="method-clear" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>clear</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5047"><code>lib&#x2F;p5.play.js:5047</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Reset this transform to an identity transform, in-place.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>:
+					<p>this transform</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-copy" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>copy</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5062"><code>lib&#x2F;p5.play.js:5062</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Make a copy of this transform.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-equals" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>equals</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>other</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Boolean</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5071"><code>lib&#x2F;p5.play.js:5071</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Check whether two transforms are the same.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">other</code>
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a>  |  Array.<number></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Boolean</span>
+			</div>
+		</div>
+
+</div>
+<div id="method-getRotation" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>getRotation</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Number</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5266"><code>lib&#x2F;p5.play.js:5266</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Retrieve the angle of this transform in radians.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Number</span>
+			</div>
+		</div>
+
+</div>
+<div id="method-getScale" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>getScale</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5222"><code>lib&#x2F;p5.play.js:5222</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Retrieve the scale vector of this transform.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-getTranslation" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>getTranslation</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5178"><code>lib&#x2F;p5.play.js:5178</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Retrieve the resolved translation of this transform.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-mult" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>mult</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>other</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5133"><code>lib&#x2F;p5.play.js:5133</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Multiply this transform by another, combining them.
+Modifies this transform and returns it.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">other</code>
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a>  |  Float32Array  |  Array.<number></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-rotate" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>rotate</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>radians</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5247"><code>lib&#x2F;p5.play.js:5247</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Modify this transform, rotating it by a certain amount.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">radians</code>
+						<span class="type">Number</span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-scale" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>scale</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5187"><code>lib&#x2F;p5.play.js:5187</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Modify this transform, scaling it by a certain amount.
+Returns this transform.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+			</div>
+		</div>
+
+		<div class="example">
+			<h4>Example:</h4>
+
+			<div class="example-content">
+				<pre class="code prettyprint"><code>// Three different ways to call this method.
+var t = new p5.Transform();
+// 1. One scalar value
+t.scale(uniformScale);
+// 1. Two scalar values
+t.scale(scaleX, scaleY);
+// 2. One vector
+t.translate(new p5.Vector(scaleX, scaleY));</code></pre>
+
+			</div>
+		</div>
+</div>
+<div id="method-translate" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>translate</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5144"><code>lib&#x2F;p5.play.js:5144</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Modify this transform, translating it by a certain amount.
+Returns this transform.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+			</div>
+		</div>
+
+		<div class="example">
+			<h4>Example:</h4>
+
+			<div class="example-content">
+				<pre class="code prettyprint"><code>// Two different ways to call this method.
+var t = new p5.Transform();
+// 1. Two numbers
+t.translate(x, y);
+// 2. One vector
+t.translate(new p5.Vector(x, y));</code></pre>
+
+			</div>
+		</div>
+</div>
+        </div>
+    </div>
+
+
+
+
+    <div id="static-methods" class="page-section">
+        <h2 class="off-left">Static Methods</h2>
+        <div class="item-list">
+<div id="method-mult" class="method item ">
+	<div class="method-signature">
+	<span class="name"><code>p5.Transform2D.mult</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>t1</code>
+				</li>
+				<li class="arg">
+						<code>t2</code>
+				</li>
+				<li class="arg">
+						<code class="optional">dest</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/lib_p5.play.js.html#l5090"><code>lib&#x2F;p5.play.js:5090</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Multiply two transforms together, combining them.
+Does not modify original transforms.  Assigns result into dest argument if
+provided and returns it.  Otherwise returns a new transform.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">t1</code>
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a>  |  Array.<number></span>
+
+
+
+				</li>
+				<li class="param">
+						<code class="param-name">t2</code>
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a>  |  Array.<number></span>
+
+
+
+				</li>
+				<li class="param">
+						<code class="param-name optional">[dest]</code>
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="../classes/p5.Transform2D.html" class="crosslink">p5.Transform2D</a></span>
+			</div>
+		</div>
+
+</div>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
