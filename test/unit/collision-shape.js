@@ -1,6 +1,4 @@
 describe('CollisionShape interface', function() {
-  //var MARGIN_OF_ERROR = 0.000001;
-
   // We run this suite of tests for every type that extends from CollisionShape,
   // to ensure that none of them break these assumptions.
   [
@@ -152,6 +150,18 @@ describe('CollisionShape interface', function() {
           expect(shape.center.y).to.eq(-2);
           expect(shape.offset.x).to.eq(-7);
           expect(shape.offset.y).to.eq(-7);
+        });
+
+        describe('_getCandidateAxesForShapes', function() {
+          it('replaces a zero axis with world X-axis', function() {
+            // Circles with the same center might result in a zero-vector axis
+            var a = new p5.CircleCollider(new p5.Vector(2, 3), 1);
+            var b = new p5.CircleCollider(new p5.Vector(2, 3), 10);
+            var candidateAxes = p5.CollisionShape._getCandidateAxesForShapes(a, b);
+            expect(candidateAxes.length).to.equal(1);
+            expect(candidateAxes[0].x).to.equal(1);
+            expect(candidateAxes[0].y).to.equal(0);
+          });
         });
       });
     });

@@ -79,6 +79,12 @@ describe('CircleCollider', function() {
       }
     });
 
+    it('detects overlap when a is exactly centered on b', function() {
+      b.center = a.center.copy();
+      var displacement = a.collide(b);
+      expect(displacement.mag()).not.to.equal(0);
+    });
+
     it('detects overlap when b to the right', function() {
       b.center = new p5.Vector(9, 0);
       var displacement = a.collide(b);
