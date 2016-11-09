@@ -312,7 +312,7 @@
             "submodule": "p5.play",
             "namespace": "",
             "file": "lib/p5.play.js",
-            "line": 4574,
+            "line": 4578,
             "description": "An Axis-Aligned Bounding Box (AABB) collision shape, used to detect overlap\nand compute minimum displacement vectors with other collision shapes.\n\nCannot be rotated - hence the name.  You might use this in place of an\nOBB because it simplifies some of the math and may improve performance.",
             "is_constructor": 1,
             "extends": "p5.CollisionShape",
@@ -346,7 +346,7 @@
             "submodule": "p5.play",
             "namespace": "",
             "file": "lib/p5.play.js",
-            "line": 4793,
+            "line": 4802,
             "description": "An Oriented Bounding Box (OBB) collision shape, used to detect overlap and\ncompute minimum displacement vectors with other collision shapes.",
             "is_constructor": 1,
             "extends": "p5.CollisionShape",
@@ -3147,7 +3147,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4475,
+            "line": 4479,
             "description": "Recalculate cached properties, relevant vectors, etc. when at least one\nof the shape's transforms changes.  The base CollisionShape (and PointCollider)\nonly need to recompute the shape's center, but other shapes may need to\noverride this method and do additional recomputation.",
             "itemtype": "method",
             "name": "_onTransformChanged",
@@ -3159,7 +3159,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4488,
+            "line": 4492,
             "description": "Call to update the cached scaled radius value.",
             "itemtype": "method",
             "name": "_computeScaledRadius",
@@ -3171,7 +3171,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4501,
+            "line": 4505,
             "description": "Debug-draw this collision shape.",
             "itemtype": "method",
             "name": "draw",
@@ -3188,7 +3188,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4515,
+            "line": 4519,
             "description": "Compute candidate separating axes relative to another object.",
             "itemtype": "method",
             "name": "_getCandidateAxes",
@@ -3211,7 +3211,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4564,
+            "line": 4568,
             "description": "Get this shape's radius (half-width of its projection) along the given axis.",
             "itemtype": "method",
             "name": "_getRadiusOnAxis",
@@ -3227,7 +3227,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4591,
+            "line": 4595,
             "description": "Unscaled box width.",
             "itemtype": "property",
             "name": "_width",
@@ -3240,7 +3240,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4599,
+            "line": 4603,
             "description": "Unscaled box height.",
             "itemtype": "property",
             "name": "_width",
@@ -3253,7 +3253,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4607,
+            "line": 4611,
             "description": "Cached half-diagonals, used for computing a projected radius.\nAlready transformed into world-space.",
             "itemtype": "property",
             "name": "_halfDiagonals",
@@ -3266,7 +3266,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4618,
+            "line": 4622,
             "description": "The untransformed width of the box collider.\nRecomputes diagonals when set.",
             "itemtype": "property",
             "name": "width",
@@ -3277,7 +3277,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4635,
+            "line": 4639,
             "description": "The unrotated height of the box collider.\nRecomputes diagonals when set.",
             "itemtype": "property",
             "name": "height",
@@ -3288,7 +3288,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4652,
+            "line": 4656,
             "description": "Two vectors representing adjacent half-diagonals of the box at its\ncurrent dimensions and orientation.",
             "itemtype": "property",
             "name": "halfDiagonals",
@@ -3300,7 +3300,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4671,
+            "line": 4675,
             "description": "Construct a new AxisAlignedBoundingBoxCollider with given offset for the given sprite.",
             "itemtype": "method",
             "name": "createFromSprite",
@@ -3328,7 +3328,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4691,
+            "line": 4695,
             "description": "Update this collider based on the properties of a parent Sprite.",
             "itemtype": "method",
             "name": "updateFromSprite",
@@ -3348,7 +3348,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4705,
+            "line": 4714,
             "description": "Recalculate cached properties, relevant vectors, etc. when at least one\nof the shape's transforms changes.  The base CollisionShape (and PointCollider)\nonly need to recompute the shape's center, but other shapes may need to\noverride this method and do additional recomputation.",
             "itemtype": "method",
             "name": "_onTransformChanged",
@@ -3360,7 +3360,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4718,
+            "line": 4727,
             "description": "Recompute this bounding box's half-diagonal vectors.",
             "itemtype": "method",
             "name": "_computeHalfDiagonals",
@@ -3376,7 +3376,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4751,
+            "line": 4760,
             "description": "Debug-draw this collider.",
             "itemtype": "method",
             "name": "draw",
@@ -3393,7 +3393,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4767,
+            "line": 4776,
             "description": "Compute candidate separating axes relative to another object.",
             "itemtype": "method",
             "name": "_getCandidateAxes",
@@ -3409,7 +3409,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4777,
+            "line": 4786,
             "description": "Get this shape's radius (half-width of its projection) along the given axis.",
             "itemtype": "method",
             "name": "_getRadiusOnAxis",
@@ -3432,7 +3432,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4807,
+            "line": 4816,
             "description": "Unscaled box width.",
             "itemtype": "property",
             "name": "_width",
@@ -3445,7 +3445,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4815,
+            "line": 4824,
             "description": "Unscaled box height.",
             "itemtype": "property",
             "name": "_width",
@@ -3458,7 +3458,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4823,
+            "line": 4832,
             "description": "Cached separating axes this shape contributes to a collision.",
             "itemtype": "property",
             "name": "_potentialAxes",
@@ -3471,7 +3471,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4831,
+            "line": 4840,
             "description": "Cached half-diagonals, used for computing a projected radius.\nAlready transformed into world-space.",
             "itemtype": "property",
             "name": "_halfDiagonals",
@@ -3484,7 +3484,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4842,
+            "line": 4851,
             "description": "The unrotated width of the box collider.\nRecomputes diagonals when set.",
             "itemtype": "property",
             "name": "width",
@@ -3495,7 +3495,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4859,
+            "line": 4868,
             "description": "The unrotated height of the box collider.\nRecomputes diagonals when set.",
             "itemtype": "property",
             "name": "height",
@@ -3506,7 +3506,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4876,
+            "line": 4885,
             "description": "Two vectors representing adjacent half-diagonals of the box at its\ncurrent dimensions and orientation.",
             "itemtype": "property",
             "name": "halfDiagonals",
@@ -3518,7 +3518,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4895,
+            "line": 4904,
             "description": "Construct a new AxisAlignedBoundingBoxCollider with given offset for the given sprite.",
             "itemtype": "method",
             "name": "createFromSprite",
@@ -3564,7 +3564,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4919,
+            "line": 4928,
             "description": "Update this collider based on the properties of a parent Sprite.",
             "itemtype": "method",
             "name": "updateFromSprite",
@@ -3584,7 +3584,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4933,
+            "line": 4937,
             "description": "Recalculate cached properties, relevant vectors, etc. when at least one\nof the shape's transforms changes.  The base CollisionShape (and PointCollider)\nonly need to recompute the shape's center, but other shapes may need to\noverride this method and do additional recomputation.",
             "itemtype": "method",
             "name": "_onTransformChanged",
@@ -3596,7 +3596,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4966,
+            "line": 4970,
             "description": "Debug-draw this collider.",
             "itemtype": "method",
             "name": "draw",
@@ -3613,7 +3613,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 4992,
+            "line": 4996,
             "description": "Compute candidate separating axes relative to another object.",
             "itemtype": "method",
             "name": "_getCandidateAxes",
@@ -3629,7 +3629,7 @@
         },
         {
             "file": "lib/p5.play.js",
-            "line": 5004,
+            "line": 5008,
             "description": "Get this shape's radius (half-width of its projection) along the given axis.",
             "itemtype": "method",
             "name": "_getRadiusOnAxis",

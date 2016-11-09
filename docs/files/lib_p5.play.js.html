@@ -4558,7 +4558,11 @@ p5.prototype._warn = function(message) {
    */
   p5.CircleCollider.prototype.updateFromSprite = function(sprite) {
     if (this.getsDimensionsFromSprite) {
-      this.radius = Math.max(sprite.width, sprite.height)/2;
+      if (sprite.animation) {
+        this.radius = Math.max(sprite.animation.getWidth(), sprite.animation.getHeight())/2;
+      } else {
+        this.radius = Math.max(sprite.width, sprite.height)/2;
+      }
     }
     this.setParentTransform(sprite);
   };
@@ -4787,8 +4791,13 @@ p5.prototype._warn = function(message) {
    */
   p5.AxisAlignedBoundingBoxCollider.prototype.updateFromSprite = function(sprite) {
     if (this.getsDimensionsFromSprite) {
-      this._width = sprite.width;
-      this._height = sprite.height;
+      if (sprite.animation) {
+        this._width = sprite.animation.getWidth();
+        this._height = sprite.animation.getHeight();
+      } else {
+        this._width = sprite.width;
+        this._height = sprite.height;
+      }
     }
     this.setParentTransform(sprite);
   };
@@ -5013,13 +5022,8 @@ p5.prototype._warn = function(message) {
    * @param {Sprite} sprite
    * @see p5.CollisionShape.prototype.getsDimensionsFromSprite
    */
-  p5.OrientedBoundingBoxCollider.prototype.updateFromSprite = function(sprite) {
-    if (this.getsDimensionsFromSprite) {
-      this._width = sprite.width;
-      this._height = sprite.height;
-    }
-    this.setParentTransform(sprite);
-  };
+  p5.OrientedBoundingBoxCollider.prototype.updateFromSprite =
+    p5.AxisAlignedBoundingBoxCollider.prototype.updateFromSprite;
 
   /**
    * Recalculate cached properties, relevant vectors, etc. when at least one
@@ -5099,14 +5103,10 @@ p5.prototype._warn = function(message) {
    * @param {p5.Vector} axis
    * @return {number}
    */
-  p5.OrientedBoundingBoxCollider.prototype._getRadiusOnAxis = function(axis) {
-    // How to project a rect onto an axis:
-    // Project the center-corner vectors for two adjacent corners (cached here)
-    // onto the axis.  The larger magnitude of the two is your projection&#x27;s radius.
-    return Math.max(
-      p5.Vector.project(this._halfDiagonals[0], axis).mag(),
-      p5.Vector.project(this._halfDiagonals[1], axis).mag());
-  };
+  p5.OrientedBoundingBoxCollider.prototype._getRadiusOnAxis =
+    p5.AxisAlignedBoundingBoxCollider.prototype._getRadiusOnAxis;
+  // We can reuse the AABB version of this method because both are projecting
+  // cached half-diagonals - the same code works.
 
   /**
    * A 2D affine transformation (translation, rotation, scale) stored as a
