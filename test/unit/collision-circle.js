@@ -122,10 +122,11 @@ describe('CircleCollider', function() {
   });
 
   describe('updateFromSprite()', function() {
-    var pInst;
+    var pInst, testAnimation;
 
     beforeEach(function() {
       pInst = new p5(function() {});
+      testAnimation = createTestAnimation(3);
     });
 
     afterEach(function() {
@@ -141,7 +142,7 @@ describe('CircleCollider', function() {
       sprite.width = 300;
       sprite.height = 300;
       sprite.update();
-      expect(sprite.collider.radius).to.equal(150)
+      expect(sprite.collider.radius).to.equal(150);
       expect(sprite.collider._scaledRadius).to.equal(150);
     });
 
@@ -154,7 +155,7 @@ describe('CircleCollider', function() {
       sprite.width = 300;
       sprite.height = 300;
       sprite.update();
-      expect(sprite.collider.radius).to.equal(25)
+      expect(sprite.collider.radius).to.equal(25);
       expect(sprite.collider._scaledRadius).to.equal(25);
     });
 
@@ -177,7 +178,7 @@ describe('CircleCollider', function() {
       expect(sprite.collider._scaledRadius).to.equal(450);
     });
 
-    it('doubles own radius from animationless sprite when radius is given, scale != 1', function() {
+    it('scales own radius from animationless sprite when radius is given, scale != 1', function() {
       var sprite = pInst.createSprite(0, 0, 200, 200);
       sprite.scale = 2;
       sprite.setCollider('circle', 0, 0, 25);
@@ -195,5 +196,94 @@ describe('CircleCollider', function() {
       expect(sprite.collider.radius).to.equal(25);
       expect(sprite.collider._scaledRadius).to.equal(75);
     });
+
+    it('adopts animation radius from sprite with animation when no radius is given, scale 1', function() {
+      var sprite = pInst.createSprite(0, 0, 200, 200);
+      sprite.addAnimation('testAnim', testAnimation);
+      sprite.setCollider('circle');
+      // Frames in the test animation are 50x50
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(25);
+
+      sprite.width = 300;
+      sprite.height = 300;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(25);
+    });
+
+    it('keeps own radius from sprite with animation when radius is given, scale 1', function() {
+      var sprite = pInst.createSprite(0, 0, 200, 200);
+      sprite.addAnimation('testAnim', testAnimation);
+      sprite.setCollider('circle', 0, 0, 40);
+      expect(sprite.collider.radius).to.equal(40);
+      expect(sprite.collider._scaledRadius).to.equal(40);
+
+      sprite.width = 300;
+      sprite.height = 300;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(40);
+      expect(sprite.collider._scaledRadius).to.equal(40);
+    });
+
+    it('adopts scaled animation radius from sprite with animation when no radius is given, scale != 1', function() {
+      var sprite = pInst.createSprite(0, 0, 200, 200);
+      sprite.addAnimation('testAnim', testAnimation);
+      sprite.scale = 2;
+      sprite.setCollider('circle');
+      // Frames in the test animation are 50x50
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(50);
+
+      sprite.width = 300;
+      sprite.height = 300;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(50);
+
+      sprite.scale = 3;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(75);
+    });
+
+    it('scales own radius from sprite with animation when radius is given, scale != 1', function() {
+      var sprite = pInst.createSprite(0, 0, 200, 200);
+      sprite.addAnimation('testAnim', testAnimation);
+      sprite.scale = 2;
+      sprite.setCollider('circle', 0, 0, 40);
+      expect(sprite.collider.radius).to.equal(40);
+      expect(sprite.collider._scaledRadius).to.equal(80);
+
+      sprite.width = 300;
+      sprite.height = 300;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(40);
+      expect(sprite.collider._scaledRadius).to.equal(80);
+
+      sprite.scale = 3;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(40);
+      expect(sprite.collider._scaledRadius).to.equal(120);
+    });
+
+    /**
+     * Makes a fake animation with the specified number of frames.
+     * @param {number} frameCount
+     * @returns {p5.Animation}
+     */
+    function createTestAnimation(frameCount) {
+      frameCount = frameCount || 1;
+      var image = new p5.Image(100, 100, pInst);
+      var frames = [];
+      for (var i = 0; i < frameCount; i++) {
+        frames.push({name: i, frame: {x: 0, y: 0, width: 50, height: 50}});
+      }
+      var sheet = new pInst.SpriteSheet(image, frames);
+      var animation = new pInst.Animation(sheet);
+      animation.frameDelay = 1;
+      return animation;
+    }
   });
 });
+
