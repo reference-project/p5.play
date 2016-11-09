@@ -4229,7 +4229,7 @@ p5.prototype._warn = function(message) {
     if (parent instanceof Sprite) {
       this._parentTransform
         .clear()
-        .scale(parent.scale) // TODO: ScaleX and ScaleY?
+        .scale(parent._getScaleX(), parent._getScaleY())
         .rotate(radians(parent.rotation))
         .translate(parent.position);
     } else if (parent instanceof p5.Transform2D) {
