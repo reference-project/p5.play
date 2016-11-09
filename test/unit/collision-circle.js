@@ -133,7 +133,7 @@ describe('CircleCollider', function() {
       pInst.remove();
     });
 
-    it('adopts scaled radius from animationless sprite when no radius is given, scale 1', function() {
+    it('adopts radius from animationless sprite when no radius is given, scale 1', function() {
       var sprite = pInst.createSprite(0, 0, 200, 200);
       sprite.setCollider('circle');
       expect(sprite.collider.radius).to.equal(100);
