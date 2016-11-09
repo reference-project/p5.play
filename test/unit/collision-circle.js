@@ -120,4 +120,80 @@ describe('CircleCollider', function() {
       expect(displacement.y / displacement.x).to.closeTo(2 / 6, MARGIN_OF_ERROR);
     });
   });
+
+  describe('updateFromSprite()', function() {
+    var pInst;
+
+    beforeEach(function() {
+      pInst = new p5(function() {});
+    });
+
+    afterEach(function() {
+      pInst.remove();
+    });
+
+    it('adopts scaled radius from animationless sprite when no radius is given, scale 1', function() {
+      var sprite = pInst.createSprite(0, 0, 200, 200);
+      sprite.setCollider('circle');
+      expect(sprite.collider.radius).to.equal(100);
+      expect(sprite.collider._scaledRadius).to.equal(100);
+
+      sprite.width = 300;
+      sprite.height = 300;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(150)
+      expect(sprite.collider._scaledRadius).to.equal(150);
+    });
+
+    it('keeps own radius from animationless sprite when radius is given, scale 1', function() {
+      var sprite = pInst.createSprite(0, 0, 200, 200);
+      sprite.setCollider('circle', 0, 0, 25);
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(25);
+
+      sprite.width = 300;
+      sprite.height = 300;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(25)
+      expect(sprite.collider._scaledRadius).to.equal(25);
+    });
+
+    it('adopts scaled radius from animationless sprite when no radius is given, scale != 1', function() {
+      var sprite = pInst.createSprite(0, 0, 200, 200);
+      sprite.scale = 2;
+      sprite.setCollider('circle');
+      expect(sprite.collider.radius).to.equal(100);
+      expect(sprite.collider._scaledRadius).to.equal(200);
+
+      sprite.width = 300;
+      sprite.height = 300;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(150);
+      expect(sprite.collider._scaledRadius).to.equal(300);
+
+      sprite.scale = 3;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(150);
+      expect(sprite.collider._scaledRadius).to.equal(450);
+    });
+
+    it('doubles own radius from animationless sprite when radius is given, scale != 1', function() {
+      var sprite = pInst.createSprite(0, 0, 200, 200);
+      sprite.scale = 2;
+      sprite.setCollider('circle', 0, 0, 25);
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(50);
+
+      sprite.width = 300;
+      sprite.height = 300;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(50);
+
+      sprite.scale = 3;
+      sprite.update();
+      expect(sprite.collider.radius).to.equal(25);
+      expect(sprite.collider._scaledRadius).to.equal(75);
+    });
+  });
 });
