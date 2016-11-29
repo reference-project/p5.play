@@ -2405,8 +2405,8 @@ function Sprite(pInst, _x, _y, _w, _h) {
       // when objects end up at very high velocities (as happens sometimes in
       // game engines).
       var radiusOnVelocityAxis = Math.max(
-        this.collider._getRadiusOnAxis(relativeVelocity),
-        target.collider._getRadiusOnAxis(relativeVelocity));
+        this.collider._getMinRadius(),
+        target.collider._getMinRadius());
       var timestep = Math.max(0.015, radiusOnVelocityAxis / Math.sqrt(squareVelocity));
       // If the objects are small enough to benefit from multisampling at this
       // relative velocity
@@ -3367,11 +3367,11 @@ function Animation(pInst) {
     //this.playing = false;
   };
 
-   /**
-  * Goes to the next frame and stops.
-  *
-  * @method changeFrame
-  */
+  /**
+   * Goes to the next frame and stops.
+   *
+   * @method nextFrame
+   */
   this.nextFrame = function() {
 
     if (frame&lt;this.images.length-1)
@@ -3383,11 +3383,11 @@ function Animation(pInst) {
     this.playing = false;
   };
 
-   /**
-  * Goes to the next frame and stops.
-  *
-  * @method changeFrame
-  */
+  /**
+   * Goes to the previous frame and stops.
+   *
+   * @method previousFrame
+   */
   this.previousFrame = function() {
 
     if (frame&gt;0)
@@ -4410,6 +4410,17 @@ p5.prototype._warn = function(message) {
   };
 
   /**
+   * Get the shape&#x27;s minimum radius on any axis for tunneling checks.
+   * @method _getMinRadius
+   * @protected
+   * @param {p5.Vector} axis
+   * @return {number}
+   */
+  p5.CollisionShape.prototype._getMinRadius = function() {
+    return 0;
+  };
+
+  /**
    * @property X_AXIS
    * @type {p5.Vector}
    * @static
@@ -4667,6 +4678,17 @@ p5.prototype._warn = function(message) {
   };
 
   /**
+   * Get the shape&#x27;s minimum radius on any axis for tunneling checks.
+   * @method _getMinRadius
+   * @protected
+   * @param {p5.Vector} axis
+   * @return {number}
+   */
+  p5.CircleCollider.prototype._getMinRadius = function() {
+    return this._scaledRadius;
+  };
+
+  /**
    * An Axis-Aligned Bounding Box (AABB) collision shape, used to detect overlap
    * and compute minimum displacement vectors with other collision shapes.
    *
@@ -4891,6 +4913,17 @@ p5.prototype._warn = function(message) {
   };
 
   /**
+   * Get the shape&#x27;s minimum radius on any axis for tunneling checks.
+   * @method _getMinRadius
+   * @protected
+   * @param {p5.Vector} axis
+   * @return {number}
+   */
+  p5.AxisAlignedBoundingBoxCollider.prototype._getMinRadius = function() {
+    return Math.min(this._width, this._height);
+  };
+
+  /**
    * An Oriented Bounding Box (OBB) collision shape, used to detect overlap and
    * compute minimum displacement vectors with other collision shapes.
    * @class p5.OrientedBoundingBoxCollider
@@ -5107,6 +5140,17 @@ p5.prototype._warn = function(message) {
     p5.AxisAlignedBoundingBoxCollider.prototype._getRadiusOnAxis;
   // We can reuse the AABB version of this method because both are projecting
   // cached half-diagonals - the same code works.
+
+  /**
+   * When checking for tunneling through a OrientedBoundingBoxCollider use a
+   * worst-case of zero (e.g. if the other sprite is passing through a corner).
+   * @method _getMinRadius
+   * @protected
+   * @param {p5.Vector} axis
+   * @return {number}
+   */
+  p5.OrientedBoundingBoxCollider.prototype._getMinRadius =
+    p5.AxisAlignedBoundingBoxCollider.prototype._getMinRadius;
 
   /**
    * A 2D affine transformation (translation, rotation, scale) stored as a

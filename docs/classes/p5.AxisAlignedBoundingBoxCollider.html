@@ -119,6 +119,7 @@ OBB because it simplifies some of the math and may improve performance.</p>
 			<ul>
 				<li class="private"><a href="#method-_computeHalfDiagonals"><span class="im">_computeHalfDiagonals</span>()</a></li>
 				<li class="protected"><a href="#method-_getCandidateAxes"><span class="im">_getCandidateAxes</span>()</a></li>
+				<li class="protected"><a href="#method-_getMinRadius"><span class="im">_getMinRadius</span>(<span class="ia">axis</span>)</a></li>
 				<li class="protected"><a href="#method-_getRadiusOnAxis"><span class="im">_getRadiusOnAxis</span>(<span class="ia">axis</span>)</a></li>
 				<li class="protected"><a href="#method-_onTransformChanged"><span class="im">_onTransformChanged</span>()</a></li>
 				<li class="inherited"><a href="#method-collide"><span class="im">collide</span>(<span class="ia">other</span>)</a></li>
@@ -195,7 +196,7 @@ OBB because it simplifies some of the math and may improve performance.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l4578"><code>lib&#x2F;p5.play.js:4578</code></a>
+		<a href="../files/lib_p5.play.js.html#l4600"><code>lib&#x2F;p5.play.js:4600</code></a>
 		</p>
 
 
@@ -258,7 +259,7 @@ OBB because it simplifies some of the math and may improve performance.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l4727"><code>lib&#x2F;p5.play.js:4727</code></a>
+		<a href="../files/lib_p5.play.js.html#l4749"><code>lib&#x2F;p5.play.js:4749</code></a>
 		</p>
 
 
@@ -300,7 +301,7 @@ OBB because it simplifies some of the math and may improve performance.</p>
 				p5.CollisionShape
 			</a>
 			but overwritten in
-		<a href="../files/lib_p5.play.js.html#l4776"><code>lib&#x2F;p5.play.js:4776</code></a>
+		<a href="../files/lib_p5.play.js.html#l4798"><code>lib&#x2F;p5.play.js:4798</code></a>
 		</p>
 
 
@@ -316,6 +317,67 @@ OBB because it simplifies some of the math and may improve performance.</p>
 
 			<div class="returns-description">
 						<span class="type">Array.<p5.Vector></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-_getMinRadius" class="method item protected">
+	<div class="method-signature">
+	<span class="name"><code>_getMinRadius</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>axis</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Number</span>
+		</span>
+	</div>
+
+
+		<span class="flag protected">protected</span>
+
+
+
+
+	<div class="meta">
+			<p>Inherited from
+			<a href="../classes/p5.CollisionShape.html#method__getMinRadius">
+				p5.CollisionShape
+			</a>
+			but overwritten in
+		<a href="../files/lib_p5.play.js.html#l4824"><code>lib&#x2F;p5.play.js:4824</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get the shape's minimum radius on any axis for tunneling checks.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">axis</code>
+						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Number</span>
 			</div>
 		</div>
 
@@ -348,7 +410,7 @@ OBB because it simplifies some of the math and may improve performance.</p>
 				p5.CollisionShape
 			</a>
 			but overwritten in
-		<a href="../files/lib_p5.play.js.html#l4786"><code>lib&#x2F;p5.play.js:4786</code></a>
+		<a href="../files/lib_p5.play.js.html#l4808"><code>lib&#x2F;p5.play.js:4808</code></a>
 		</p>
 
 
@@ -400,7 +462,7 @@ OBB because it simplifies some of the math and may improve performance.</p>
 				p5.CollisionShape
 			</a>
 			but overwritten in
-		<a href="../files/lib_p5.play.js.html#l4714"><code>lib&#x2F;p5.play.js:4714</code></a>
+		<a href="../files/lib_p5.play.js.html#l4736"><code>lib&#x2F;p5.play.js:4736</code></a>
 		</p>
 
 
@@ -496,7 +558,7 @@ zero vector to indicate that no displacement is necessary.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l4760"><code>lib&#x2F;p5.play.js:4760</code></a>
+		<a href="../files/lib_p5.play.js.html#l4782"><code>lib&#x2F;p5.play.js:4782</code></a>
 		</p>
 
 
@@ -544,7 +606,7 @@ zero vector to indicate that no displacement is necessary.</p>
 	<div class="meta">
 				<p>Inherited from
 				<a href="../classes/p5.CollisionShape.html#method_getBoundingBox">p5.CollisionShape</a>:
-		<a href="../files/lib_p5.play.js.html#l4348"><code>lib&#x2F;p5.play.js:4348</code></a>
+		<a href="../files/lib_p5.play.js.html#l4359"><code>lib&#x2F;p5.play.js:4359</code></a>
 		</p>
 
 
@@ -699,7 +761,7 @@ from the sprite's position/rotation/scale and used.</p>
 				p5.CollisionShape
 			</a>
 			but overwritten in
-		<a href="../files/lib_p5.play.js.html#l4695"><code>lib&#x2F;p5.play.js:4695</code></a>
+		<a href="../files/lib_p5.play.js.html#l4717"><code>lib&#x2F;p5.play.js:4717</code></a>
 		</p>
 
 
@@ -770,7 +832,7 @@ from the sprite's position/rotation/scale and used.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4611"><code>lib&#x2F;p5.play.js:4611</code></a>
+        <a href="../files/lib_p5.play.js.html#l4633"><code>lib&#x2F;p5.play.js:4633</code></a>
         </p>
 
 
@@ -935,7 +997,7 @@ for shapes that have dimensions (e.g. not for point colliders)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4595"><code>lib&#x2F;p5.play.js:4595</code></a>
+        <a href="../files/lib_p5.play.js.html#l4617"><code>lib&#x2F;p5.play.js:4617</code></a>
         </p>
 
 
@@ -961,7 +1023,7 @@ for shapes that have dimensions (e.g. not for point colliders)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4603"><code>lib&#x2F;p5.play.js:4603</code></a>
+        <a href="../files/lib_p5.play.js.html#l4625"><code>lib&#x2F;p5.play.js:4625</code></a>
         </p>
 
 
@@ -1040,7 +1102,7 @@ If false, only the transform (position/rotation/scale) will be adopted.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4656"><code>lib&#x2F;p5.play.js:4656</code></a>
+        <a href="../files/lib_p5.play.js.html#l4678"><code>lib&#x2F;p5.play.js:4678</code></a>
         </p>
 
 
@@ -1066,7 +1128,7 @@ current dimensions and orientation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4639"><code>lib&#x2F;p5.play.js:4639</code></a>
+        <a href="../files/lib_p5.play.js.html#l4661"><code>lib&#x2F;p5.play.js:4661</code></a>
         </p>
 
 
@@ -1168,7 +1230,7 @@ owned by a sprite, the offset of the collider center from the sprite center.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4622"><code>lib&#x2F;p5.play.js:4622</code></a>
+        <a href="../files/lib_p5.play.js.html#l4644"><code>lib&#x2F;p5.play.js:4644</code></a>
         </p>
 
 
@@ -1218,7 +1280,7 @@ Recomputes diagonals when set.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l4675"><code>lib&#x2F;p5.play.js:4675</code></a>
+		<a href="../files/lib_p5.play.js.html#l4697"><code>lib&#x2F;p5.play.js:4697</code></a>
 		</p>
 
 

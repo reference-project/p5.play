@@ -116,6 +116,7 @@ compute minimum displacement vectors with other collision shapes.</p>
 			<strong>Methods</strong>
 			<ul>
 				<li class="protected"><a href="#method-_getCandidateAxes"><span class="im">_getCandidateAxes</span>()</a></li>
+				<li class="protected"><a href="#method-_getMinRadius"><span class="im">_getMinRadius</span>(<span class="ia">axis</span>)</a></li>
 				<li class="protected"><a href="#method-_getRadiusOnAxis"><span class="im">_getRadiusOnAxis</span>(<span class="ia">axis</span>)</a></li>
 				<li class="protected"><a href="#method-_onTransformChanged"><span class="im">_onTransformChanged</span>()</a></li>
 				<li class="inherited"><a href="#method-collide"><span class="im">collide</span>(<span class="ia">other</span>)</a></li>
@@ -196,7 +197,7 @@ compute minimum displacement vectors with other collision shapes.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l4802"><code>lib&#x2F;p5.play.js:4802</code></a>
+		<a href="../files/lib_p5.play.js.html#l4835"><code>lib&#x2F;p5.play.js:4835</code></a>
 		</p>
 
 
@@ -277,7 +278,7 @@ compute minimum displacement vectors with other collision shapes.</p>
 				p5.CollisionShape
 			</a>
 			but overwritten in
-		<a href="../files/lib_p5.play.js.html#l4996"><code>lib&#x2F;p5.play.js:4996</code></a>
+		<a href="../files/lib_p5.play.js.html#l5029"><code>lib&#x2F;p5.play.js:5029</code></a>
 		</p>
 
 
@@ -293,6 +294,68 @@ compute minimum displacement vectors with other collision shapes.</p>
 
 			<div class="returns-description">
 						<span class="type">Array.<p5.Vector></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-_getMinRadius" class="method item protected">
+	<div class="method-signature">
+	<span class="name"><code>_getMinRadius</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>axis</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Number</span>
+		</span>
+	</div>
+
+
+		<span class="flag protected">protected</span>
+
+
+
+
+	<div class="meta">
+			<p>Inherited from
+			<a href="../classes/p5.CollisionShape.html#method__getMinRadius">
+				p5.CollisionShape
+			</a>
+			but overwritten in
+		<a href="../files/lib_p5.play.js.html#l5053"><code>lib&#x2F;p5.play.js:5053</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>When checking for tunneling through a OrientedBoundingBoxCollider use a
+worst-case of zero (e.g. if the other sprite is passing through a corner).</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">axis</code>
+						<span class="type"><a href="../classes/p5.Vector.html" class="crosslink">p5.Vector</a></span>
+
+
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Number</span>
 			</div>
 		</div>
 
@@ -325,7 +388,7 @@ compute minimum displacement vectors with other collision shapes.</p>
 				p5.CollisionShape
 			</a>
 			but overwritten in
-		<a href="../files/lib_p5.play.js.html#l5008"><code>lib&#x2F;p5.play.js:5008</code></a>
+		<a href="../files/lib_p5.play.js.html#l5041"><code>lib&#x2F;p5.play.js:5041</code></a>
 		</p>
 
 
@@ -377,7 +440,7 @@ compute minimum displacement vectors with other collision shapes.</p>
 				p5.CollisionShape
 			</a>
 			but overwritten in
-		<a href="../files/lib_p5.play.js.html#l4937"><code>lib&#x2F;p5.play.js:4937</code></a>
+		<a href="../files/lib_p5.play.js.html#l4970"><code>lib&#x2F;p5.play.js:4970</code></a>
 		</p>
 
 
@@ -473,7 +536,7 @@ zero vector to indicate that no displacement is necessary.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l4970"><code>lib&#x2F;p5.play.js:4970</code></a>
+		<a href="../files/lib_p5.play.js.html#l5003"><code>lib&#x2F;p5.play.js:5003</code></a>
 		</p>
 
 
@@ -521,7 +584,7 @@ zero vector to indicate that no displacement is necessary.</p>
 	<div class="meta">
 				<p>Inherited from
 				<a href="../classes/p5.CollisionShape.html#method_getBoundingBox">p5.CollisionShape</a>:
-		<a href="../files/lib_p5.play.js.html#l4348"><code>lib&#x2F;p5.play.js:4348</code></a>
+		<a href="../files/lib_p5.play.js.html#l4359"><code>lib&#x2F;p5.play.js:4359</code></a>
 		</p>
 
 
@@ -676,7 +739,7 @@ from the sprite's position/rotation/scale and used.</p>
 				p5.CollisionShape
 			</a>
 			but overwritten in
-		<a href="../files/lib_p5.play.js.html#l4928"><code>lib&#x2F;p5.play.js:4928</code></a>
+		<a href="../files/lib_p5.play.js.html#l4961"><code>lib&#x2F;p5.play.js:4961</code></a>
 		</p>
 
 
@@ -747,7 +810,7 @@ from the sprite's position/rotation/scale and used.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4840"><code>lib&#x2F;p5.play.js:4840</code></a>
+        <a href="../files/lib_p5.play.js.html#l4873"><code>lib&#x2F;p5.play.js:4873</code></a>
         </p>
 
 
@@ -857,7 +920,7 @@ will remain an identity matrix.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4832"><code>lib&#x2F;p5.play.js:4832</code></a>
+        <a href="../files/lib_p5.play.js.html#l4865"><code>lib&#x2F;p5.play.js:4865</code></a>
         </p>
 
 
@@ -938,7 +1001,7 @@ for shapes that have dimensions (e.g. not for point colliders)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4816"><code>lib&#x2F;p5.play.js:4816</code></a>
+        <a href="../files/lib_p5.play.js.html#l4849"><code>lib&#x2F;p5.play.js:4849</code></a>
         </p>
 
 
@@ -964,7 +1027,7 @@ for shapes that have dimensions (e.g. not for point colliders)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4824"><code>lib&#x2F;p5.play.js:4824</code></a>
+        <a href="../files/lib_p5.play.js.html#l4857"><code>lib&#x2F;p5.play.js:4857</code></a>
         </p>
 
 
@@ -1043,7 +1106,7 @@ If false, only the transform (position/rotation/scale) will be adopted.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4885"><code>lib&#x2F;p5.play.js:4885</code></a>
+        <a href="../files/lib_p5.play.js.html#l4918"><code>lib&#x2F;p5.play.js:4918</code></a>
         </p>
 
 
@@ -1069,7 +1132,7 @@ current dimensions and orientation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4868"><code>lib&#x2F;p5.play.js:4868</code></a>
+        <a href="../files/lib_p5.play.js.html#l4901"><code>lib&#x2F;p5.play.js:4901</code></a>
         </p>
 
 
@@ -1171,7 +1234,7 @@ owned by a sprite, the offset of the collider center from the sprite center.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/lib_p5.play.js.html#l4851"><code>lib&#x2F;p5.play.js:4851</code></a>
+        <a href="../files/lib_p5.play.js.html#l4884"><code>lib&#x2F;p5.play.js:4884</code></a>
         </p>
 
 
@@ -1230,7 +1293,7 @@ Recomputes diagonals when set.</p>
 	<div class="meta">
 				<p>
 				Defined in
-		<a href="../files/lib_p5.play.js.html#l4904"><code>lib&#x2F;p5.play.js:4904</code></a>
+		<a href="../files/lib_p5.play.js.html#l4937"><code>lib&#x2F;p5.play.js:4937</code></a>
 		</p>
 
 
