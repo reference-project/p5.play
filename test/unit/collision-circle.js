@@ -60,6 +60,45 @@ describe('CircleCollider', function() {
     // collider report correct radius on axis when scaleX != scaleY
   });
 
+  describe('setParentTransform', function() {
+    var circle, pInst;
+
+    beforeEach(function() {
+      circle = new p5.CircleCollider(new p5.Vector(), 5);
+      pInst = new p5(function() {});
+    });
+
+    afterEach(function() {
+      pInst.remove();
+    });
+
+    it('scales radius by height when height is greater', function() {
+      var parent = pInst.createSprite();
+      parent._getScaleX = function() {
+        return 2;
+      };
+      parent._getScaleY = function() {
+        return 3;
+      };
+      circle.setParentTransform(parent);
+      circle._computeScaledRadius();
+      expect(circle._scaledRadius).to.equal(15);
+    });
+
+    it('scales radius by width when width is greater', function() {
+      var parent = pInst.createSprite();
+      parent._getScaleX = function() {
+        return 4;
+      };
+      parent._getScaleY = function() {
+        return 3;
+      };
+      circle.setParentTransform(parent);
+      circle._computeScaledRadius();
+      expect(circle._scaledRadius).to.equal(20);
+    });
+  });
+
   describe('circles of same radii', function() {
     var a, b;
     beforeEach(function() {
