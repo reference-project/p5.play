@@ -177,6 +177,28 @@ describe('Animation', function() {
     });
   });
 
+  describe('playing', function() {
+    it('is false when done playing a non-looping animation', function() {
+      var animation = createTestAnimation(3); // with 3 frames
+      animation.frameDelay = 1;
+      animation.looping = false;
+      animation.play();
+      expect(animation.getFrame()).to.equal(0);
+      expect(animation.playing).to.equal(true);
+      animation.update();
+      expect(animation.getFrame()).to.equal(1);
+      expect(animation.playing).to.equal(true);
+      animation.update();
+      expect(animation.getFrame()).to.equal(2);
+      expect(animation.playing).to.equal(true);
+
+      //Out of frames to increment
+      animation.update();
+      expect(animation.getFrame()).to.equal(2);
+      expect(animation.playing).to.equal(false);
+    });
+  });
+
   /**
    * Makes a fake animation with the specified number of frames.
    * @param {number} frameCount
